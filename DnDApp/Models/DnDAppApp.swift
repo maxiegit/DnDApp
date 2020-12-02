@@ -6,18 +6,19 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct DnDAppApp: App {
     
-    
-    
-    let persistenceContainer = PersistenceContainer.shared
-    
+    // Configure Firebase with applicaiton start
+    init() {
+      FirebaseApp.configure()
+    }
+
     var body: some Scene {
         WindowGroup {
             MainMenu()
-                .environment(\.managedObjectContext, persistenceContainer.container.viewContext)
         }
     }
 }
