@@ -6,10 +6,8 @@
 //
 
 import SwiftUI
-import CoreData
 
 struct MainMenu: View {
-    
     var body: some View {
         
         NavigationView{
@@ -22,7 +20,7 @@ struct MainMenu: View {
                         
                     }
                     Button("delete"){
-                        
+                
                     }
                 }
             }

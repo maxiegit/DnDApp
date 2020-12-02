@@ -11,10 +11,10 @@ import Firebase
 @main
 struct DnDAppApp: App {
     
-    // Configure Firebase with applicaiton start
-    init() {
-      FirebaseApp.configure()
-    }
+//    // Configure Firebase with applicaiton start
+//    init() {
+//      FirebaseApp.configure()
+//    }
 
     var body: some Scene {
         WindowGroup {
