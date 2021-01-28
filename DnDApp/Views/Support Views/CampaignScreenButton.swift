@@ -1,10 +1,3 @@
-//
-//  CampaignScreenButton.swift
-//  DnDApp
-//
-//  Created by Max Magill on 13/11/2020.
-//
-
 import SwiftUI
 
 struct CampaignScreenButton: View {
@@ -30,9 +23,6 @@ struct CampaignScreenButton: View {
                     .resizable()
                     .frame(width: 100, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                     .foregroundColor(.white)
-//                    .overlay(Text("20")
-//                                .font(.title)
-//                                .foregroundColor(Color.black))
                 
             }
         }
@@ -40,6 +30,7 @@ struct CampaignScreenButton: View {
     
     struct CampaignScreenButton_Previews: PreviewProvider {
         static var previews: some View {
+            //filled with test data
             CampaignScreenButton(destination: AnyView(Roller()), symbol: "person.crop.square.fill")
         }
     }

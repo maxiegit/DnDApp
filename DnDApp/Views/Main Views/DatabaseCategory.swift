@@ -1,53 +1,75 @@
-//
-//  DatabaseCategory.swift
-//  DnDApp
-//
-//  Created by Max Magill on 05/11/2020.
-//
-
 import SwiftUI
 
-struct DatabaseCategory: View {
+struct SpellDatabaseView: View {
+    @ObservedObject var listVM = DatabaseListViewModel()
     
-    @State private var showSheet: Bool = false
-    @State private var showImagePicker: Bool = false
-    @State private var sourseType: UIImagePickerController.SourceType = .camera
+    let spells = spellTestData
+
+    @State var presentAddNewItem = false
     
-    @State private var image: UIImage?
+    
+    //All placeholder at the moment. Will eventually loop thought the relevent database category and display all items to be tapped on.
     
     var body: some View {
         VStack {
-            
-            Image(uiImage: (image ?? UIImage(named: "bg1"))!)
-                .resizable()
-                .frame(width: 300, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            
-            Button("Open camera") {
-                self.showSheet = true
+            List{
+                ForEach(listVM.spellViewModel){ spellVM in
+                    ListCell(spellVM: spellVM)
+                }
+                if presentAddNewItem {
+//                    ListCell(spellVM: SpellViewModel(spell: Spell(name: "", level: 3, school: "", castTime: "kjadhsf", range: "sdlkhf", components: "dslknf", duration: "l;asdkfn", ritual: true, description: "aklsjdf"))){ spell in
+//                        self.listVM.addSpell(spell: spell)
+//                        self.presentAddNewItem.toggle()
+//                    }
+                }
             }
-            .actionSheet(isPresented: $showSheet) {
-                ActionSheet(title: Text("Select Photo"),
-                            message: Text("Chhose"),
-                            buttons: [
-                                .default(Text("Photo Library")){
-                                    self.showImagePicker = true
-                                    self.sourseType = .photoLibrary
-                            },
-                                .default(Text("Camera")){
-                                    self.showImagePicker = true
-                                    self.sourseType = .camera
-                            },
-                            .cancel()
-                        ])
+            Button(action: {self.presentAddNewItem.toggle()}) {
+                Text("button")
             }
-        }.sheet(isPresented: $showImagePicker){
-            ImagePicker(image: $image, isShown: self.$showImagePicker, sourceType: self.sourseType)
+        }
+    }
+    
+    struct DatabaseCategory_Previews: PreviewProvider {
+        static var previews: some View {
+            SpellDatabaseView()
         }
     }
 }
 
-struct DatabaseCategory_Previews: PreviewProvider {
-    static var previews: some View {
-        DatabaseCategory()
+struct ListCell: View{
+    @ObservedObject var spellVM: SpellViewModel
+    
+    var onCommit: (Spell) -> (Void) = { _ in}
+    
+    var body: some View{
+        HStack {
+            VStack(alignment: .center) {
+                Text(spellVM.spell.name)
+                
+//                TextField("Please enter spell", text: $spellVM.spell.name, onCommit:{
+//                    self.onCommit(self.spellVM.spell)
+//                })
+            }
+            .padding()
+        }
     }
 }
+
+//struct ListCell: View{
+//    @ObservedObject var spellVM: SpellViewModel
+//
+//    var onCommit: (Spell) -> (Void) = { _ in}
+//
+//    var body: some View{
+//        HStack {
+//            VStack(alignment: .center) {
+//                Text(spellVM.spell.name)
+//
+////                TextField("Please enter spell", text: $spellVM.spell.name, onCommit:{
+////                    self.onCommit(self.spellVM.spell)
+////                })
+//            }
+//            .padding()
+//        }
+//    }
+//}

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,8 +12,16 @@
 		0B13B958255C69700078E076 /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13B957255C69700078E076 /* Extenstions.swift */; };
 		0B13B95B255CAB200078E076 /* DiceSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13B95A255CAB200078E076 /* DiceSection.swift */; };
 		0B20C027255EE21B00CEDA38 /* RollerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B20C026255EE21B00CEDA38 /* RollerViewModel.swift */; };
-		0B4585D6255462B600E65F47 /* DatabaseCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4585D5255462B600E65F47 /* DatabaseCategory.swift */; };
+		0B4585D6255462B600E65F47 /* SpellDatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4585D5255462B600E65F47 /* SpellDatabaseView.swift */; };
 		0B4585DE2555C27D00E65F47 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4585DD2555C27D00E65F47 /* ImagePicker.swift */; };
+		0B4D565C25AD4D1D00E959C9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D565B25AD4D1D00E959C9 /* Item.swift */; };
+		0B4D565F25AD4D6800E959C9 /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D565E25AD4D6800E959C9 /* ItemRepository.swift */; };
+		0B4D566225AD4E1500E959C9 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D566125AD4E1500E959C9 /* ItemViewModel.swift */; };
+		0B4D566625AE195A00E959C9 /* ItemDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D566525AE195A00E959C9 /* ItemDatabase.swift */; };
+		0B4D566925AE464A00E959C9 /* ItemDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D566825AE464A00E959C9 /* ItemDetailView.swift */; };
+		0B4D566C25AE639500E959C9 /* EditItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D566B25AE639400E959C9 /* EditItem.swift */; };
+		0B4D566F25AE79E000E959C9 /* NewSpell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D566E25AE79E000E959C9 /* NewSpell.swift */; };
+		0B4D567225AE957400E959C9 /* SpellDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D567125AE957400E959C9 /* SpellDetailView.swift */; };
 		0B506B82255E0B7700610557 /* CampaignScreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B506B81255E0B7700610557 /* CampaignScreenButton.swift */; };
 		0BB4C13D2551A01D0061455C /* DnDAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB4C13C2551A01D0061455C /* DnDAppApp.swift */; };
 		0BB4C13F2551A01D0061455C /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB4C13E2551A01D0061455C /* MainMenu.swift */; };
@@ -22,10 +30,15 @@
 		0BB4C15A2551EB220061455C /* Campaign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB4C1592551EB220061455C /* Campaign.swift */; };
 		0BB4C15D2551EC620061455C /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB4C15C2551EC620061455C /* Database.swift */; };
 		0BB4C1602551EFFD0061455C /* DatabaseSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB4C15F2551EFFD0061455C /* DatabaseSection.swift */; };
-		0BB4C164255204650061455C /* DnDApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0BB4C162255204650061455C /* DnDApp.xcdatamodeld */; };
-		0BB4C167255205340061455C /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB4C166255205340061455C /* Persistence.swift */; };
 		0BCF44A82561854400E98B86 /* CharacterSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCF44A72561854400E98B86 /* CharacterSheet.swift */; };
 		0BCF44AB25618A0E00E98B86 /* CharatcerTopBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCF44AA25618A0E00E98B86 /* CharatcerTopBar.swift */; };
+		0BCF44C82577FB6000E98B86 /* Spell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCF44C72577FB6000E98B86 /* Spell.swift */; };
+		0BCF44CB2578028C00E98B86 /* camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCF44CA2578028C00E98B86 /* camera.swift */; };
+		0BCF44E82578477D00E98B86 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0BCF44E72578477D00E98B86 /* GoogleService-Info.plist */; };
+		0BCF4512257858E600E98B86 /* SpellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCF4511257858E600E98B86 /* SpellViewModel.swift */; };
+		0BCF451525785E4400E98B86 /* DatabaseListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCF451425785E4400E98B86 /* DatabaseListViewModel.swift */; };
+		0BCF45192578664C00E98B86 /* SpellRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCF45182578664C00E98B86 /* SpellRepository.swift */; };
+		93DC6683CA851E22AC021FC6 /* Pods_DnDApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE572FBD83E66DCBEB9B44A /* Pods_DnDApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +47,16 @@
 		0B13B957255C69700078E076 /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
 		0B13B95A255CAB200078E076 /* DiceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceSection.swift; sourceTree = "<group>"; };
 		0B20C026255EE21B00CEDA38 /* RollerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollerViewModel.swift; sourceTree = "<group>"; };
-		0B4585D5255462B600E65F47 /* DatabaseCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseCategory.swift; sourceTree = "<group>"; };
+		0B4585D5255462B600E65F47 /* SpellDatabaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellDatabaseView.swift; sourceTree = "<group>"; };
 		0B4585DD2555C27D00E65F47 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		0B4D565B25AD4D1D00E959C9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		0B4D565E25AD4D6800E959C9 /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
+		0B4D566125AD4E1500E959C9 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
+		0B4D566525AE195A00E959C9 /* ItemDatabase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDatabase.swift; sourceTree = "<group>"; };
+		0B4D566825AE464A00E959C9 /* ItemDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemDetailView.swift; sourceTree = "<group>"; };
+		0B4D566B25AE639400E959C9 /* EditItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItem.swift; sourceTree = "<group>"; };
+		0B4D566E25AE79E000E959C9 /* NewSpell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSpell.swift; sourceTree = "<group>"; };
+		0B4D567125AE957400E959C9 /* SpellDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellDetailView.swift; sourceTree = "<group>"; };
 		0B506B81255E0B7700610557 /* CampaignScreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignScreenButton.swift; sourceTree = "<group>"; };
 		0BB4C1392551A01D0061455C /* DnDApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DnDApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB4C13C2551A01D0061455C /* DnDAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDAppApp.swift; sourceTree = "<group>"; };
@@ -46,10 +67,17 @@
 		0BB4C1592551EB220061455C /* Campaign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campaign.swift; sourceTree = "<group>"; };
 		0BB4C15C2551EC620061455C /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		0BB4C15F2551EFFD0061455C /* DatabaseSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSection.swift; sourceTree = "<group>"; };
-		0BB4C163255204650061455C /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
-		0BB4C166255205340061455C /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		0BCF44A72561854400E98B86 /* CharacterSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterSheet.swift; sourceTree = "<group>"; };
 		0BCF44AA25618A0E00E98B86 /* CharatcerTopBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharatcerTopBar.swift; sourceTree = "<group>"; };
+		0BCF44C72577FB6000E98B86 /* Spell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spell.swift; sourceTree = "<group>"; };
+		0BCF44CA2578028C00E98B86 /* camera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = camera.swift; sourceTree = "<group>"; };
+		0BCF44E72578477D00E98B86 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0BCF4511257858E600E98B86 /* SpellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellViewModel.swift; sourceTree = "<group>"; };
+		0BCF451425785E4400E98B86 /* DatabaseListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseListViewModel.swift; sourceTree = "<group>"; };
+		0BCF45182578664C00E98B86 /* SpellRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellRepository.swift; sourceTree = "<group>"; };
+		1228F08F1A1624338A7AC644 /* Pods-DnDApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDApp.release.xcconfig"; path = "Target Support Files/Pods-DnDApp/Pods-DnDApp.release.xcconfig"; sourceTree = "<group>"; };
+		BBDF44A32DFDAADFD97810E3 /* Pods-DnDApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDApp.debug.xcconfig"; path = "Target Support Files/Pods-DnDApp/Pods-DnDApp.debug.xcconfig"; sourceTree = "<group>"; };
+		DAE572FBD83E66DCBEB9B44A /* Pods_DnDApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DnDApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				93DC6683CA851E22AC021FC6 /* Pods_DnDApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +105,9 @@
 			isa = PBXGroup;
 			children = (
 				0B20C026255EE21B00CEDA38 /* RollerViewModel.swift */,
+				0BCF4511257858E600E98B86 /* SpellViewModel.swift */,
+				0BCF451425785E4400E98B86 /* DatabaseListViewModel.swift */,
+				0B4D566125AD4E1500E959C9 /* ItemViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -84,8 +116,10 @@
 			isa = PBXGroup;
 			children = (
 				0B13B957255C69700078E076 /* Extenstions.swift */,
-				0BB4C166255205340061455C /* Persistence.swift */,
 				0BB4C13C2551A01D0061455C /* DnDAppApp.swift */,
+				0BCF44C72577FB6000E98B86 /* Spell.swift */,
+				0B4D565B25AD4D1D00E959C9 /* Item.swift */,
+				0B4585DD2555C27D00E65F47 /* ImagePicker.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -95,6 +129,8 @@
 			children = (
 				0BB4C13B2551A01D0061455C /* DnDApp */,
 				0BB4C13A2551A01D0061455C /* Products */,
+				7959B211D33E0008D8268E79 /* Pods */,
+				2B9E26205D733A06F56A67F0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,14 +145,14 @@
 		0BB4C13B2551A01D0061455C /* DnDApp */ = {
 			isa = PBXGroup;
 			children = (
+				0BCF44E72578477D00E98B86 /* GoogleService-Info.plist */,
 				0B20C024255EE0D600CEDA38 /* Models */,
+				0BCF45172578663000E98B86 /* Repositories */,
 				0B20C023255EE0BB00CEDA38 /* ViewModel */,
 				0B20C022255EB91C00CEDA38 /* Views */,
-				0BB4C14C2551A2AE0061455C /* Structs */,
 				0BB4C1402551A0210061455C /* Assets.xcassets */,
 				0BB4C1452551A0210061455C /* Info.plist */,
 				0BB4C1422551A0210061455C /* Preview Content */,
-				0BB4C162255204650061455C /* DnDApp.xcdatamodeld */,
 			);
 			path = DnDApp;
 			sourceTree = "<group>";
@@ -129,14 +165,6 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		0BB4C14C2551A2AE0061455C /* Structs */ = {
-			isa = PBXGroup;
-			children = (
-				0B4585DD2555C27D00E65F47 /* ImagePicker.swift */,
-			);
-			path = Structs;
-			sourceTree = "<group>";
-		};
 		0BB4C1512551AE090061455C /* Support Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +173,7 @@
 				0B13B95A255CAB200078E076 /* DiceSection.swift */,
 				0B506B81255E0B7700610557 /* CampaignScreenButton.swift */,
 				0BCF44AA25618A0E00E98B86 /* CharatcerTopBar.swift */,
+				0BCF44CA2578028C00E98B86 /* camera.swift */,
 			);
 			path = "Support Views";
 			sourceTree = "<group>";
@@ -154,12 +183,43 @@
 			children = (
 				0BB4C1592551EB220061455C /* Campaign.swift */,
 				0BB4C15C2551EC620061455C /* Database.swift */,
-				0B4585D5255462B600E65F47 /* DatabaseCategory.swift */,
+				0B4585D5255462B600E65F47 /* SpellDatabaseView.swift */,
+				0B4D567125AE957400E959C9 /* SpellDetailView.swift */,
+				0B4D566E25AE79E000E959C9 /* NewSpell.swift */,
 				0BB4C13E2551A01D0061455C /* MainMenu.swift */,
 				0B0952BD255B6C560012C64F /* Roller.swift */,
 				0BCF44A72561854400E98B86 /* CharacterSheet.swift */,
+				0B4D566525AE195A00E959C9 /* ItemDatabase.swift */,
+				0B4D566825AE464A00E959C9 /* ItemDetailView.swift */,
+				0B4D566B25AE639400E959C9 /* EditItem.swift */,
 			);
 			path = "Main Views";
+			sourceTree = "<group>";
+		};
+		0BCF45172578663000E98B86 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				0BCF45182578664C00E98B86 /* SpellRepository.swift */,
+				0B4D565E25AD4D6800E959C9 /* ItemRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		2B9E26205D733A06F56A67F0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DAE572FBD83E66DCBEB9B44A /* Pods_DnDApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7959B211D33E0008D8268E79 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				BBDF44A32DFDAADFD97810E3 /* Pods-DnDApp.debug.xcconfig */,
+				1228F08F1A1624338A7AC644 /* Pods-DnDApp.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -169,9 +229,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0BB4C1482551A0210061455C /* Build configuration list for PBXNativeTarget "DnDApp" */;
 			buildPhases = (
+				4F701A4DD1EE71CBB83C76F9 /* [CP] Check Pods Manifest.lock */,
 				0BB4C1352551A01D0061455C /* Sources */,
 				0BB4C1362551A01D0061455C /* Frameworks */,
 				0BB4C1372551A01D0061455C /* Resources */,
+				70509BDAEBCF7166781CF61B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -221,29 +283,83 @@
 			files = (
 				0BB4C1442551A0210061455C /* Preview Assets.xcassets in Resources */,
 				0BB4C1412551A0210061455C /* Assets.xcassets in Resources */,
+				0BCF44E82578477D00E98B86 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4F701A4DD1EE71CBB83C76F9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DnDApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		70509BDAEBCF7166781CF61B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DnDApp/Pods-DnDApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DnDApp/Pods-DnDApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DnDApp/Pods-DnDApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0BB4C1352551A01D0061455C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BB4C167255205340061455C /* Persistence.swift in Sources */,
+				0BCF44CB2578028C00E98B86 /* camera.swift in Sources */,
 				0BB4C15D2551EC620061455C /* Database.swift in Sources */,
+				0BCF451525785E4400E98B86 /* DatabaseListViewModel.swift in Sources */,
 				0BB4C13F2551A01D0061455C /* MainMenu.swift in Sources */,
-				0BB4C164255204650061455C /* DnDApp.xcdatamodeld in Sources */,
+				0B4D565C25AD4D1D00E959C9 /* Item.swift in Sources */,
 				0BCF44AB25618A0E00E98B86 /* CharatcerTopBar.swift in Sources */,
-				0B4585D6255462B600E65F47 /* DatabaseCategory.swift in Sources */,
+				0B4D567225AE957400E959C9 /* SpellDetailView.swift in Sources */,
+				0B4D566F25AE79E000E959C9 /* NewSpell.swift in Sources */,
+				0B4585D6255462B600E65F47 /* SpellDatabaseView.swift in Sources */,
+				0B4D566225AD4E1500E959C9 /* ItemViewModel.swift in Sources */,
+				0BCF4512257858E600E98B86 /* SpellViewModel.swift in Sources */,
+				0B4D566C25AE639500E959C9 /* EditItem.swift in Sources */,
 				0BCF44A82561854400E98B86 /* CharacterSheet.swift in Sources */,
+				0BCF45192578664C00E98B86 /* SpellRepository.swift in Sources */,
+				0B4D565F25AD4D6800E959C9 /* ItemRepository.swift in Sources */,
 				0BB4C1602551EFFD0061455C /* DatabaseSection.swift in Sources */,
+				0BCF44C82577FB6000E98B86 /* Spell.swift in Sources */,
 				0B4585DE2555C27D00E65F47 /* ImagePicker.swift in Sources */,
 				0B0952BE255B6C560012C64F /* Roller.swift in Sources */,
 				0B20C027255EE21B00CEDA38 /* RollerViewModel.swift in Sources */,
+				0B4D566625AE195A00E959C9 /* ItemDatabase.swift in Sources */,
 				0BB4C13D2551A01D0061455C /* DnDAppApp.swift in Sources */,
 				0BB4C15A2551EB220061455C /* Campaign.swift in Sources */,
+				0B4D566925AE464A00E959C9 /* ItemDetailView.swift in Sources */,
 				0B13B955255C69450078E076 /* PcPill.swift in Sources */,
 				0B13B95B255CAB200078E076 /* DiceSection.swift in Sources */,
 				0B13B958255C69700078E076 /* Extenstions.swift in Sources */,
@@ -372,6 +488,7 @@
 		};
 		0BB4C1492551A0210061455C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = BBDF44A32DFDAADFD97810E3 /* Pods-DnDApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -394,6 +511,7 @@
 		};
 		0BB4C14A2551A0210061455C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1228F08F1A1624338A7AC644 /* Pods-DnDApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -436,19 +554,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		0BB4C162255204650061455C /* DnDApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				0BB4C163255204650061455C /* Model.xcdatamodel */,
-			);
-			currentVersion = 0BB4C163255204650061455C /* Model.xcdatamodel */;
-			path = DnDApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 0BB4C1312551A01D0061455C /* Project object */;
 }

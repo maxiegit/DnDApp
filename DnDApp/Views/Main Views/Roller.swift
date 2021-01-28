@@ -1,13 +1,8 @@
-//
-//  Roller.swift
-//  DnDApp
-//
-//  Created by Max Magill on 11/11/2020.
-//
-
 import SwiftUI
 
 struct Roller: View {
+    
+    //TODO: Finish roller viewmodel, have text fields for number of dice
     
     @ObservedObject var rollerVM: RollerViewModel = RollerViewModel()
     
