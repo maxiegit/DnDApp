@@ -1,15 +1,9 @@
-//
-//  Extenstions.swift
-//  DnDApp
-//
-//  Created by Max Magill on 11/11/2020.
-//
-
 import Foundation
 import SwiftUI
 
 extension UIColor {
     
+    //Backgrounds to be used in UI development
     static let DarkBackground = UIColor(red: 36, green: 36, blue: 36)
     static let DarkPillBackground = UIColor(red: 46, green: 46, blue: 46)
     

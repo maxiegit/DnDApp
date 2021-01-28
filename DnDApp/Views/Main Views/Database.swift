@@ -1,22 +1,21 @@
-//
-//  Database.swift
-//  DnDApp
-//
-//  Created by Max Magill on 03/11/2020.
-//
-
 import SwiftUI
 
 struct Database: View {
     var body: some View {
-        ScrollView {
-            VStack {
-                NavigationLink(destination: Text("Spells!"))
-                {
-                    DatabaseSection(image: "bg1", section: "Spells")
+        ZStack {
+            Color.flatDarkBackground.ignoresSafeArea()
+            ScrollView {
+                VStack {
+                    //TODO: have this loop through all collections and create buttons programatically
+                    NavigationLink(destination: SpellDatabaseView())
+                    {
+                        DatabaseSection(section: "Spells")
+                    }
+                    .padding()
+                    NavigationLink(destination: ItemDatabaseView()){
+                        DatabaseSection(section: "Items")
+                    }
                 }
-                .padding()
-                DatabaseSection(image: "bg2", section: "Items")
             }
         }
     }

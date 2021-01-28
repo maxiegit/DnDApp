@@ -1,10 +1,3 @@
-//
-//  DiceSection.swift
-//  DnDApp
-//
-//  Created by Max Magill on 11/11/2020.
-//
-
 import SwiftUI
 
 struct DiceSection: View {
@@ -54,6 +47,7 @@ struct DiceSection: View {
 
 struct DiceSection_Previews: PreviewProvider {
     static var previews: some View {
+        //filled with test data
         DiceSection(symbol: "square.fill", sides: 6)
     }
 }

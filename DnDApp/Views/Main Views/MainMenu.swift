@@ -1,31 +1,19 @@
-//
-//  ContentView.swift
-//  DnDApp
-//
-//  Created by Max Magill on 03/11/2020.
-//
-
 import SwiftUI
 
 struct MainMenu: View {
     var body: some View {
-        
         NavigationView{
             ZStack{
                 Color.flatDarkBackground.ignoresSafeArea()
                 VStack() {
                     ScrollView{
-                        
+                        //placeholder, will loop through all user chaartcers
                         cNav(name: "Lyanna Hawthorne", classIcon: "barbarian", race: "Half-Elf", portrait: "aaliyah", level: 13)
-                        
-                    }
-                    Button("delete"){
-                
                     }
                 }
             }
             .navigationBarItems(leading:NavigationLink(destination: Database()) {
-                Image(systemName: "sparkles")
+                Image(systemName: "sparkles") //replace with more appropriate icon
             },
             trailing: Button("Add"){
             })
@@ -34,14 +22,11 @@ struct MainMenu: View {
     
     // creates the navigation links out of menuRow
     private func cNav(name: String, classIcon: String, race: String, portrait: String, level: Int) -> NavigationLink<PcPill, Campaign>{
+        //for cleaner creation on navigation links
         
         let navlink = NavigationLink(destination: Campaign()) {
-            
             PcPill(portrait: portrait, classIcon: classIcon, level: level, race: race, name: name)
-            
-            
         }
-        
         return navlink
     }
     

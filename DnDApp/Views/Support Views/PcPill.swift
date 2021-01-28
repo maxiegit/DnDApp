@@ -1,10 +1,3 @@
-//
-//  PcPill.swift
-//  DnDApp
-//
-//  Created by Max Magill on 11/11/2020.
-//
-
 import SwiftUI
 
 struct PcPill: View {
@@ -74,6 +67,7 @@ struct PcPill: View {
 
 struct PcPill_Previews: PreviewProvider {
     static var previews: some View {
+        //filled with test data
         PcPill(portrait: "yass", classIcon: "barbarian", level: 20, race: "Aasimar", name: "Lyanna Hawthorn")
         
     }
