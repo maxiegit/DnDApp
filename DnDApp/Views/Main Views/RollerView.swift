@@ -1,10 +1,10 @@
 import SwiftUI
 
-struct Roller: View {
+struct RollerView: View {
     
     //TODO: Finish roller viewmodel, have text fields for number of dice
     
-    @ObservedObject var rollerVM: RollerViewModel = RollerViewModel()
+    @ObservedObject var rollerVM: RollerViewModel = RollerViewModel(roller: Roller(sides: 6, amount: 1, modifer: 0))
     
     @State private var result = 0
         
@@ -32,7 +32,7 @@ struct Roller: View {
                     .foregroundColor(Color.white)
                 
                 Button("Roll", action:{
-                    self.result = Int.random(in: 1...self.rollerVM.sides)
+                    rollerVM.roll()
                 })
                 .frame(width: 300, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .background(Color.flatDarkCardBackground)
@@ -49,6 +49,6 @@ struct Roller: View {
 
 struct Roller_Previews: PreviewProvider {
     static var previews: some View {
-        Roller()
+        RollerView()
     }
 }

@@ -38,8 +38,6 @@ struct DiceSection: View {
         }
         .onTapGesture {
             tapped.toggle()
-            self.rollerVM.setSides(numOfSides: sides)
-            print("\(self.rollerVM.sides)")
         }
         
     }

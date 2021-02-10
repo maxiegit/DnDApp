@@ -8,8 +8,6 @@ struct SpellDatabaseView: View {
     
     let spells = spellTestData
     
-    //All placeholder at the moment. Will eventually loop thought the relevent database category and display all items to be tapped on.
-    
     var body: some View {
         VStack {
             List{
@@ -25,7 +23,7 @@ struct SpellDatabaseView: View {
                 }
             }
             .sheet(isPresented: $toggleSheet, content: {
-                NewSpell()
+                EditSpell()
             })
         }
     }

@@ -24,4 +24,12 @@ class SpellViewModel: ObservableObject, Identifiable {
     func addSpell(){
         spellRepo.addSpell(spell)
     }
+    
+    func updateSpell(){
+        spellRepo.updateSpell(spell)
+    }
+    
+    func deleteSpell(){
+        spellRepo.deleteSpell(spell)
+    }
 }

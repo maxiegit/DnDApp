@@ -11,14 +11,22 @@ struct Database: View {
                     {
                         DatabaseSection(section: "Spells")
                     }
-                    .padding()
                     NavigationLink(destination: ItemDatabaseView()){
                         DatabaseSection(section: "Items")
+                    }
+                    NavigationLink(destination: ArmorDatabaseView()){
+                        DatabaseSection(section: "Armor")
+                    }
+                    NavigationLink(
+                        destination: WeaponDatabaseView()){
+                        DatabaseSection(section: "Weapons")
                     }
                 }
             }
         }
     }
+
+    
 }
 
 struct Database_Previews: PreviewProvider {

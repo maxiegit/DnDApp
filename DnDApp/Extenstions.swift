@@ -25,3 +25,10 @@ extension Color {
         return Color(decimalRed: 46, green: 46, blue: 46)
     }
 }
+
+extension String: Identifiable {
+    public var id: String {
+        self
+    }
+}
+

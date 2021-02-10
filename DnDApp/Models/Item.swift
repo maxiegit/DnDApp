@@ -5,8 +5,9 @@ import FirebaseFirestoreSwift
 struct Item: Codable, Identifiable{
     @DocumentID var id: String?
     var name: String
-    //Cost
-    //Weight
+    var cost: Int
+    var weight: Int
+    var description: String
     
     //Later when filling out the databse more, have different options for the type of item (ie weapon, armor, tool etc) and have different options available to the user based on that
 }

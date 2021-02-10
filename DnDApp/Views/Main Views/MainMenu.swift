@@ -13,9 +13,11 @@ struct MainMenu: View {
                 }
             }
             .navigationBarItems(leading:NavigationLink(destination: Database()) {
-                Image(systemName: "sparkles") //replace with more appropriate icon
+                Image(systemName: "sparkles")
+                //replace with more appropriate icon
             },
             trailing: Button("Add"){
+                print("test")
             })
         }
     }
