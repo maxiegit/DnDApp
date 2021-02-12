@@ -10,7 +10,7 @@ class ItemViewModel: ObservableObject, Identifiable {
     
     private var cancellables = Set<AnyCancellable>()
     
-    init(item: Item = Item(name: "")){
+    init(item: Item = Item(name: "", cost: 0, weight: 0, description: "")){
         self.item = item
         
         $item
