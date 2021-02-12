@@ -8,7 +8,7 @@ class ItemRepository: ObservableObject {
     let db = Firestore.firestore()
     
     @Published var items = [Item]()
-    @Published var item = Item(name: "")
+    @Published var item = Item(name: "", cost: 0, weight: 0, description: "")
     
     init() {
         loadData()
@@ -41,16 +41,6 @@ class ItemRepository: ObservableObject {
         }
     }
     
-//    func deleteItem(){
-//        if let documentId = item.id{
-//            db.collection("items").document(documentId).delete { error in
-//                if let error = error {
-//                    print(error.localizedDescription)
-//                }
-//            }
-//        }
-//    }
-    
     func updateItem(_ item: Item){
         if let documentId = item.id{
             do{
@@ -61,15 +51,6 @@ class ItemRepository: ObservableObject {
             }
         }
     }
-    
-    
-//    func handleDoneTapped() {
-//      self.updateOrAddItem()
-//    }
-//
-//    func handleDeleteTapped() {
-//      self.deleteItem()
-//    }
     
     func deleteItem(_ item: Item){
         if let itemID = item.id{

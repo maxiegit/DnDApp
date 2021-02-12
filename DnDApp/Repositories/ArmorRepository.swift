@@ -2,24 +2,24 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-class SpellRepository: ObservableObject {
+class ArmorRepository: ObservableObject {
     
     //set db for use
     let db = Firestore.firestore()
     
-    @Published var spells = [Spell]()
+    @Published var armor = [Armor]()
     
     init() {
         loadData()
     }
     
-    //grabs all the data from the spell collection
+    //grabs all the data from the armor collection
     func loadData() {
-        db.collection("spells").addSnapshotListener { (querySnapshot, error) in
+        db.collection("armor").addSnapshotListener { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
-                self.spells = querySnapshot.documents.compactMap {document in
+                self.armor = querySnapshot.documents.compactMap {document in
                     do {
-                        let x = try document.data(as: Spell.self)
+                        let x = try document.data(as: Armor.self)
                         return x
                     }
                     catch {
@@ -31,19 +31,19 @@ class SpellRepository: ObservableObject {
         }
     }
     
-    func addSpell(_ spell: Spell){
+    func addArmor(_ armor: Armor){
         do{
-           let _ = try db.collection("spells").addDocument(from: spell)
+           let _ = try db.collection("armor").addDocument(from: armor)
         }
         catch{
             fatalError("Unable to encode task: \(error.localizedDescription)")
         }
     }
     
-    func updateSpell(_ spell: Spell){
-        if let documentId = spell.id{
+    func updateArmor(_ armor: Armor){
+        if let documentId = armor.id{
             do{
-                try db.collection("spells").document(documentId).setData(from: spell)
+                try db.collection("armor").document(documentId).setData(from: armor)
             }
             catch{
                 fatalError("Unable to encode task: \(error.localizedDescription)")
@@ -51,9 +51,9 @@ class SpellRepository: ObservableObject {
         }
     }
     
-    func deleteSpell(_ spell: Spell){
-        if let spellID = spell.id{
-            db.collection("spells").document(spellID).delete() { (error) in
+    func deleteArmor(_ armor: Armor){
+        if let armorID = armor.id{
+            db.collection("armor").document(armorID).delete() { (error) in
                 if let error = error {
                     print("Error removing document: \(error.localizedDescription)")
                 }
