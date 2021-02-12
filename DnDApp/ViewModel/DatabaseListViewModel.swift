@@ -1,17 +1,24 @@
+
 import Foundation
 import Combine
 
 class DatabaseListViewModel: ObservableObject{
     @Published var spellRepo = SpellRepository()
     @Published var itemRepo = ItemRepository()
+    @Published var armorRepo = ArmorRepository()
+    @Published var weaponRepo = WeaponRepository()
     @Published var spellViewModel = [SpellViewModel]()
     @Published var itemViewModel = [ItemViewModel]()
+    @Published var armorViewModel = [ArmorViewModel()]
+    @Published var weaponViewModel = [WeaponViewModel()]
     
     private var cancellables = Set<AnyCancellable>()
     
     init() {
         loadSpells()
         loadItems()
+        loadArmor()
+        loadWeapon()
     }
     
     func loadItems(){
@@ -36,7 +43,26 @@ class DatabaseListViewModel: ObservableObject{
         .store(in: &cancellables)
     }
     
-
+    func loadArmor(){
+        armorRepo.$armor.map { armors in
+            armors.map{armor in
+                ArmorViewModel(armor: armor)
+                
+            }
+        }
+        .assign(to: \.armorViewModel, on: self)
+        .store(in: &cancellables)
+    }
     
+    func loadWeapon(){
+        weaponRepo.$weapon.map { weapons in
+            weapons.map{weapon in
+                WeaponViewModel(weapon: weapon)
+                
+            }
+        }
+        .assign(to: \.weaponViewModel, on: self)
+        .store(in: &cancellables)
+    }
 
 }
