@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0B0952BE255B6C560012C64F /* Roller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0952BD255B6C560012C64F /* Roller.swift */; };
+		0B0952BE255B6C560012C64F /* RollerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B0952BD255B6C560012C64F /* RollerView.swift */; };
 		0B13B955255C69450078E076 /* PcPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13B954255C69450078E076 /* PcPill.swift */; };
 		0B13B958255C69700078E076 /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13B957255C69700078E076 /* Extenstions.swift */; };
 		0B13B95B255CAB200078E076 /* DiceSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13B95A255CAB200078E076 /* DiceSection.swift */; };
@@ -17,6 +17,7 @@
 		0B4D565F25AD4D6800E959C9 /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D565E25AD4D6800E959C9 /* ItemRepository.swift */; };
 		0B4D566225AD4E1500E959C9 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D566125AD4E1500E959C9 /* ItemViewModel.swift */; };
 		0B506B82255E0B7700610557 /* CampaignScreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B506B81255E0B7700610557 /* CampaignScreenButton.swift */; };
+		0B77621725ED114C00338CCE /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77621625ED114C00338CCE /* Webservice.swift */; };
 		0BB4C13D2551A01D0061455C /* DnDAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB4C13C2551A01D0061455C /* DnDAppApp.swift */; };
 		0BB4C13F2551A01D0061455C /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB4C13E2551A01D0061455C /* MainMenu.swift */; };
 		0BB4C1412551A0210061455C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB4C1402551A0210061455C /* Assets.xcassets */; };
@@ -50,11 +51,12 @@
 		0BE49A1A25D6E04300E69471 /* Armor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE49A1825D6E04300E69471 /* Armor.swift */; };
 		0BE49A1E25D6E06400E69471 /* WeaponViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE49A1C25D6E06400E69471 /* WeaponViewModel.swift */; };
 		0BE49A1F25D6E06400E69471 /* ArmorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE49A1D25D6E06400E69471 /* ArmorViewModel.swift */; };
+		0BE49A2625DC24A800E69471 /* Roller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE49A2525DC24A800E69471 /* Roller.swift */; };
 		93DC6683CA851E22AC021FC6 /* Pods_DnDApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE572FBD83E66DCBEB9B44A /* Pods_DnDApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0B0952BD255B6C560012C64F /* Roller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roller.swift; sourceTree = "<group>"; };
+		0B0952BD255B6C560012C64F /* RollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollerView.swift; sourceTree = "<group>"; };
 		0B13B954255C69450078E076 /* PcPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PcPill.swift; sourceTree = "<group>"; };
 		0B13B957255C69700078E076 /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
 		0B13B95A255CAB200078E076 /* DiceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceSection.swift; sourceTree = "<group>"; };
@@ -64,6 +66,7 @@
 		0B4D565E25AD4D6800E959C9 /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
 		0B4D566125AD4E1500E959C9 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		0B506B81255E0B7700610557 /* CampaignScreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignScreenButton.swift; sourceTree = "<group>"; };
+		0B77621625ED114C00338CCE /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		0BB4C1392551A01D0061455C /* DnDApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DnDApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB4C13C2551A01D0061455C /* DnDAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDAppApp.swift; sourceTree = "<group>"; };
 		0BB4C13E2551A01D0061455C /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
@@ -99,6 +102,7 @@
 		0BE49A1825D6E04300E69471 /* Armor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Armor.swift; sourceTree = "<group>"; };
 		0BE49A1C25D6E06400E69471 /* WeaponViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeaponViewModel.swift; sourceTree = "<group>"; };
 		0BE49A1D25D6E06400E69471 /* ArmorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArmorViewModel.swift; sourceTree = "<group>"; };
+		0BE49A2525DC24A800E69471 /* Roller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roller.swift; sourceTree = "<group>"; };
 		1228F08F1A1624338A7AC644 /* Pods-DnDApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDApp.release.xcconfig"; path = "Target Support Files/Pods-DnDApp/Pods-DnDApp.release.xcconfig"; sourceTree = "<group>"; };
 		BBDF44A32DFDAADFD97810E3 /* Pods-DnDApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDApp.debug.xcconfig"; path = "Target Support Files/Pods-DnDApp/Pods-DnDApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DAE572FBD83E66DCBEB9B44A /* Pods_DnDApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DnDApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,8 +152,17 @@
 				0B4585DD2555C27D00E65F47 /* ImagePicker.swift */,
 				0BE49A1825D6E04300E69471 /* Armor.swift */,
 				0BE49A1725D6E04300E69471 /* Weapon.swift */,
+				0BE49A2525DC24A800E69471 /* Roller.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0B77621525ED113800338CCE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0B77621625ED114C00338CCE /* Webservice.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		0BB4C1302551A01D0061455C = {
@@ -174,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				0BCF44E72578477D00E98B86 /* GoogleService-Info.plist */,
+				0B77621525ED113800338CCE /* Services */,
 				0B20C024255EE0D600CEDA38 /* Models */,
 				0BCF45172578663000E98B86 /* Repositories */,
 				0B20C023255EE0BB00CEDA38 /* ViewModel */,
@@ -212,7 +226,7 @@
 				0BE499F225D6DF0200E69471 /* data */,
 				0BB4C1592551EB220061455C /* Campaign.swift */,
 				0BB4C13E2551A01D0061455C /* MainMenu.swift */,
-				0B0952BD255B6C560012C64F /* Roller.swift */,
+				0B0952BD255B6C560012C64F /* RollerView.swift */,
 				0BCF44A72561854400E98B86 /* CharacterSheet.swift */,
 			);
 			path = "Main Views";
@@ -420,6 +434,7 @@
 				0B4D565C25AD4D1D00E959C9 /* Item.swift in Sources */,
 				0BE49A1E25D6E06400E69471 /* WeaponViewModel.swift in Sources */,
 				0BE49A0825D6DF0200E69471 /* EditSpell.swift in Sources */,
+				0B77621725ED114C00338CCE /* Webservice.swift in Sources */,
 				0BCF44AB25618A0E00E98B86 /* CharatcerTopBar.swift in Sources */,
 				0B4D566225AD4E1500E959C9 /* ItemViewModel.swift in Sources */,
 				0BE49A0F25D6DF0200E69471 /* ArmorDetail.swift in Sources */,
@@ -436,13 +451,14 @@
 				0BCF44C82577FB6000E98B86 /* Spell.swift in Sources */,
 				0B4585DE2555C27D00E65F47 /* ImagePicker.swift in Sources */,
 				0BE49A0E25D6DF0200E69471 /* EditArmor.swift in Sources */,
-				0B0952BE255B6C560012C64F /* Roller.swift in Sources */,
+				0B0952BE255B6C560012C64F /* RollerView.swift in Sources */,
 				0BE49A0525D6DF0200E69471 /* WeaponDatabase.swift in Sources */,
 				0B20C027255EE21B00CEDA38 /* RollerViewModel.swift in Sources */,
 				0BB4C13D2551A01D0061455C /* DnDAppApp.swift in Sources */,
 				0BB4C15A2551EB220061455C /* Campaign.swift in Sources */,
 				0B13B955255C69450078E076 /* PcPill.swift in Sources */,
 				0BE49A0625D6DF0200E69471 /* EditWeapon.swift in Sources */,
+				0BE49A2625DC24A800E69471 /* Roller.swift in Sources */,
 				0BE49A0D25D6DF0200E69471 /* ArmorDatabse.swift in Sources */,
 				0BE49A0C25D6DF0200E69471 /* EditItem.swift in Sources */,
 				0BE49A1925D6E04300E69471 /* Weapon.swift in Sources */,

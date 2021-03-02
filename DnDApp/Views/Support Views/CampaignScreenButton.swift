@@ -31,7 +31,7 @@ struct CampaignScreenButton: View {
     struct CampaignScreenButton_Previews: PreviewProvider {
         static var previews: some View {
             //filled with test data
-            CampaignScreenButton(destination: AnyView(Roller()), symbol: "person.crop.square.fill")
+            CampaignScreenButton(destination: AnyView(RollerView(rollerListVm: RollerListViewModel())), symbol: "person.crop.square.fill")
         }
     }
 }

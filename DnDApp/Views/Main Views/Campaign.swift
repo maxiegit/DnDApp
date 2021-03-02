@@ -7,7 +7,7 @@ struct Campaign: View {
             
             VStack(spacing: 20) {
                 HStack(spacing: 25) {
-                    CampaignScreenButton(destination: AnyView(Roller()), symbol: "hexagon.fill")
+                    CampaignScreenButton(destination: AnyView(RollerView()), symbol: "hexagon.fill")
                         .overlay(Text("20")
                                     .font(.title)
                                     .fontWeight(.light))
@@ -15,7 +15,7 @@ struct Campaign: View {
                 }
                 
                 HStack(spacing: 25) {
-                    CampaignScreenButton(destination: AnyView(Roller()), symbol: "bubble.right.fill")
+                    CampaignScreenButton(destination: AnyView(RollerView()), symbol: "bubble.right.fill")
 
                     CampaignScreenButton(destination: AnyView(SpellDatabaseView()), symbol: "book.circle")
                 }

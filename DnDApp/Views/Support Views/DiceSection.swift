@@ -1,8 +1,6 @@
 import SwiftUI
 
 struct DiceSection: View {
-    
-    @ObservedObject var rollerVM = RollerViewModel()
 
     let symbol: String
     let sides: Int
@@ -34,12 +32,13 @@ struct DiceSection: View {
                 .foregroundColor(.white)
                 .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .overlay(Text("\(sides)")
-                            .fontWeight(.light))
+                            .fontWeight(.light)
+                            .foregroundColor(Color.black))
         }
         .onTapGesture {
             tapped.toggle()
-            self.rollerVM.setSides(numOfSides: sides)
-            print("\(self.rollerVM.sides)")
+//            self.rollerVM.setSides(numOfSides: sides)
+//            print("\(self.rollerVM.sides)")
         }
         
     }
