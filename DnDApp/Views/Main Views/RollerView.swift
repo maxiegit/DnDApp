@@ -13,15 +13,15 @@ struct RollerView: View {
             
             VStack(spacing: 20) {
                 HStack(spacing: 20) {
-                    DiceSection(symbol: "square.fill", sides: 4)
-                    DiceSection(symbol: "square.fill", sides: 6)
-                    DiceSection(symbol: "square.fill", sides: 8)
+                    DiceSection(symbol: "square.fill", sides: .four, rollerListVm: rollerListVm)
+                    DiceSection(symbol: "square.fill", sides: .six, rollerListVm: rollerListVm)
+                    DiceSection(symbol: "square.fill", sides: .eight, rollerListVm: rollerListVm)
                 }
                 
                 HStack(spacing: 20) {
-                    DiceSection(symbol: "square.fill", sides: 10)
-                    DiceSection(symbol: "square.fill", sides: 12)
-                    DiceSection(symbol: "square.fill", sides: 20)
+                    DiceSection(symbol: "square.fill", sides: .ten, rollerListVm: rollerListVm)
+                    DiceSection(symbol: "square.fill", sides: .twelve, rollerListVm: rollerListVm)
+                    DiceSection(symbol: "square.fill", sides: .twenty, rollerListVm: rollerListVm)
                     
                 }
                 
@@ -32,7 +32,7 @@ struct RollerView: View {
                     .foregroundColor(Color.white)
                 
                 Button("Roll", action:{
-                    result = Webservice().addValue(rollerListVm: rollerListVm)
+                    result = rollerListVm.addValue(rollerListVm: rollerListVm)
                 })
                 .frame(width: 300, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                 .background(Color.flatDarkCardBackground)

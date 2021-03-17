@@ -1,16 +1,18 @@
 import SwiftUI
 
 struct DiceSection: View {
-
-    let symbol: String
-    let sides: Int
     
-    init(symbol: String, sides: Int) {
+    let symbol: String
+    let sides: DieSides
+    var rollerListVm: RollerListViewModel
+    @State private var tapped = false
+
+    
+    init(symbol: String, sides: DieSides, rollerListVm: RollerListViewModel) {
         self.symbol = symbol
         self.sides = sides
+        self.rollerListVm = rollerListVm
     }
-    
-    @State private var tapped = false
     
     var body: some View {
         ZStack {
@@ -31,14 +33,13 @@ struct DiceSection: View {
                 .resizable()
                 .foregroundColor(.white)
                 .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                .overlay(Text("\(sides)")
+                .overlay(Text(rollerListVm.rawSidesValue(sides: sides))
                             .fontWeight(.light)
                             .foregroundColor(Color.black))
         }
         .onTapGesture {
             tapped.toggle()
-//            self.rollerVM.setSides(numOfSides: sides)
-//            print("\(self.rollerVM.sides)")
+            rollerListVm.setArrayBool(sides: sides, isToggled: tapped)
         }
         
     }
@@ -47,6 +48,6 @@ struct DiceSection: View {
 struct DiceSection_Previews: PreviewProvider {
     static var previews: some View {
         //filled with test data
-        DiceSection(symbol: "square.fill", sides: 6)
+        DiceSection(symbol: "square.fill", sides: .six, rollerListVm: RollerListViewModel())
     }
 }
