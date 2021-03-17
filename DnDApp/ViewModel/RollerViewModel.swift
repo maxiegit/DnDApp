@@ -2,6 +2,8 @@ import Foundation
 
 struct RollerViewModel{
     
+    // struct for the dice objuct recieved form the api to be assigned to
+    
     var dice: Dice
     
     init(dice: Dice) {
@@ -17,6 +19,7 @@ struct RollerViewModel{
     }
 }
 
+// side enum
 public enum DieSides {
     case four
     case six
@@ -31,14 +34,18 @@ class RollerListViewModel: ObservableObject{
     @Published var dice = [RollerViewModel]()
     var sideArray = [false, false, false, false, false, false]
     var x = 0
+    var diceArray: [RollerViewModel] = []
+    
+    // the main roll function
+    // TODO: there is a bug where its using the previous set of results not the current
     
     func roll(){
         for value in sideArray{
-            if value {
+            if value { // check the dice has been selected
                 Webservice().getRoll(sides: urlShite(arrPos: x)) { (dice) in
                     if let dice = dice {
-                        self.dice = dice.map(RollerViewModel.init)
-                        print("dice from inside roll; ", dice)
+                        self.dice = dice.map(RollerViewModel.init) // assign according to struct above
+                        self.diceArray.append(contentsOf: self.dice) // add to array to be used
                     }
                 }
             }
@@ -52,12 +59,10 @@ class RollerListViewModel: ObservableObject{
         
         rollerListVm.roll()
         
-        print("ok ", rollerListVm.dice)
-        for dice in rollerListVm.dice{
+        for dice in diceArray{
             result += dice.value
-            print("dice in add value: ", dice)
-            print("result: ", result)
         }
+        diceArray = []
         return result
     }
     
@@ -109,7 +114,6 @@ class RollerListViewModel: ObservableObject{
         switch sides {
         case .four:
             sideArray[0] = isToggled
-            print(sideArray)
         case .six:
             sideArray[1] = isToggled
         case .eight:
