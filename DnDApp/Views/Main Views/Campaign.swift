@@ -15,7 +15,7 @@ struct Campaign: View {
                 }
                 
                 HStack(spacing: 25) {
-                    CampaignScreenButton(destination: AnyView(RollerView()), symbol: "bubble.right.fill")
+                    CampaignScreenButton(destination: AnyView(CameraPlacehold()), symbol: "bubble.right.fill")
 
                     CampaignScreenButton(destination: AnyView(SpellDatabaseView()), symbol: "book.circle")
                 }

@@ -11,6 +11,7 @@
 		0B13B955255C69450078E076 /* PcPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13B954255C69450078E076 /* PcPill.swift */; };
 		0B13B958255C69700078E076 /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13B957255C69700078E076 /* Extenstions.swift */; };
 		0B13B95B255CAB200078E076 /* DiceSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13B95A255CAB200078E076 /* DiceSection.swift */; };
+		0B1C8A1F2608C03A00ACA518 /* CameraPlacehold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C8A1E2608C03A00ACA518 /* CameraPlacehold.swift */; };
 		0B20C027255EE21B00CEDA38 /* RollerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B20C026255EE21B00CEDA38 /* RollerViewModel.swift */; };
 		0B4585DE2555C27D00E65F47 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4585DD2555C27D00E65F47 /* ImagePicker.swift */; };
 		0B4D565C25AD4D1D00E959C9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D565B25AD4D1D00E959C9 /* Item.swift */; };
@@ -60,6 +61,7 @@
 		0B13B954255C69450078E076 /* PcPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PcPill.swift; sourceTree = "<group>"; };
 		0B13B957255C69700078E076 /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
 		0B13B95A255CAB200078E076 /* DiceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceSection.swift; sourceTree = "<group>"; };
+		0B1C8A1E2608C03A00ACA518 /* CameraPlacehold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPlacehold.swift; sourceTree = "<group>"; };
 		0B20C026255EE21B00CEDA38 /* RollerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollerViewModel.swift; sourceTree = "<group>"; };
 		0B4585DD2555C27D00E65F47 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0B4D565B25AD4D1D00E959C9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 				0BB4C13E2551A01D0061455C /* MainMenu.swift */,
 				0B0952BD255B6C560012C64F /* RollerView.swift */,
 				0BCF44A72561854400E98B86 /* CharacterSheet.swift */,
+				0B1C8A1E2608C03A00ACA518 /* CameraPlacehold.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -457,6 +460,7 @@
 				0BB4C13D2551A01D0061455C /* DnDAppApp.swift in Sources */,
 				0BB4C15A2551EB220061455C /* Campaign.swift in Sources */,
 				0B13B955255C69450078E076 /* PcPill.swift in Sources */,
+				0B1C8A1F2608C03A00ACA518 /* CameraPlacehold.swift in Sources */,
 				0BE49A0625D6DF0200E69471 /* EditWeapon.swift in Sources */,
 				0BE49A2625DC24A800E69471 /* Roller.swift in Sources */,
 				0BE49A0D25D6DF0200E69471 /* ArmorDatabse.swift in Sources */,
