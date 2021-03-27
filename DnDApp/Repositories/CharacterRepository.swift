@@ -2,24 +2,24 @@ import Foundation
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-class SpellRepository: ObservableObject {
+class CharacterRepository: ObservableObject {
     
     //set db for use
     let db = Firestore.firestore()
     
-    @Published var spells = [Spell]()
+    @Published var characters = [Character]()
     
     init() {
         loadData()
     }
     
-    //grabs all the data from the  spell collection
+    //grabs all the data from the  character collection
     func loadData() {
-        db.collection("spells").addSnapshotListener { (querySnapshot, error) in
+        db.collection("characters").addSnapshotListener { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
-                self.spells = querySnapshot.documents.compactMap {document in
+                self.characters = querySnapshot.documents.compactMap {document in
                     do {
-                        let x = try document.data(as: Spell.self)
+                        let x = try document.data(as: Character.self)
                         return x
                     }
                     catch {
@@ -31,19 +31,19 @@ class SpellRepository: ObservableObject {
         }
     }
     
-    func addSpell(_ spell: Spell){
+    func addCharacter(_ character: Character){
         do{
-           let _ = try db.collection("spells").addDocument(from: spell)
+           let _ = try db.collection("characters").addDocument(from: character)
         }
         catch{
             fatalError("Unable to encode task: \(error.localizedDescription)")
         }
     }
     
-    func updateSpell(_ spell: Spell){
-        if let documentId = spell.id{
+    func updateCharacter(_ character: Character){
+        if let documentId = character.id{
             do{
-                try db.collection("spells").document(documentId).setData(from: spell)
+                try db.collection("characters").document(documentId).setData(from: character)
             }
             catch{
                 fatalError("Unable to encode task: \(error.localizedDescription)")
@@ -51,9 +51,9 @@ class SpellRepository: ObservableObject {
         }
     }
     
-    func deleteSpell(_ spell: Spell){
-        if let spellID = spell.id{
-            db.collection("spells").document(spellID).delete() { (error) in
+    func deleteCharacter(_ character: Character){
+        if let characterID = character.id{
+            db.collection("characters").document(characterID).delete() { (error) in
                 if let error = error {
                     print("Error removing document: \(error.localizedDescription)")
                 }

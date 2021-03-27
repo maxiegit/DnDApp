@@ -13,6 +13,9 @@
 		0B13B95B255CAB200078E076 /* DiceSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13B95A255CAB200078E076 /* DiceSection.swift */; };
 		0B1C8A1F2608C03A00ACA518 /* CameraPlacehold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C8A1E2608C03A00ACA518 /* CameraPlacehold.swift */; };
 		0B1C8A23260A22E300ACA518 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C8A22260A22E300ACA518 /* Character.swift */; };
+		0B1C8A26260A346800ACA518 /* CharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C8A25260A346800ACA518 /* CharacterRepository.swift */; };
+		0B1C8A29260A358100ACA518 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C8A28260A358100ACA518 /* CharacterViewModel.swift */; };
+		0B1C8A2C260F862200ACA518 /* NewCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C8A2B260F862200ACA518 /* NewCharacter.swift */; };
 		0B20C027255EE21B00CEDA38 /* RollerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B20C026255EE21B00CEDA38 /* RollerViewModel.swift */; };
 		0B4585DE2555C27D00E65F47 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4585DD2555C27D00E65F47 /* ImagePicker.swift */; };
 		0B4D565C25AD4D1D00E959C9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D565B25AD4D1D00E959C9 /* Item.swift */; };
@@ -64,6 +67,9 @@
 		0B13B95A255CAB200078E076 /* DiceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceSection.swift; sourceTree = "<group>"; };
 		0B1C8A1E2608C03A00ACA518 /* CameraPlacehold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPlacehold.swift; sourceTree = "<group>"; };
 		0B1C8A22260A22E300ACA518 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		0B1C8A25260A346800ACA518 /* CharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepository.swift; sourceTree = "<group>"; };
+		0B1C8A28260A358100ACA518 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
+		0B1C8A2B260F862200ACA518 /* NewCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCharacter.swift; sourceTree = "<group>"; };
 		0B20C026255EE21B00CEDA38 /* RollerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollerViewModel.swift; sourceTree = "<group>"; };
 		0B4585DD2555C27D00E65F47 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0B4D565B25AD4D1D00E959C9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 				0BCF4511257858E600E98B86 /* SpellViewModel.swift */,
 				0BCF451425785E4400E98B86 /* DatabaseListViewModel.swift */,
 				0B4D566125AD4E1500E959C9 /* ItemViewModel.swift */,
+				0B1C8A28260A358100ACA518 /* CharacterViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -234,6 +241,7 @@
 				0B0952BD255B6C560012C64F /* RollerView.swift */,
 				0BCF44A72561854400E98B86 /* CharacterSheet.swift */,
 				0B1C8A1E2608C03A00ACA518 /* CameraPlacehold.swift */,
+				0B1C8A2B260F862200ACA518 /* NewCharacter.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -245,6 +253,7 @@
 				0B4D565E25AD4D6800E959C9 /* ItemRepository.swift */,
 				0BE49A1325D6DF2D00E69471 /* ArmorRepository.swift */,
 				0BE49A1225D6DF2D00E69471 /* WeaponRepository.swift */,
+				0B1C8A25260A346800ACA518 /* CharacterRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -436,6 +445,7 @@
 				0BCF451525785E4400E98B86 /* DatabaseListViewModel.swift in Sources */,
 				0BE49A1425D6DF2D00E69471 /* WeaponRepository.swift in Sources */,
 				0BB4C13F2551A01D0061455C /* MainMenu.swift in Sources */,
+				0B1C8A2C260F862200ACA518 /* NewCharacter.swift in Sources */,
 				0BE49A1F25D6E06400E69471 /* ArmorViewModel.swift in Sources */,
 				0B4D565C25AD4D1D00E959C9 /* Item.swift in Sources */,
 				0BE49A1E25D6E06400E69471 /* WeaponViewModel.swift in Sources */,
@@ -461,6 +471,8 @@
 				0BE49A0525D6DF0200E69471 /* WeaponDatabase.swift in Sources */,
 				0B20C027255EE21B00CEDA38 /* RollerViewModel.swift in Sources */,
 				0BB4C13D2551A01D0061455C /* DnDAppApp.swift in Sources */,
+				0B1C8A26260A346800ACA518 /* CharacterRepository.swift in Sources */,
+				0B1C8A29260A358100ACA518 /* CharacterViewModel.swift in Sources */,
 				0BB4C15A2551EB220061455C /* Campaign.swift in Sources */,
 				0B13B955255C69450078E076 /* PcPill.swift in Sources */,
 				0B1C8A1F2608C03A00ACA518 /* CameraPlacehold.swift in Sources */,

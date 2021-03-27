@@ -8,7 +8,7 @@ struct Character: Codable, Identifiable{
     //basic character info
     var name: String
     var race: String
-    var classes: [String] // array to accom multiclassing
+    var classes: String // array to accom multiclassing
     var level: Int
     var exp: Int
     var alignment: String

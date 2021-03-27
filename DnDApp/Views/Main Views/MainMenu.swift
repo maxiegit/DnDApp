@@ -1,39 +1,53 @@
 import SwiftUI
 
 struct MainMenu: View {
+    @ObservedObject var listVM = DatabaseListViewModel()
+    @StateObject var charVm = CharacterViewModel()
+    @State private var toggleSheet = false
+    
+    
     var body: some View {
         NavigationView{
             ZStack{
                 Color.flatDarkBackground.ignoresSafeArea()
                 VStack() {
                     ScrollView{
-                        //placeholder, will loop through all user chaartcers
-                        cNav(name: "Lyanna Hawthorne", classIcon: "barbarian", race: "Half-Elf", portrait: "aaliyah", level: 13)
+                        ForEach(listVM.characterViewModel){ char in
+                            charCell(charVm: char)
+                            
+                        }
                     }
                 }
             }
             .navigationBarItems(leading:NavigationLink(destination: Database()) {
-                Image(systemName: "sparkles") //replace with more appropriate icon
+                Image(systemName: "archivebox.fill")
             },
-            trailing: Button("Add"){
+            trailing: Button(action: {toggleSheet.toggle()}, label: {
+                Text("Button")
+            }))
+            .sheet(isPresented: $toggleSheet, content: {
+                NewCharacter()
             })
         }
     }
     
-    // creates the navigation links out of menuRow
-    private func cNav(name: String, classIcon: String, race: String, portrait: String, level: Int) -> NavigationLink<PcPill, Campaign>{
-        //for cleaner creation on navigation links
-        
-        let navlink = NavigationLink(destination: Campaign()) {
-            PcPill(portrait: portrait, classIcon: classIcon, level: level, race: race, name: name)
-        }
-        return navlink
-    }
-    
-    
     struct Menu_Previews: PreviewProvider {
         static var previews: some View {
             MainMenu()
+        }
+    }
+    
+    
+    struct charCell: View {
+        
+        
+        @ObservedObject var charVm: CharacterViewModel
+        
+        var body: some View{
+            
+            NavigationLink(destination: Campaign()) {
+                PcPill(portrait: "default", classIcon: charVm.character.background, level: charVm.character.level, race: charVm.character.race, name: charVm.character.name)
+            }
         }
     }
 }

@@ -3,7 +3,7 @@ import SwiftUI
 struct ItemDatabaseView: View {
     @ObservedObject var listVM = DatabaseListViewModel()
     @StateObject var itemVM = ItemViewModel()
-
+    
     
     @State private var toggleSheet = false
     
@@ -36,13 +36,11 @@ struct ItemDatabaseView: View {
 struct ItemCell: View{
     @ObservedObject var itemVM: ItemViewModel
     
-    
     var body: some View{
         NavigationLink(destination: ItemDetailView(item: itemVM.item)){
-                VStack{
-                    Text(itemVM.item.name)
-                }
+            VStack{
+                Text(itemVM.item.name)
             }
-        
+        }
     }
 }
