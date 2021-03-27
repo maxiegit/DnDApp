@@ -46,7 +46,7 @@ struct MainMenu: View {
         var body: some View{
             
             NavigationLink(destination: Campaign()) {
-                PcPill(portrait: "default", classIcon: charVm.character.background, level: charVm.character.level, race: charVm.character.race, name: charVm.character.name)
+                PcPill(portrait: "default", classIcon: charVm.character.classes, level: charVm.character.level, race: charVm.character.race, name: charVm.character.name)
             }
         }
     }

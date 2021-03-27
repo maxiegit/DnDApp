@@ -32,14 +32,17 @@ struct PcPill: View {
                     HStack{
                         Image(classIcon)
                             .resizable()
-                            .frame(width: 30, height: 30, alignment: .leading)
+                            .renderingMode(.template)
+                            .foregroundColor(.white)
+                            .frame(width: 42, height: 30, alignment: .leading)
                             .padding(.leading)
+                        
                         
                         Text("\(level)")
                             .font(.subheadline)
                             .fontWeight(.regular)
                             .foregroundColor(Color.white)
-                            .padding(.trailing, 30)
+ 
                         
                         Text(race)
                             .font(.body)
@@ -68,7 +71,7 @@ struct PcPill: View {
 struct PcPill_Previews: PreviewProvider {
     static var previews: some View {
         //filled with test data
-        PcPill(portrait: "yass", classIcon: "barbarian", level: 20, race: "Aasimar", name: "Lyanna Hawthorn")
+        PcPill(portrait: "default", classIcon: "Barbarian", level: 20, race: "Aasimar", name: "Lyanna Hawthorn")
         
     }
 }
