@@ -23,7 +23,8 @@ struct MainMenu: View {
                 Image(systemName: "archivebox.fill")
             },
             trailing: Button(action: {toggleSheet.toggle()}, label: {
-                Text("Button")
+                Image(systemName: "plus")
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             }))
             .sheet(isPresented: $toggleSheet, content: {
                 NewCharacter()
@@ -45,7 +46,7 @@ struct MainMenu: View {
         
         var body: some View{
             
-            NavigationLink(destination: Campaign()) {
+            NavigationLink(destination: Campaign(charVM: charVm)) {
                 PcPill(portrait: "default", classIcon: charVm.character.classes, level: charVm.character.level, race: charVm.character.race, name: charVm.character.name)
             }
         }

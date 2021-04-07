@@ -42,13 +42,15 @@ struct Character: Codable, Identifiable{
     var flaws: String
     
     // Proficicies lists
-    var coreProficicies: [String]
+    var coreProficicies: [Bool]
     var otherProficicies: [String]
     var languageProficicies: [String]
     var armorProficicies: [String]
     
     // inventory
-    var inventory: [String]
+    var items: [Item]
+    var weapons: [Weapon]
+    var armor: [Armor]
     var cp: Int
     var sp: Int
     var gp: Int
