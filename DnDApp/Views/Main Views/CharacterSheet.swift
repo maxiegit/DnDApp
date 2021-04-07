@@ -26,14 +26,14 @@ struct CharacterSheet: View{
                         VStack {
                             VStack(spacing: 20){
                                 HStack(spacing: 30){
-                                    StatBox(stat: charVM.character.strength)
-                                    StatBox(stat: charVM.character.dexterity)
-                                    StatBox(stat: charVM.character.constitution)
+                                    StatBox(stat: charVM.character.strength, statName: "Str")
+                                    StatBox(stat: charVM.character.dexterity, statName: "Dex")
+                                    StatBox(stat: charVM.character.constitution, statName: "Con")
                                 }
                                 HStack(spacing: 30){
-                                    StatBox(stat: charVM.character.intellignece)
-                                    StatBox(stat: charVM.character.wisdom)
-                                    StatBox(stat: charVM.character.charisma)
+                                    StatBox(stat: charVM.character.intellignece, statName: "Int")
+                                    StatBox(stat: charVM.character.wisdom, statName: "Wis")
+                                    StatBox(stat: charVM.character.charisma, statName: "Cha")
                                 }
                                 ProfTable(charVM: charVM)
                             }

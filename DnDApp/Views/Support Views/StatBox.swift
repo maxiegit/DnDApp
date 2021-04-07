@@ -3,6 +3,7 @@ import SwiftUI
 struct StatBox: View {
     
     var stat: Int
+    var statName: String
     
     var body: some View {
         ZStack(alignment: .center){
@@ -11,9 +12,15 @@ struct StatBox: View {
                 .clipShape(RoundedRectangle(cornerRadius: 15))
                 .shadow(radius: 20)
 
-            Text(String(stat))
-                .foregroundColor(.white)
-                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            VStack {
+                Text(String(stat))
+                    .foregroundColor(.white)
+                    .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                
+                Text(statName)
+                    .foregroundColor(.white)
+                    .font(.subheadline)
+            }
 
             Color.flatDarkBackground
                 .frame(width:50, height:35)
@@ -35,6 +42,6 @@ struct StatBox: View {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        StatBox(stat: 9)
+        StatBox(stat: 9, statName: "Str")
     }
 }
