@@ -21,21 +21,25 @@ struct CharacterSheet: View{
                 TabView() {
                     
                     // First tab
-                    ZStack {
-                        Color.flatDarkBackground.ignoresSafeArea()
-                        VStack {
-                            VStack(spacing: 20){
-                                HStack(spacing: 30){
-                                    StatBox(stat: charVM.character.strength, statName: "Str")
-                                    StatBox(stat: charVM.character.dexterity, statName: "Dex")
-                                    StatBox(stat: charVM.character.constitution, statName: "Con")
+                    GeometryReader{ _ in
+                        ZStack {
+                            Color.flatDarkBackground.ignoresSafeArea()
+                            VStack(spacing: 0) {
+                                VStack(spacing: 20){
+                                    HStack(spacing: 30){
+                                        StatBox(stat: String(charVM.character.strength), statName: "Str", charVM: charVM)
+                                        StatBox(stat: String(charVM.character.dexterity), statName: "Dex", charVM: charVM)
+                                        StatBox(stat: String(charVM.character.constitution), statName: "Con", charVM: charVM)
+                                    }
+                                    HStack(spacing: 30){
+                                        StatBox(stat: String(charVM.character.intellignece), statName: "Int", charVM: charVM)
+                                        StatBox(stat: String(charVM.character.wisdom), statName: "Wis", charVM: charVM)
+                                        StatBox(stat: String(charVM.character.charisma), statName: "Cha", charVM: charVM)
+                                    }
+                                    ProfTable(charVM: charVM)
+                                        .ignoresSafeArea(.keyboard)
+                                    
                                 }
-                                HStack(spacing: 30){
-                                    StatBox(stat: charVM.character.intellignece, statName: "Int")
-                                    StatBox(stat: charVM.character.wisdom, statName: "Wis")
-                                    StatBox(stat: charVM.character.charisma, statName: "Cha")
-                                }
-                                ProfTable(charVM: charVM)
                             }
                         }
                         .tabItem { Image(systemName: "person.crop.circle") }.tag(0)
@@ -47,23 +51,24 @@ struct CharacterSheet: View{
                             Section(header: HStack {
                                 Text("Items")
                                 Spacer()
-                                Button(action: { toggleItemSheet.toggle() }, label: {
-                                    Image(systemName: "plus")                                        .font(.headline)
-
+                                Button(action: {toggleItemSheet.toggle()}, label: {
+                                    Image(systemName: "plus")
+                                        .font(.headline)
                                 })
-
                             }){
                                 List{
-                                    ForEach(charVM.character.items){ item in
+                                    ForEach(charVM.character.items, id: \.self){ item in
                                         VStack(alignment: .leading, spacing: 3){
-                                            Text(item.name)
-                                                .font(.headline)
-                                                .multilineTextAlignment(.leading)
-                                            
-                                            Text(item.description)
-                                                .font(.subheadline)
-                                                .foregroundColor(.gray)
-                                            
+                                            NavigationLink(destination: ItemDetailView(item: item)) {
+                                                
+                                                Text(item.name)
+                                                    .font(.headline)
+                                                    .multilineTextAlignment(.leading)
+                                                
+                                                Text(item.description)
+                                                    .font(.subheadline)
+                                                    .foregroundColor(.gray)
+                                            }
                                         }
                                     }
                                     .onDelete(perform: deleteItem)
@@ -75,12 +80,12 @@ struct CharacterSheet: View{
                                 Text("Weapons")
                                 Spacer()
                                 Button(action: { toggleWeaponSheet.toggle() }, label: {
-                                    Image(systemName: "plus")                                        .font(.headline)
-
+                                    Image(systemName: "plus")
+                                        .font(.headline)
                                 })
                             }){
                                 List{
-                                    ForEach(charVM.character.weapons){ weapon in
+                                    ForEach(charVM.character.weapons, id: \.self){ weapon in
                                         VStack(alignment: .leading, spacing: 3){
                                             Text(weapon.name)
                                                 .font(.headline)
@@ -104,7 +109,7 @@ struct CharacterSheet: View{
                                 })
                             }){
                                 List{
-                                    ForEach(charVM.character.armor){ armor in
+                                    ForEach(charVM.character.armor, id: \.self){ armor in
                                         VStack(alignment: .leading, spacing: 3){
                                             Text(armor.name)
                                                 .font(.headline)
@@ -112,7 +117,7 @@ struct CharacterSheet: View{
                                             Text(armor.description)
                                                 .font(.subheadline)
                                                 .foregroundColor(.gray)
-
+                                            
                                         }
                                     }
                                     .onDelete(perform: deleteArmor)
@@ -133,6 +138,7 @@ struct CharacterSheet: View{
                 }
             }
             .ignoresSafeArea()
+            .ignoresSafeArea(.keyboard)
             .onDisappear {charVM.updateCharacter()}
             .sheet(isPresented: $toggleItemSheet, content: {
                 ItemDatabaseView()
@@ -144,7 +150,7 @@ struct CharacterSheet: View{
                 ArmorDatabaseView()
             })
         }
-
+        
     }
     
     func deleteItem(at offsets: IndexSet) {
@@ -181,8 +187,9 @@ struct CharacterSheet: View{
                                                         languageProficicies: [],
                                                         armorProficicies: [],
                                                         items: [
-                                                            Item(name: "Book", cost: 40, weight: 3, description: "A piece of rope"),
-                                                            Item(name: "Rope", cost: 5, weight: 3, description: "A simple book")],
+                                                            Item(name: "Book", cost: 40, weight: 3, description: "A simple book"),
+                                                            Item(name: "Rope", cost: 5, weight: 3, description: "A piece of rope")
+                                                        ],
                                                         weapons: [Weapon(name: "Dagger", cost: 30, weight: 5, damage: "1d4", type: "Slashing", martial: false, magic: false, descriptors: [], description: "A simple dagger")],
                                                         armor: [Armor(name: "Chainmail", cost: 40, weight: 30, ac: 15, type: "heavy", magic: false, description: "A set of chainmail")],
                                                         cp: 0, sp: 0, gp: 0, ep: 0, pp: 0,
@@ -190,6 +197,6 @@ struct CharacterSheet: View{
                                                         classAbilities: [],
                                                         spells: [])))
         }
-
+        
     }
 }

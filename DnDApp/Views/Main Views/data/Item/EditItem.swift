@@ -4,6 +4,7 @@ import SwiftUI
 enum Mode{
     case new
     case edit
+    case read
 }
 
 enum Action {

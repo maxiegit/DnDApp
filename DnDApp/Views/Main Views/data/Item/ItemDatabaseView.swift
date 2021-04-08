@@ -3,7 +3,7 @@ import SwiftUI
 struct ItemDatabaseView: View {
     @ObservedObject var listVM = DatabaseListViewModel()
     @StateObject var itemVM = ItemViewModel()
-    
+    var fromCharSheet: Bool = false
     
     @State private var toggleSheet = false
     
@@ -26,6 +26,7 @@ struct ItemDatabaseView: View {
             EditItem()
         })
     }
+    
     struct DatabaseCategory_Previews: PreviewProvider {
         static var previews: some View {
             ItemDatabaseView()

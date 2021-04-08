@@ -2,8 +2,10 @@ import SwiftUI
 
 struct ItemDetailView: View {
     
+    var addButton: Bool = false
     @StateObject var itemModel = ItemViewModel()
     @State var presentEditScreen = false
+    
     @Environment(\.presentationMode) var presentationMode
     var item: Item
     
@@ -22,10 +24,19 @@ struct ItemDetailView: View {
                 Section(header: Text("Description")) {
                     Text(item.description)
                 }
+                
+                if(addButton){
+                    Button(action: {}, label: {
+                        Text("Button")
+                    })
+                }
+                
             }
             
-            Button(action: {self.presentEditScreen.toggle()}) {
-                Text("Edit")
+            if(!addButton){
+                Button(action: {self.presentEditScreen.toggle()}) {
+                    Text("Edit")
+                }
             }
         }
         .sheet(isPresented: self.$presentEditScreen, content: {
