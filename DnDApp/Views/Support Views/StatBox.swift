@@ -30,6 +30,7 @@ struct StatBox: View {
                     .fixedSize()
                     .foregroundColor(.white)
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+                    .offset(y: 5)
                 
                 Text(statName)
                     .foregroundColor(.white)
@@ -40,7 +41,7 @@ struct StatBox: View {
                 .frame(width:50, height:35)
                 .cornerRadius(5)
                 .overlay(Text("\(bonusCalc(stat: Int(stat) ?? 0 ))").foregroundColor(.white))
-                .offset(y: 45)
+                .offset(y: 55)
             
         }
     }
