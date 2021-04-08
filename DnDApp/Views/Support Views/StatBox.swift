@@ -17,7 +17,7 @@ struct StatBox: View {
             VStack {
                 TextField("0", text: $stat)
                     // santise input
-//                    .keyboardType(.decimalPad)
+                    .keyboardType(.numberPad)
                     .onReceive(Just(stat)) { newValue in
                         let filtered = newValue.filter { "0123456789".contains($0) }
                         if filtered != newValue {

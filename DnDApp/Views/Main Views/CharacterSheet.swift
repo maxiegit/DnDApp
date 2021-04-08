@@ -41,6 +41,7 @@ struct CharacterSheet: View{
                                     
                                 }
                             }
+                            .onTapGesture {self.hideKeyboard()}
                         }
                         .tabItem { Image(systemName: "person.crop.circle") }.tag(0)
                     }
@@ -137,8 +138,8 @@ struct CharacterSheet: View{
                     
                 }
             }
+            
             .ignoresSafeArea()
-            .ignoresSafeArea(.keyboard)
             .onDisappear {charVM.updateCharacter()}
             .sheet(isPresented: $toggleItemSheet, content: {
                 ItemDatabaseView()
