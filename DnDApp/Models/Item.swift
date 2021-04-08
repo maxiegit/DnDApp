@@ -2,7 +2,7 @@ import Foundation
 import FirebaseFirestoreSwift
 
 //Create the item model
-struct Item: Codable, Identifiable{
+struct Item: Codable, Identifiable, Hashable{
     @DocumentID var id: String?
     var name: String
     var cost: Int
