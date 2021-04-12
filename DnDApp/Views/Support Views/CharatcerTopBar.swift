@@ -67,6 +67,22 @@ struct TopBarStat: View {
                 .foregroundColor(.white)
             
             }
+            else if(name == "Level"){
+                TextField("", text: $number)
+                    .keyboardType(.numberPad)
+                    // santise input
+                    .onReceive(Just(number)) { newValue in
+                        let filtered = newValue.filter { "0123456789".contains($0) }
+                        if filtered != newValue {
+                            self.number = filtered
+                        }
+                    }
+                    .onChange(of: number, perform: { newNumber in
+                        changeNumber(numberChanging: name, number: number)
+                    })
+                    .fixedSize()
+                    .foregroundColor(.white)
+            }
             else{
             TextField("", text: $number)
                 .keyboardType(.numberPad)
@@ -109,8 +125,14 @@ struct TopBarStat: View {
             case("HP"):
                 charVM.character.hp = Int(number) ?? 0
                 charVM.updateCharacter()
-            case("level"):
+            case("Level"):
                 charVM.character.level = Int(number) ?? 0
+                charVM.updateCharacter()
+            case("race"):
+                charVM.character.race = number
+                charVM.updateCharacter()
+            case("class"):
+                charVM.character.classes = number
                 charVM.updateCharacter()
             default:
                 break
