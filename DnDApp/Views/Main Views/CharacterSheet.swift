@@ -17,7 +17,7 @@ struct CharacterSheet: View{
             
             VStack {
                 CharatcerTopBar(charVM: charVM)
-                    .ignoresSafeArea()
+                
                 TabView() {
                     
                     // First tab
@@ -133,13 +133,10 @@ struct CharacterSheet: View{
                     Text("Tab Content 2").tabItem { Text("Actions") }.tag(2)
                     Text("Tab Content 2").tabItem { Text("Condition") }.tag(3)
                     Text("Tab Content 2").tabItem { Text("Equipment") }.tag(4)
-                    
-                    
-                    
                 }
             }
             
-            .ignoresSafeArea()
+//            .ignoresSafeArea()
             .onDisappear {charVM.updateCharacter()}
             .sheet(isPresented: $toggleItemSheet, content: {
                 ItemDatabaseView()
@@ -151,6 +148,7 @@ struct CharacterSheet: View{
                 ArmorDatabaseView()
             })
         }
+        .navigationBarTitle("", displayMode: .inline)
         
     }
     

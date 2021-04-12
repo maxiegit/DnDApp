@@ -1,4 +1,5 @@
 import SwiftUI
+import Combine
 
 struct CharatcerTopBar: View {
     
@@ -7,39 +8,40 @@ struct CharatcerTopBar: View {
     var body: some View {
         ZStack {
             Color.flatDarkBackground
-                .frame(height: 220, alignment: .top)
+                .frame(height: 180, alignment: .top)
                 .shadow(radius: 20)
             
             VStack {
-                Text(charVM.character.name)
+                TopBarStat(name: "name", number: charVM.character.name, charVM: charVM)
                     .font(.title3)
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
                     .padding(.top)
                 
-                HStack(spacing: 20){
-                    TopBarStat(name: "ft.", number: 30)
-                    TopBarStat(name: "Prof.", number: charVM.character.profBonus)
-                    Image("default")
-                        .resizable()
-                        .frame(width: 80, height: 75, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                        .clipShape(Circle())
-                        .multilineTextAlignment(.center)
-
-                    TopBarStat(name: "AC", number: charVM.character.ac)
-                    TopBarStat(name: "HP", number: charVM.character.hp)
-                    
+                ZStack {
+                    HStack(spacing: 20){
+                        TopBarStat(name: "ft.", number: String(charVM.character.speed), charVM: charVM)
+                            .padding(.leading, 30)
+                        TopBarStat(name: "Prof.", number: String(charVM.character.profBonus), charVM: charVM)
+                            
+                        Image("default")
+                            .resizable()
+                            .frame(width: 80, height: 75, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .clipShape(Circle())
+                            .multilineTextAlignment(.center)
+//                            .position(x: 90, y: 375)
+                        TopBarStat(name: "AC", number: String(charVM.character.ac), charVM: charVM)
+                        TopBarStat(name: "HP", number: String(charVM.character.hp), charVM: charVM)
+                            .padding(.trailing)
+                        
+                    }
+                    .offset(x: 6.0)
                 }
-                .offset(x: -6.0)
                 
                 HStack {
-                    Text(charVM.character.race)
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.center)
-                    
-                    Text(charVM.character.classes + " \(charVM.character.level)")
-                        .foregroundColor(Color.white)
-                        .multilineTextAlignment(.center)
+                    TopBarStat(name: "race", number: charVM.character.race, charVM: charVM)
+                    TopBarStat(name: "class", number: charVM.character.classes, charVM: charVM)
+                    TopBarStat(name: "Level", number: String(charVM.character.level), charVM: charVM)
                 }
             }
         }
@@ -48,28 +50,70 @@ struct CharatcerTopBar: View {
 
 struct TopBarStat: View {
     
-    private var name: String
-    private var number: Int
-    
-    init(name:String, number: Int) {
-        self.name = name
-        self.number = number
-    }
+    var name: String
+    @State var number: String
+    @ObservedObject var charVM: CharacterViewModel
     
     var body: some View{
         
         
         VStack{
-            Text("\(number)")
-                .font(.title)
-                .foregroundColor(Color.white)
-                .multilineTextAlignment(.leading)
+            if(name == "race" || name == "class" || name == "name"){
+                TextField(name, text: $number)
+                    .onChange(of: number, perform: { newNumber in
+                    changeNumber(numberChanging: name, number: number)
+                })
+                .fixedSize()
+                .foregroundColor(.white)
+            
+            }
+            else{
+            TextField("", text: $number)
+                .keyboardType(.numberPad)
+                // santise input
+                .onReceive(Just(number)) { newValue in
+                    let filtered = newValue.filter { "0123456789".contains($0) }
+                    if filtered != newValue {
+                        self.number = filtered
+                    }
+                }
+                .onChange(of: number, perform: { newNumber in
+                    changeNumber(numberChanging: name, number: number)
+                })
+                .fixedSize()
+                .foregroundColor(.white)
+                .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
+            }
+            
+            if(name != "race" && name != "class" && name != "Level" && name != "name"){
+                Text(name)
+                    .font(.footnote)
+                    .foregroundColor(Color.white)
+                    .multilineTextAlignment(.center)
+            }
 
-            Text(name)
-                .font(.footnote)
-                .foregroundColor(Color.white)
-                .multilineTextAlignment(.center)
-
+        }
+    }
+    
+    func changeNumber(numberChanging: String, number: String) {
+        switch(numberChanging){
+            case("ft."):
+                charVM.character.speed = Int(number) ?? 0
+                charVM.updateCharacter()
+            case("Prof."):
+                charVM.character.profBonus = Int(number) ?? 0
+                charVM.updateCharacter()
+            case("AC"):
+                charVM.character.ac = Int(number) ?? 0
+                charVM.updateCharacter()
+            case("HP"):
+                charVM.character.hp = Int(number) ?? 0
+                charVM.updateCharacter()
+            case("level"):
+                charVM.character.level = Int(number) ?? 0
+                charVM.updateCharacter()
+            default:
+                break
         }
     }
 }
