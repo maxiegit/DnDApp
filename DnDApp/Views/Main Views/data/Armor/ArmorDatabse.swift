@@ -1,8 +1,12 @@
 import SwiftUI
 
 struct ArmorDatabaseView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var charVM = CharacterViewModel()
     @ObservedObject var listVM = DatabaseListViewModel()
     @StateObject var armorVM = ArmorViewModel()
+    @State var addToInventory = false
+
     
     
     @State private var toggleSheet = false
@@ -12,7 +16,12 @@ struct ArmorDatabaseView: View {
             VStack {
                 List{
                     ForEach(listVM.armorViewModel){ armorVM in
-                        ArmorCell(armorVM: armorVM)
+                        if(addToInventory){
+                            ArmorSelectionCell(armorVM: armorVM, charVM: charVM)
+                        }
+                        else{
+                            ArmorCell(armorVM: armorVM)
+                        }
                     }
                 }
                 .toolbar {
@@ -33,6 +42,24 @@ struct ArmorDatabaseView: View {
                 ArmorDatabaseView()
             }
         }
+}
+
+struct ArmorSelectionCell: View {
+    @ObservedObject var armorVM: ArmorViewModel
+    @ObservedObject var charVM: CharacterViewModel
+
+
+    @Environment(\.presentationMode) var presentationMode
+
+    
+    var body: some View{
+        Text(armorVM.armor.name)
+            .onTapGesture {
+                charVM.character.armor.append(armorVM.armor)
+                charVM.updateCharacter()
+                presentationMode.wrappedValue.dismiss()
+            }
+    }
 }
 
 struct ArmorCell: View{

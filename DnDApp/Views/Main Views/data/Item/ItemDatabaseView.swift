@@ -1,17 +1,24 @@
 import SwiftUI
 
 struct ItemDatabaseView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var charVM = CharacterViewModel()
     @ObservedObject var listVM = DatabaseListViewModel()
     @StateObject var itemVM = ItemViewModel()
-    var fromCharSheet: Bool = false
-    
+    @State var addToInventory = false
     @State private var toggleSheet = false
+
     
     var body: some View {
         VStack {
             List{
                 ForEach(listVM.itemViewModel){ itemVM in
-                    ItemCell(itemVM: itemVM)
+                    if(addToInventory){
+                        ItemSelectionCell(itemVM: itemVM, charVM: charVM)
+                    }
+                    else{
+                        ItemCell(itemVM: itemVM)
+                    }
                 }
             }
             .toolbar {
@@ -31,6 +38,24 @@ struct ItemDatabaseView: View {
         static var previews: some View {
             ItemDatabaseView()
         }
+    }
+}
+
+struct ItemSelectionCell: View {
+    @ObservedObject var itemVM: ItemViewModel
+    @ObservedObject var charVM: CharacterViewModel
+
+
+    @Environment(\.presentationMode) var presentationMode
+
+    
+    var body: some View{
+        Text(itemVM.item.name)
+            .onTapGesture {
+                charVM.character.items.append(itemVM.item)
+                charVM.updateCharacter()
+                presentationMode.wrappedValue.dismiss()
+            }
     }
 }
 

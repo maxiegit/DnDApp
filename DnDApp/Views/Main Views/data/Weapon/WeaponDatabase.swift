@@ -1,9 +1,11 @@
 import SwiftUI
 
 struct WeaponDatabaseView: View {
+    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var charVM = CharacterViewModel()
     @ObservedObject var listVM = DatabaseListViewModel()
     @StateObject var weaponVM = WeaponViewModel()
-    
+    @State var addToInventory = false
     
     @State private var toggleSheet = false
     
@@ -12,7 +14,12 @@ struct WeaponDatabaseView: View {
             VStack {
                 List{
                     ForEach(listVM.weaponViewModel){ weaponVM in
-                        WeaponCell(weaponVM: weaponVM)
+                        if(addToInventory){
+                            WeaponSelectionCell(weaponVM: weaponVM, charVM: charVM)
+                        }
+                        else{
+                            WeaponCell(weaponVM: weaponVM)
+                        }
                     }
                 }
                 .toolbar {
@@ -33,6 +40,24 @@ struct WeaponDatabaseView: View {
                 WeaponDatabaseView()
             }
         }
+}
+
+struct WeaponSelectionCell: View {
+    @ObservedObject var weaponVM: WeaponViewModel
+    @ObservedObject var charVM: CharacterViewModel
+    
+    
+    @Environment(\.presentationMode) var presentationMode
+    
+    
+    var body: some View{
+        Text(weaponVM.weapon.name)
+            .onTapGesture {
+                charVM.character.weapons.append(weaponVM.weapon)
+                charVM.updateCharacter()
+                presentationMode.wrappedValue.dismiss()
+            }
+    }
 }
 
 struct WeaponCell: View{
