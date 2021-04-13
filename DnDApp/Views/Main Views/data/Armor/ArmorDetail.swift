@@ -40,6 +40,7 @@ struct ArmorDetailView: View {
                 Text("Edit")
             }
         }
+        .navigationBarTitle("", displayMode: .inline)
         .sheet(isPresented: self.$presentEditScreen, content: {
             EditArmor(armorModel: ArmorViewModel(armor: armor), mode: .edit) { result in
                 if case .success(let action) = result, action == .delete {

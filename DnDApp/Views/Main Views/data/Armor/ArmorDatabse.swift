@@ -12,7 +12,6 @@ struct ArmorDatabaseView: View {
     @State private var toggleSheet = false
     
     var body: some View {
-        NavigationView{
             VStack {
                 List{
                     ForEach(listVM.armorViewModel){ armorVM in
@@ -32,11 +31,14 @@ struct ArmorDatabaseView: View {
                     }
                 }
             }
-            .sheet(isPresented: $toggleSheet, content: {
+            .navigationBarTitle("", displayMode: .inline)
+            .navigationBarItems(leading: NavigationLink(destination: Database()) {
+                Text("")
+            })            .sheet(isPresented: $toggleSheet, content: {
                 EditArmor()
             })
         }
-    }
+
         struct DatabaseCategory_Previews: PreviewProvider {
             static var previews: some View {
                 ArmorDatabaseView()

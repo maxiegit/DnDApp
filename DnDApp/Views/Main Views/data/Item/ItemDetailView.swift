@@ -2,7 +2,6 @@ import SwiftUI
 
 struct ItemDetailView: View {
     
-    var addButton: Bool = false
     @StateObject var itemModel = ItemViewModel()
     @State var presentEditScreen = false
     
@@ -24,21 +23,12 @@ struct ItemDetailView: View {
                 Section(header: Text("Description")) {
                     Text(item.description)
                 }
-                
-                if(addButton){
-                    Button(action: {}, label: {
-                        Text("Button")
-                    })
-                }
-                
             }
-            
-            if(!addButton){
-                Button(action: {self.presentEditScreen.toggle()}) {
-                    Text("Edit")
-                }
+            Button(action: {self.presentEditScreen.toggle()}) {
+                Text("Edit")
             }
         }
+        .navigationBarTitle("", displayMode: .inline)
         .sheet(isPresented: self.$presentEditScreen, content: {
             EditItem(itemModel: ItemViewModel(item: item), mode: .edit) { result in
                 if case .success(let action) = result, action == .delete {
