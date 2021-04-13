@@ -4,11 +4,16 @@ struct CharacterSheet: View{
     
     @ObservedObject var charVM: CharacterViewModel
     @StateObject var itemVM = ItemViewModel()
-    
+    @State var toggleSheet = (show: false, sheet: invSheet.item)
     @State var toggleItemSheet: Bool = false
     @State var toggleWeaponSheet: Bool = false
     @State var toggleArmorSheet: Bool = false
     
+    enum invSheet {
+        case item
+        case wep
+        case arm
+    }
     
     var body: some View{
         ZStack {
@@ -41,7 +46,6 @@ struct CharacterSheet: View{
                                     
                                 }
                             }
-                            .onTapGesture {self.hideKeyboard()}
                         }
                         .tabItem { Image(systemName: "person.crop.circle") }.tag(0)
                     }
@@ -52,16 +56,18 @@ struct CharacterSheet: View{
                             Section(header: HStack {
                                 Text("Items")
                                 Spacer()
-                                Button(action: {toggleItemSheet.toggle()}, label: {
+                                Button(action: {
+                                    toggleSheet.sheet = invSheet.item
+                                    toggleSheet.show.toggle()
+                                }, label: {
                                     Image(systemName: "plus")
                                         .font(.headline)
                                 })
                             }){
                                 List{
                                     ForEach(charVM.character.items, id: \.self){ item in
-                                        VStack(alignment: .leading, spacing: 3){
-                                            NavigationLink(destination: ItemDetailView(item: item)) {
-                                                
+                                        NavigationLink(destination: ItemDetailView(item: item)) {
+                                            VStack(alignment: .leading, spacing: 3){
                                                 Text(item.name)
                                                     .font(.headline)
                                                     .multilineTextAlignment(.leading)
@@ -80,21 +86,26 @@ struct CharacterSheet: View{
                             Section(header: HStack {
                                 Text("Weapons")
                                 Spacer()
-                                Button(action: { toggleWeaponSheet.toggle() }, label: {
+                                Button(action: {
+                                    toggleSheet.sheet = invSheet.wep
+                                    toggleSheet.show.toggle()
+                                }, label: {
                                     Image(systemName: "plus")
                                         .font(.headline)
                                 })
                             }){
                                 List{
                                     ForEach(charVM.character.weapons, id: \.self){ weapon in
-                                        VStack(alignment: .leading, spacing: 3){
-                                            Text(weapon.name)
-                                                .font(.headline)
-                                                .multilineTextAlignment(.leading)
-                                            
-                                            Text(weapon.description)
-                                                .font(.subheadline)
-                                                .foregroundColor(.gray)
+                                        NavigationLink(destination: WeaponDetailView(weapon: weapon)){
+                                            VStack(alignment: .leading, spacing: 3){
+                                                Text(weapon.name)
+                                                    .font(.headline)
+                                                    .multilineTextAlignment(.leading)
+                                                
+                                                Text(weapon.description)
+                                                    .font(.subheadline)
+                                                    .foregroundColor(.gray)
+                                            }
                                         }
                                     }
                                     .onDelete(perform: deleteWep)
@@ -104,7 +115,11 @@ struct CharacterSheet: View{
                             Section(header: HStack {
                                 Text("Armor")
                                 Spacer()
-                                Button(action: { toggleArmorSheet.toggle() }, label: {
+                                Button(action: {
+                                    toggleSheet.sheet = invSheet.arm
+                                    toggleSheet.show.toggle()
+                                    
+                                }, label: {
                                     Image(systemName: "plus")
                                         .font(.headline)
                                 })
@@ -135,31 +150,35 @@ struct CharacterSheet: View{
                     Text("Tab Content 2").tabItem { Text("Equipment") }.tag(4)
                 }
             }
-            
-//            .ignoresSafeArea()
             .onDisappear {charVM.updateCharacter()}
-            .sheet(isPresented: $toggleItemSheet, content: {
-                ItemDatabaseView()
-            })
-            .sheet(isPresented: $toggleWeaponSheet, content: {
-                WeaponDatabaseView()
-            })
-            .sheet(isPresented: $toggleArmorSheet, content: {
-                ArmorDatabaseView()
+            .sheet(isPresented: $toggleSheet.show, content: {
+                if(toggleSheet.sheet == .item){
+                    ItemDatabaseView(charVM: charVM, addToInventory: true)
+                }
+                else if(toggleSheet.sheet == .wep){
+                    WeaponDatabaseView(charVM: charVM, addToInventory: true)
+                }
+                else{
+                    ArmorDatabaseView(charVM: charVM, addToInventory: true)
+                }
             })
         }
+        .onTapGesture {self.hideKeyboard()}
         .navigationBarTitle("", displayMode: .inline)
         
     }
     
     func deleteItem(at offsets: IndexSet) {
         charVM.character.items.remove(atOffsets: offsets)
+        charVM.updateCharacter()
     }
     func deleteWep(at offsets: IndexSet) {
         charVM.character.weapons.remove(atOffsets: offsets)
+        charVM.updateCharacter()
     }
     func deleteArmor(at offsets: IndexSet) {
         charVM.character.armor.remove(atOffsets: offsets)
+        charVM.updateCharacter()
     }
     
     struct CharatcerSheet_Previews: PreviewProvider {
