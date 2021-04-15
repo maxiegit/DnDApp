@@ -18,10 +18,15 @@ struct CharacterSheet: View{
     var body: some View{
         ZStack {
             
-            Color.flatDarkBackground.ignoresSafeArea()
+            Color.flatDarkBackground
+                .ignoresSafeArea()
+                .onTapGesture {self.hideKeyboard()}
+
             
             VStack {
                 CharatcerTopBar(charVM: charVM)
+                    .onTapGesture {self.hideKeyboard()}
+
                 
                 TabView() {
                     
@@ -49,10 +54,22 @@ struct CharacterSheet: View{
                         }
                         .tabItem { Image(systemName: "person.crop.circle") }.tag(0)
                     }
+                    .onTapGesture {self.hideKeyboard()}
+
                     
                     //Second Tab
                     VStack{
                         Form{
+                            Section(header: Text("Currency")){
+                                HStack(spacing: 12){
+                                    CurrencyBox(currency: String(charVM.character.cp), currencyName: "CP", charVM: charVM)
+                                    CurrencyBox(currency: String(charVM.character.sp), currencyName: "SP", charVM: charVM)
+                                    CurrencyBox(currency: String(charVM.character.gp), currencyName: "GP", charVM: charVM)
+                                    CurrencyBox(currency: String(charVM.character.ep), currencyName: "EP", charVM: charVM)
+                                    CurrencyBox(currency: String(charVM.character.pp), currencyName: "PP", charVM: charVM)
+                                }
+                            }
+                            
                             Section(header: HStack {
                                 Text("Items")
                                 Spacer()
@@ -139,6 +156,8 @@ struct CharacterSheet: View{
                                 }
                             }
                         }
+                        .onTapGesture {self.hideKeyboard()}
+
                     }
                     .tabItem {
                         Image(systemName: "bag")
@@ -161,7 +180,7 @@ struct CharacterSheet: View{
                     ArmorDatabaseView(charVM: charVM, addToInventory: true)
                 }
             })
-            .onTapGesture {self.hideKeyboard()}
+//            .onTapGesture {self.hideKeyboard()}
 
         }
         .navigationBarTitle("", displayMode: .inline)

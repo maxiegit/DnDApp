@@ -25,6 +25,7 @@
 		0B4D566225AD4E1500E959C9 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D566125AD4E1500E959C9 /* ItemViewModel.swift */; };
 		0B506B82255E0B7700610557 /* CampaignScreenButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B506B81255E0B7700610557 /* CampaignScreenButton.swift */; };
 		0B77621725ED114C00338CCE /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B77621625ED114C00338CCE /* Webservice.swift */; };
+		0BB3D47E26285B6700E03F41 /* CurrencyBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB3D47D26285B6700E03F41 /* CurrencyBox.swift */; };
 		0BB4C13D2551A01D0061455C /* DnDAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB4C13C2551A01D0061455C /* DnDAppApp.swift */; };
 		0BB4C13F2551A01D0061455C /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB4C13E2551A01D0061455C /* MainMenu.swift */; };
 		0BB4C1412551A0210061455C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB4C1402551A0210061455C /* Assets.xcassets */; };
@@ -81,6 +82,7 @@
 		0B4D566125AD4E1500E959C9 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
 		0B506B81255E0B7700610557 /* CampaignScreenButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampaignScreenButton.swift; sourceTree = "<group>"; };
 		0B77621625ED114C00338CCE /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
+		0BB3D47D26285B6700E03F41 /* CurrencyBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyBox.swift; sourceTree = "<group>"; };
 		0BB4C1392551A01D0061455C /* DnDApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DnDApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BB4C13C2551A01D0061455C /* DnDAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDAppApp.swift; sourceTree = "<group>"; };
 		0BB4C13E2551A01D0061455C /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 				0B1C8A2F2613364900ACA518 /* StatBox.swift */,
 				0B1C8A2B260F862200ACA518 /* NewCharacter.swift */,
 				0B1C8A332613749800ACA518 /* ProfTable.swift */,
+				0BB3D47D26285B6700E03F41 /* CurrencyBox.swift */,
 			);
 			path = "Support Views";
 			sourceTree = "<group>";
@@ -477,6 +480,7 @@
 				0B0952BE255B6C560012C64F /* RollerView.swift in Sources */,
 				0BE49A0525D6DF0200E69471 /* WeaponDatabase.swift in Sources */,
 				0B20C027255EE21B00CEDA38 /* RollerViewModel.swift in Sources */,
+				0BB3D47E26285B6700E03F41 /* CurrencyBox.swift in Sources */,
 				0BB4C13D2551A01D0061455C /* DnDAppApp.swift in Sources */,
 				0B1C8A26260A346800ACA518 /* CharacterRepository.swift in Sources */,
 				0B1C8A29260A358100ACA518 /* CharacterViewModel.swift in Sources */,
