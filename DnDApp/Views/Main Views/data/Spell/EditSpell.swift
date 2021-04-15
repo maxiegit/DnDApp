@@ -36,6 +36,11 @@ struct EditSpell: View {
                     Section(header: Text("Level")){
                         TextField("Level", value: $spellModel.spell.level, formatter: NumberFormatter())
                     }
+                    Section(header: Text("Ritual")){
+                        Toggle("", isOn: $spellModel.spell.ritual)
+                            .labelsHidden()
+
+                    }
                     Section(header: Text("Description")){
                         TextField("Description", text:$spellModel.spell.description)
                     }

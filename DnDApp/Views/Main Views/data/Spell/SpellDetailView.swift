@@ -32,6 +32,13 @@ struct SpellDetailView: View {
                 Section(header: Text("Level")){
                     Text(String(spell.level))
                 }
+                Section(header: Text("Ritual")){
+                    Toggle("", isOn: $spellModel.spell.ritual)
+                        .labelsHidden()
+                        .disabled(true)
+                    
+                }
+                
                 Section(header: Text("Description")){
                     Text(spell.description)
                 }
@@ -65,7 +72,7 @@ struct SpellDetailView: View {
 
 struct SpellDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        let spell = Spell(name: "Fireball", level: 3, school: "Evocation", castTime: "1 Action", range: "120 ft", components: "V, S, M", duration: "Instant", description: "Hurl a fireball at the target")
+        let spell = Spell(name: "Fireball", level: 3, school: "Evocation", castTime: "1 Action", range: "120 ft", components: "V, S, M", duration: "Instant", description: "Hurl a fireball at the target", ritual: false)
         SpellDetailView(spell: spell)
     }
 }

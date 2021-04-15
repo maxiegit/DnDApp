@@ -10,7 +10,7 @@ class SpellViewModel: ObservableObject, Identifiable {
     
     private var cancellables = Set<AnyCancellable>()
     
-    init(spell: Spell = Spell(name: "", level: 0, school: "", castTime: "", range: "", components: "", duration: "", description: "")){
+    init(spell: Spell = Spell(name: "", level: 0, school: "", castTime: "", range: "", components: "", duration: "", description: "", ritual: false)){
         self.spell = spell
         
         $spell
