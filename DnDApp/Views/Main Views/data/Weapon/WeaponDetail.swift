@@ -49,6 +49,7 @@ struct WeaponDetailView: View {
                 Text("Edit")
             }
         }
+        .navigationBarTitle("", displayMode: .inline)
         .sheet(isPresented: self.$presentEditScreen, content: {
             EditWeapon(weaponModel: WeaponViewModel(weapon: weapon), weapon: weapon, mode: .edit) { result in
                 if case .success(let action) = result, action == .delete {

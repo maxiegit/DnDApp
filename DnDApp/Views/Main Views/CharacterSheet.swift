@@ -70,7 +70,7 @@ struct CharacterSheet: View{
                                             VStack(alignment: .leading, spacing: 3){
                                                 Text(item.name)
                                                     .font(.headline)
-                                                    .multilineTextAlignment(.leading)
+                                                    .foregroundColor(.black)
                                                 
                                                 Text(item.description)
                                                     .font(.subheadline)
@@ -100,7 +100,6 @@ struct CharacterSheet: View{
                                             VStack(alignment: .leading, spacing: 3){
                                                 Text(weapon.name)
                                                     .font(.headline)
-                                                    .multilineTextAlignment(.leading)
                                                 
                                                 Text(weapon.description)
                                                     .font(.subheadline)
@@ -162,8 +161,9 @@ struct CharacterSheet: View{
                     ArmorDatabaseView(charVM: charVM, addToInventory: true)
                 }
             })
+            .onTapGesture {self.hideKeyboard()}
+
         }
-        .onTapGesture {self.hideKeyboard()}
         .navigationBarTitle("", displayMode: .inline)
         
     }

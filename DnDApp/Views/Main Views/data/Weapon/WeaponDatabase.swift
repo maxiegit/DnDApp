@@ -10,7 +10,6 @@ struct WeaponDatabaseView: View {
     @State private var toggleSheet = false
     
     var body: some View {
-        NavigationView{
             VStack {
                 List{
                     ForEach(listVM.weaponViewModel){ weaponVM in
@@ -29,12 +28,20 @@ struct WeaponDatabaseView: View {
                         })
                     }
                 }
+
             }
+            .navigationBarTitle("", displayMode: .inline)
+            .navigationBarItems(leading: NavigationLink(destination: Database()) {
+                Text("")
+            })
+
             .sheet(isPresented: $toggleSheet, content: {
                 EditWeapon(weapon: weaponVM.weapon)
             })
         }
-    }
+
+
+    
         struct DatabaseCategory_Previews: PreviewProvider {
             static var previews: some View {
                 WeaponDatabaseView()

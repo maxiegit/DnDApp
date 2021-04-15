@@ -29,6 +29,10 @@ struct ItemDatabaseView: View {
                 }
             }
         }
+        .navigationBarTitle("", displayMode: .inline)
+        .navigationBarItems(leading: NavigationLink(destination: Database()) {
+            Text("")
+        })
         .sheet(isPresented: $toggleSheet, content: {
             EditItem()
         })
