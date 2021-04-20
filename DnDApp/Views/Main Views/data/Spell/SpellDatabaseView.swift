@@ -1,16 +1,23 @@
 import SwiftUI
 
 struct SpellDatabaseView: View {
+    @ObservedObject var charVM = CharacterViewModel()
+    @Environment(\.presentationMode) var presentationMode
     @ObservedObject var listVM = DatabaseListViewModel()
+    @StateObject var spellVM = ItemViewModel()
+    @State var addToInventory = false
     @State private var toggleSheet = false
-    
-    let spells = spellTestData
-    
+        
     var body: some View {
         VStack {
             List{
                 ForEach(listVM.spellViewModel){ spellVM in
-                    ListCell(spellVM: spellVM)
+                    if(addToInventory){
+                        SpellSelectionCell(spellVM: spellVM, charVM: charVM)
+                    }
+                    else{
+                        SpellCell(spellVM: spellVM)
+                    }
                 }
             }
             .toolbar {
@@ -37,7 +44,25 @@ struct SpellDatabaseView: View {
     }
 }
 
-struct ListCell: View{
+struct SpellSelectionCell: View {
+    @ObservedObject var spellVM: SpellViewModel
+    @ObservedObject var charVM: CharacterViewModel
+
+
+    @Environment(\.presentationMode) var presentationMode
+
+    
+    var body: some View{
+        Text(spellVM.spell.name)
+            .onTapGesture {
+                charVM.character.spells.append(spellVM.spell)
+                charVM.updateCharacter()
+                presentationMode.wrappedValue.dismiss()
+            }
+    }
+}
+
+struct SpellCell: View{
     @ObservedObject var spellVM: SpellViewModel
     
     var body: some View{
