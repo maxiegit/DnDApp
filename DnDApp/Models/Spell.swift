@@ -2,7 +2,7 @@ import Foundation
 import FirebaseFirestoreSwift
 
 //Create the spell model
-struct Spell: Codable, Identifiable{
+struct Spell: Codable, Identifiable, Hashable{
     @DocumentID var id: String?
     var name: String
     var level: Int
