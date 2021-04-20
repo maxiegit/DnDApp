@@ -53,7 +53,13 @@ struct CharacterSheet: View{
                             Image(systemName: "staroflife.fill")
                             Text("Actions")
                         }.tag(2)
-                    Text("Tab Content 2").tabItem { Text("Condition") }.tag(3)
+                    
+                    //Fourth Tab
+                    PersonalityTab(charVM: charVM).tabItem {
+                        Image(systemName:"book")
+                        Text("Personality")
+                        
+                    }.tag(3)
                     Text("Tab Content 2").tabItem { Text("Equipment") }.tag(4)
                 }
             }
