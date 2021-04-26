@@ -11,7 +11,6 @@ struct ProfTable: View {
                 .frame(minWidth: 0, idealWidth: 100, maxWidth: .infinity, minHeight: 0, idealHeight: 100, maxHeight: 250, alignment: .center)
                 .cornerRadius(20)
                 .padding()
-//                .padding(.bottom, 25)
             
             HStack{
                 VStack(spacing: 4){
@@ -77,7 +76,7 @@ struct ProfTable: View {
     
     struct ProfTable_Previews: PreviewProvider {
         static var previews: some View {
-            ProfTable(charVM: CharacterViewModel(character: Character(name: "", race: "", classes: "", level: 0, exp: 0, alignment: "", background: "", ac: 0, hp: 0, tempHp: 0, speed: 0, profBonus: 0, hitDice: [], inspo: false, dstFailure: 0, dstSuccess: 0, strength: 0, dexterity: 0, constitution: 0, intellignece: 0, wisdom: 0, charisma: 0, personality: "", ideals: "", bonds: "", flaws: "", coreProficicies: [true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false], otherProficicies: [], languageProficicies: [], armorProficicies: [], items: [], weapons: [], armor: [], cp: 0, sp: 0, gp: 0, ep: 0, pp: 0, attacks: [], classAbilities: [], spells: [])))
+            ProfTable(charVM: CharacterViewModel(character: Character(name: "", race: "", classes: "", level: 0, exp: 0, alignment: "", background: "", ac: 0, hp: 0, tempHp: 0, speed: 0, profBonus: 0, hitDice: [], inspo: false, dstFailure: [false, false, false], dstSuccess: [false, false, false], strength: 0, dexterity: 0, constitution: 0, intellignece: 0, wisdom: 0, charisma: 0, personality: "", ideals: "", bonds: "", flaws: "", coreProficicies: [true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false], saveProficicies: [false, false, false, false, false, false], otherProficicies: [], languageProficicies: [], armorProficicies: [], items: [], weapons: [], armor: [], cp: 0, sp: 0, gp: 0, ep: 0, pp: 0, attacks: [], classAbilities: [], spells: [])))
         }
     }
 }

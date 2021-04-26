@@ -40,17 +40,10 @@ struct StatBox: View {
             Color.flatDarkBackground
                 .frame(width:50, height:35)
                 .cornerRadius(5)
-                .overlay(Text("\(bonusCalc(stat: Int(stat) ?? 0 ))").foregroundColor(.white))
+                .overlay(Text("\(charVM.bonusCalc(stat: Int(stat) ?? 0 ))").foregroundColor(.white))
                 .offset(y: 55)
             
         }
-    }
-    
-    func bonusCalc(stat: Int) -> Int {
-        let unroundedbonus = ((Double(stat)-10)/2)
-        let bonus = Double(unroundedbonus).rounded(.down)
-        return Int(bonus)
-        
     }
     
     func statChange(statChanging: String, stat: String){

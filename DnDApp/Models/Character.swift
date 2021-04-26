@@ -24,8 +24,8 @@ struct Character: Codable, Identifiable{
     var inspo: Bool
     
     //death saving throw
-    var dstFailure: Int
-    var dstSuccess: Int
+    var dstFailure: [Bool]
+    var dstSuccess: [Bool]
     
     // core stats
     var strength: Int
@@ -43,6 +43,7 @@ struct Character: Codable, Identifiable{
     
     // Proficicies lists
     var coreProficicies: [Bool]
+    var saveProficicies: [Bool]
     var otherProficicies: [String]
     var languageProficicies: [String]
     var armorProficicies: [String]

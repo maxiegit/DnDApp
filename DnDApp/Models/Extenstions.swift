@@ -53,6 +53,13 @@ extension String {
     }
 }
 
+class ViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        overrideUserInterfaceStyle = .dark
+    }
+}
+
 #if canImport(UIKit)
 extension View {
     func hideKeyboard() {
