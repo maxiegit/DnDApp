@@ -1,10 +1,3 @@
-//
-//  DeathSavingThrow.swift
-//  DnDApp
-//
-//  Created by Max Magill on 26/04/2021.
-//
-
 import SwiftUI
 
 struct DeathSavingThrow: View {

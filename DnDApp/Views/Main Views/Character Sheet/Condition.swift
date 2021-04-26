@@ -60,11 +60,11 @@ struct Condition: View {
                 }
             })
             Section(header: Text("Saving Throws"), content: {
-//                SavingThrowTable(charVM: charVM)
-//                    .padding(.leading, 45)
+                SavingThrowTable(charVM: charVM)
+                    .padding(.leading, 45)
             })
             Section(header: Text("Death Saving Throws"), content: {
-//                DeathSavingThrow(charVM: charVM)
+                DeathSavingThrow(charVM: charVM)
             })
         }
     }
@@ -111,7 +111,7 @@ struct AddLang: View {
 }
 
 //struct AddProf: View {
-//    
+//
 //    @Environment(\.presentationMode) var presentationMode
 //    @ObservedObject var charVM: CharacterViewModel
 //    @State var addition: String = ""
