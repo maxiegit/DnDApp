@@ -60,7 +60,11 @@ struct CharacterSheet: View{
                         Text("Personality")
                         
                     }.tag(3)
-                    Text("Tab Content 2").tabItem { Text("Equipment") }.tag(4)
+                    Condition(charVM: charVM).tabItem {
+                        Image(systemName: "shield.fill")
+                        Text("Condition")
+                        
+                    }.tag(4)
                 }
             }
             .onDisappear {charVM.updateCharacter()}
@@ -81,7 +85,7 @@ struct CharacterSheet: View{
                                                         speed: 0, profBonus: 2,
                                                         hitDice: [],
                                                         inspo: false,
-                                                        dstFailure: 0, dstSuccess: 0,
+                                                        dstFailure: [false, false, false], dstSuccess: [false, false, false],
                                                         strength: 10, dexterity: 13, constitution: 16,
                                                         intellignece: 8, wisdom: 6, charisma: 20,
                                                         personality: "",
@@ -89,7 +93,9 @@ struct CharacterSheet: View{
                                                         bonds: "",
                                                         flaws: "",
                                                         coreProficicies: [true, false, false, true, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
+                                                        saveProficicies: [false, false, false, false, false, false],
                                                         otherProficicies: [],
+
                                                         languageProficicies: [],
                                                         armorProficicies: [],
                                                         items: [
