@@ -41,7 +41,6 @@ struct MainMenu: View {
     
     struct charCell: View {
         
-        
         @ObservedObject var charVm: CharacterViewModel
         
         var body: some View{

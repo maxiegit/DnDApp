@@ -30,7 +30,9 @@ class ItemViewModel: ObservableObject, Identifiable {
     }
     
     func deleteItem(){
+        print(item)
         itemRepo.deleteItem(item)
+        print("deleting item")
     }
     
 }
