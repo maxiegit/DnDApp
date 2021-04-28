@@ -108,6 +108,7 @@ struct InventoryTab: View {
                     }
                 }
             }
+            
             .sheet(isPresented: $toggleSheet.show, content: {
                 if(toggleSheet.sheet == .item){
                     ItemDatabaseView(charVM: charVM, addToInventory: true)

@@ -33,9 +33,6 @@ struct PersonalityTab: View {
                 }
             })
         }
-        .onTapGesture {
-            self.hideKeyboard()
-        }
     }
 }
 

@@ -34,7 +34,7 @@ struct CharacterSheet: View{
                         Image(systemName: "person.crop.circle")
                         Text("Stats")
                     }.tag(0)
-                    .onTapGesture {self.hideKeyboard()}
+//                    .onTapGesture {self.hideKeyboard()}
                     
                     
                     //Second Tab
@@ -45,7 +45,6 @@ struct CharacterSheet: View{
                         Image(systemName: "bag")
                         Text("Inventory")
                     }.tag(1)
-                    .onTapGesture {self.hideKeyboard()}
                     
                     //Third Tab
                     ActionsTab(charVM: charVM)
