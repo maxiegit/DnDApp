@@ -7,6 +7,9 @@ struct StatTab: View {
     var body: some View{
         ZStack {
             Color.flatDarkBackground.ignoresSafeArea()
+                .onTapGesture {
+                    self.hideKeyboard()
+                }
             VStack(spacing: 0) {
                 VStack(spacing: 20){
                     HStack(spacing: 30){
