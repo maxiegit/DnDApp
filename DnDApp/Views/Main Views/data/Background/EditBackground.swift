@@ -49,6 +49,7 @@ struct EditBackground: View {
                                 ForEach(backgroundModel.background.toolProf, id: \.self) { tool in
                                     EditorView(container: $backgroundModel.background.toolProf, index: backgroundModel.background.toolProf.firstIndex(of: tool)!, text: tool)
                                 }
+                                .onDelete(perform: deleteTool)
                             }
                         })
                         Section(header: Text("Languages"), content: {
@@ -79,6 +80,7 @@ struct EditBackground: View {
                             ForEach(backgroundModel.background.specialty, id: \.self) { specialty in
                                 EditorView(container: $backgroundModel.background.specialty, index: backgroundModel.background.specialty.firstIndex(of: specialty)!, text: specialty)
                             }
+                            .onDelete(perform: deleteSpecialty)
                         }
                     })
                     
@@ -116,6 +118,14 @@ struct EditBackground: View {
         backgroundModel.background.skillProf.remove(atOffsets: offsets)
     }
     
+    func deleteTool(at offsets: IndexSet) {
+        backgroundModel.background.toolProf.remove(atOffsets: offsets)
+    }
+    
+    func deleteSpecialty(at offsets: IndexSet) {
+        backgroundModel.background.specialty.remove(atOffsets: offsets)
+    }
+    
     func done(){
         if(mode == .new){
             backgroundModel.addBackground()
@@ -131,19 +141,6 @@ struct EditBackground: View {
         self.presentationMode.wrappedValue.dismiss()
         self.completionHandler?(.success(.delete))
     }}
-
-struct EditorView : View {
-    var container: Binding<[String]>
-    var index: Int
-
-    @State var text: String
-
-    var body: some View {
-        TextField("", text: self.$text, onCommit: {
-            self.container.wrappedValue[self.index] = self.text
-        })
-    }
-}
 
 struct Traits: View {
     
@@ -164,6 +161,8 @@ struct Traits: View {
                 ForEach(backgroundModel.background.suggestedPersonality, id: \.self) { trait in
                     EditorView(container: $backgroundModel.background.suggestedPersonality, index: backgroundModel.background.suggestedPersonality.firstIndex(of: trait)!, text: trait)
                 }
+                .onDelete(perform: deletePersonality)
+
             }
         })
         Section(header:  HStack{
@@ -180,6 +179,8 @@ struct Traits: View {
                 ForEach(backgroundModel.background.suggestedIdeal, id: \.self) { ideal in
                     EditorView(container: $backgroundModel.background.suggestedIdeal, index: backgroundModel.background.suggestedIdeal.firstIndex(of: ideal)!, text: ideal)
                 }
+                .onDelete(perform: deleteIdeal)
+
             }
         })
         Section(header:  HStack{
@@ -196,6 +197,8 @@ struct Traits: View {
                 ForEach(backgroundModel.background.suggestedBond, id: \.self) { bond in
                     EditorView(container: $backgroundModel.background.suggestedBond, index: backgroundModel.background.suggestedBond.firstIndex(of: bond)!, text: bond)
                 }
+                .onDelete(perform: deleteBond)
+
             }
         })
         Section(header:  HStack{
@@ -212,9 +215,28 @@ struct Traits: View {
                 ForEach(backgroundModel.background.suggestedFlaw, id: \.self) { flaw in
                     EditorView(container: $backgroundModel.background.suggestedFlaw, index: backgroundModel.background.suggestedFlaw.firstIndex(of: flaw)!, text: flaw)
                 }
+                .onDelete(perform: deleteFlaw)
+
             }
         })
     }
+    
+    func deletePersonality(at offsets: IndexSet) {
+        backgroundModel.background.suggestedPersonality.remove(atOffsets: offsets)
+    }
+    
+    func deleteBond(at offsets: IndexSet) {
+        backgroundModel.background.suggestedBond.remove(atOffsets: offsets)
+    }
+    
+    func deleteIdeal(at offsets: IndexSet) {
+        backgroundModel.background.suggestedIdeal.remove(atOffsets: offsets)
+    }
+    
+    func deleteFlaw(at offsets: IndexSet) {
+        backgroundModel.background.suggestedFlaw.remove(atOffsets: offsets)
+    }
+    
 }
 
 struct EditBackground_Previews: PreviewProvider {

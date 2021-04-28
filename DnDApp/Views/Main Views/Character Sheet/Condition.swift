@@ -2,7 +2,7 @@ import SwiftUI
 
 struct Condition: View {
     
-    @ObservedObject var charVM: CharacterViewModel
+    @StateObject var charVM: CharacterViewModel
     @State var toggleLangSheet: Bool = false
     @State var toggleProfSheet: Bool = false
     
@@ -27,7 +27,8 @@ struct Condition: View {
                 Text("Languages")
                 Spacer()
                 Button(action: {
-                    toggleLangSheet.toggle()
+                    charVM.character.languageProficicies.append("")
+                    charVM.updateCharacter()
                 }, label: {
                     Image(systemName: "plus")
                         .font(.headline)
@@ -35,7 +36,7 @@ struct Condition: View {
             }, content: {
                 List{
                     ForEach(charVM.character.languageProficicies, id: \.self){ lang in
-                        Text(lang)
+                        EditorView(container: $charVM.character.languageProficicies, index: charVM.character.languageProficicies.firstIndex(of: lang)!, text: lang)
                     }
                     .onDelete(perform: deleteLanguage)
                 }
@@ -46,7 +47,8 @@ struct Condition: View {
                 Text("Other Proficiencies")
                 Spacer()
                 Button(action: {
-                    toggleProfSheet.toggle()
+                    charVM.character.otherProficicies.append("")
+                    charVM.updateCharacter()
                 }, label: {
                     Image(systemName: "plus")
                         .font(.headline)
@@ -54,11 +56,12 @@ struct Condition: View {
             }, content: {
                 List{
                     ForEach(charVM.character.otherProficicies, id: \.self){ prof in
-                        Text(prof)
+                        EditorView(container: $charVM.character.otherProficicies, index: charVM.character.otherProficicies.firstIndex(of: prof)!, text: prof)
                     }
                     .onDelete(perform: deleteProficiency)
                 }
             })
+            
             Section(header: Text("Saving Throws"), content: {
                 SavingThrowTable(charVM: charVM)
                     .padding(.leading, 45)
@@ -79,66 +82,6 @@ struct Condition: View {
         charVM.updateCharacter()
     }
 }
-
-struct AddLang: View {
-    
-    @Environment(\.presentationMode) var presentationMode
-    @ObservedObject var charVM: CharacterViewModel
-    @State var addition: String = ""
-    
-    var body: some View{
-        VStack {
-            Form{
-                Section(header: Text("Language"), content: {
-                    TextField("", text: $addition)
-                        .onChange(of: addition, perform: { value in
-                            addition = addition
-                    })
-                })
-                
-                Section(content: {
-                    Button(action: {
-                        charVM.character.languageProficicies.append(addition)
-                        charVM.updateCharacter()
-                        presentationMode.wrappedValue.dismiss()
-                    }, label: {
-                        Text("Done")
-                    })
-                })
-            }
-        }
-    }
-}
-
-//struct AddProf: View {
-//
-//    @Environment(\.presentationMode) var presentationMode
-//    @ObservedObject var charVM: CharacterViewModel
-//    @State var addition: String = ""
-//
-//    var body: some View{
-//        VStack {
-//            Form{
-//                Section(header: Text("Proficiency"), content: {
-//                    TextField("", text: $addition)
-//                        .onChange(of: addition, perform: { value in
-//                            addition = addition
-//                    })
-//                })
-//
-//                Section(content: {
-//                    Button(action: {
-//                        charVM.character.otherProficicies.append(addition)
-//                        charVM.updateCharacter()
-//                        presentationMode.wrappedValue.dismiss()
-//                    }, label: {
-//                        Text("Done")
-//                    })
-//                })
-//            }
-//        }
-//    }
-//}
 
 struct Condition_Previews: PreviewProvider {
     static var previews: some View {
