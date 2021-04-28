@@ -4,7 +4,7 @@ struct SpellDatabaseView: View {
     @ObservedObject var charVM = CharacterViewModel()
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject var listVM = DatabaseListViewModel()
-    @StateObject var spellVM = ItemViewModel()
+    @StateObject var spellVM = SpellViewModel()
     @State var addToInventory = false
     @State private var toggleSheet = false
         
