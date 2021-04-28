@@ -25,7 +25,7 @@ struct ActionsTab: View {
                     }
                 }
                 Section(header: HStack {
-                    Text("Spells")
+                    Text("Cantrips")
                     Spacer()
                     Button(action: {
                         toggleSheet.sheet = invSheet.spell
@@ -37,16 +37,86 @@ struct ActionsTab: View {
                 }){
                     List{
                         ForEach(charVM.character.spells, id: \.self){ spell in
-                            NavigationLink(destination: SpellDetailView(spell: spell)){
-                                VStack(alignment: .leading){
-                                    Text(spell.name)
-                                    Text(limitText(text: spell.description))
-                                        .font(.subheadline)
-                                        .foregroundColor(.gray)
-                                }
-                            }
+                            spellCell(spell: spell, level: 0)
                         }
                         .onDelete(perform: deleteSpell)
+                    }
+                }
+                Group {
+                    Section(header:Text("1st level spells")){
+                        List{
+                            ForEach(charVM.character.spells, id: \.self){ spell in
+                                spellCell(spell: spell, level: 1)
+                                
+                            }
+                            .onDelete(perform: deleteSpell)
+                        }
+                    }
+                    Section(header: Text("2nd Level spells")){
+                        List{
+                            ForEach(charVM.character.spells, id: \.self){ spell in
+                                spellCell(spell: spell, level: 2)
+                            }
+                            .onDelete(perform: deleteSpell)
+                        }
+                    }
+                    Section(header: Text("3nd Level spells")){
+                        List{
+                            ForEach(charVM.character.spells, id: \.self){ spell in
+                                spellCell(spell: spell, level: 3)
+                            }
+                            .onDelete(perform: deleteSpell)
+                        }
+                    }
+                    Section(header: Text("4th Level spells")){
+                        List{
+                            ForEach(charVM.character.spells, id: \.self){ spell in
+                                spellCell(spell: spell, level: 4)
+                            }
+                            .onDelete(perform: deleteSpell)
+                        }
+                    }
+                    Section(header: Text("5th Level spells")){
+                        List{
+                            ForEach(charVM.character.spells, id: \.self){ spell in
+                                spellCell(spell: spell, level: 5)
+                            }
+                            .onDelete(perform: deleteSpell)
+                        }
+                    }
+                }
+                Group {
+                    Section(header: Text("6th Level spells")){
+                            List{
+                                ForEach(charVM.character.spells, id: \.self){ spell in
+                                    spellCell(spell: spell, level: 6)
+                                }
+                                .onDelete(perform: deleteSpell)
+                            }
+                    }
+                    Section(header: Text("7th Level spells")){
+                        List{
+                            ForEach(charVM.character.spells, id: \.self){ spell in
+                                spellCell(spell: spell, level: 7)
+                            }
+                            .onDelete(perform: deleteSpell)
+                        }
+                    }
+                    Section(header: Text("8th Level spells")){
+                        List{
+                            ForEach(charVM.character.spells, id: \.self){ spell in
+                                spellCell(spell: spell, level: 8)
+                            }
+                            .onDelete(perform: deleteSpell)
+                        }
+                    }
+                    Section(header: Text("9nd Level spells")){
+                        List{
+                            ForEach(charVM.character.spells, id: \.self){ spell in
+                                spellCell(spell: spell, level: 9)
+                            }
+                            .onDelete(perform: deleteSpell)
+                        }
                     }
                 }
             }
@@ -62,6 +132,30 @@ struct ActionsTab: View {
         charVM.character.spells.remove(atOffsets: offsets)
         charVM.updateCharacter()
     }
+}
+
+struct spellCell:View {
+    
+    var spell: Spell
+    var level: Int
+    @State var isSelected: Bool = false
+    
+    var body: some View{
+        if (spell.level == level){
+            NavigationLink(destination: SpellDetailView(spell: spell)){
+                HStack {
+                    VStack(alignment: .leading){
+                        Text(spell.name)
+                        if(!spell.description.isEmpty){
+                        Text(limitText(text: spell.description))
+                            .font(.subheadline)
+                            .foregroundColor(.gray)
+                        }
+                    }
+                }
+            }
+        }
+    }
     
     func limitText(text: String) -> String {
         if text.count > 20 {
@@ -73,7 +167,7 @@ struct ActionsTab: View {
             return text
         }
     }
-
+    
 }
 
 struct ActionsTab_Previews: PreviewProvider {
