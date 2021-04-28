@@ -6,7 +6,6 @@ struct Database: View {
             Color.flatDarkBackground.ignoresSafeArea()
             ScrollView {
                 VStack {
-                    //TODO: have this loop through all collections and create buttons programatically
                     NavigationLink(destination: SpellDatabaseView())
                     {
                         DatabaseSection(section: "Spells")
@@ -17,9 +16,11 @@ struct Database: View {
                     NavigationLink(destination: ArmorDatabaseView()){
                         DatabaseSection(section: "Armor")
                     }
-                    NavigationLink(
-                        destination: WeaponDatabaseView()){
+                    NavigationLink(destination: WeaponDatabaseView()){
                         DatabaseSection(section: "Weapons")
+                    }
+                    NavigationLink(destination: BackgroundDatabaseView()){
+                        DatabaseSection(section: "Backgrounds")
                     }
                 }
             }
