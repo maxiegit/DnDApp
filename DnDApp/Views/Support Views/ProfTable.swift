@@ -49,10 +49,10 @@ struct ProfTable: View {
 
         var body: some View{
             HStack{
-                Text(prof)
-                    .frame(maxWidth: 150, alignment: .leading)
-                    .foregroundColor(.white)
                 if(isProf){
+                    Text(prof + " \(charVM.bonusCalc(stat: getSkillNumber(index: index)) + charVM.character.profBonus)")
+                        .frame(maxWidth: 150, alignment: .leading)
+                        .foregroundColor(.white)
                     Image(systemName: "circle.fill")
                         .foregroundColor(.white)
                         .onTapGesture(perform: {
@@ -62,6 +62,9 @@ struct ProfTable: View {
                         })
                 }
                 else{
+                    Text(prof + " \(charVM.bonusCalc(stat: getSkillNumber(index: index)))")
+                        .frame(maxWidth: 150, alignment: .leading)
+                        .foregroundColor(.white)
                     Image(systemName: "circle")
                         .foregroundColor(.white)
                         .onTapGesture(perform: {
@@ -72,8 +75,30 @@ struct ProfTable: View {
                 }
             }
         }
+        
+        func getSkillNumber(index: Int) -> Int {
+            var skillNum: Int = 0
+            
+            if(index == 3){
+                skillNum = charVM.character.strength
+            }
+            else if(index == 0 || index == 16 || index == 15){
+                skillNum = charVM.character.dexterity
+            }
+            else if(index == 2 || index == 5 || index == 8 || index == 10 || index == 14){
+                skillNum = charVM.character.intellignece
+            }
+            else if(index == 1 || index == 6 || index == 9 || index == 11 || index == 16){
+                skillNum = charVM.character.wisdom
+            }
+            else if(index == 4 || index == 7 || index == 12 || index == 13){
+                skillNum = charVM.character.charisma
+            }
+            
+            return skillNum
+        }
+        
     }
-    
     struct ProfTable_Previews: PreviewProvider {
         static var previews: some View {
             ProfTable(charVM: CharacterViewModel(character: Character(name: "", race: "", classes: "", level: 0, exp: 0, alignment: "", background: "", ac: 0, hp: 0, tempHp: 0, speed: 0, profBonus: 0, hitDice: [], inspo: false, dstFailure: [false, false, false], dstSuccess: [false, false, false], strength: 0, dexterity: 0, constitution: 0, intellignece: 0, wisdom: 0, charisma: 0, personality: "", ideals: "", bonds: "", flaws: "", coreProficicies: [true, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false], saveProficicies: [false, false, false, false, false, false], otherProficicies: [], languageProficicies: [], armorProficicies: [], items: [], weapons: [], armor: [], cp: 0, sp: 0, gp: 0, ep: 0, pp: 0, attacks: [], classAbilities: [], spells: [])))

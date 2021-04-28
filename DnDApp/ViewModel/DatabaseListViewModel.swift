@@ -7,11 +7,13 @@ class DatabaseListViewModel: ObservableObject{
     @Published var itemRepo = ItemRepository()
     @Published var armorRepo = ArmorRepository()
     @Published var weaponRepo = WeaponRepository()
+    @Published var backgroundRepo = BackgroundRepository()
     @Published var characterRepo = CharacterRepository()
     @Published var spellViewModel = [SpellViewModel]()
     @Published var itemViewModel = [ItemViewModel]()
     @Published var armorViewModel = [ArmorViewModel()]
     @Published var weaponViewModel = [WeaponViewModel()]
+    @Published var backgroundViewModel = [BackgroundViewModel()]
     @Published var characterViewModel = [CharacterViewModel()]
     
     private var cancellables = Set<AnyCancellable>()
@@ -21,6 +23,7 @@ class DatabaseListViewModel: ObservableObject{
         loadItems()
         loadArmor()
         loadWeapon()
+        loadBackground()
         loadCharacters()
     }
     
@@ -65,6 +68,17 @@ class DatabaseListViewModel: ObservableObject{
             }
         }
         .assign(to: \.weaponViewModel, on: self)
+        .store(in: &cancellables)
+    }
+    
+    func loadBackground(){
+        backgroundRepo.$backgrounds.map { background in
+            background.map{background in
+                BackgroundViewModel(background: background)
+                
+            }
+        }
+        .assign(to: \.backgroundViewModel, on: self)
         .store(in: &cancellables)
     }
     

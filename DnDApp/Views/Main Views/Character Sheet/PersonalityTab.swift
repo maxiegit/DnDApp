@@ -7,10 +7,10 @@ struct PersonalityTab: View {
     var body: some View {
         Form{
             Section(header: Text("Alignment"), content: {
-                TextField("", text: $charVM.character.alignment)
+                TextField("Alignment", text: $charVM.character.alignment)
             })
             Section(header: Text("Background"), content: {
-                    Text(charVM.character.background)
+                TextField("Background", text: $charVM.character.background)
                 })
             Section(header: Text("Personality Traits"), content: {
                 NavigationLink(destination: Editor(charVM: charVM, txt: charVM.character.personality, trait: "personality")){
@@ -32,9 +32,6 @@ struct PersonalityTab: View {
                     Text(charVM.character.flaws)
                 }
             })
-        }
-        .onTapGesture {
-            self.hideKeyboard()
         }
     }
 }

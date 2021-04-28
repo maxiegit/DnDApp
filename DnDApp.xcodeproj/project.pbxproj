@@ -20,6 +20,16 @@
 		0B1C8A342613749800ACA518 /* ProfTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C8A332613749800ACA518 /* ProfTable.swift */; };
 		0B20C027255EE21B00CEDA38 /* RollerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B20C026255EE21B00CEDA38 /* RollerViewModel.swift */; };
 		0B4585DE2555C27D00E65F47 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4585DD2555C27D00E65F47 /* ImagePicker.swift */; };
+		0B4BA35F263946D90079DDC9 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4BA35E263946D90079DDC9 /* Background.swift */; };
+		0B4BA36226394ACC0079DDC9 /* BackgroundRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4BA36126394ACC0079DDC9 /* BackgroundRepository.swift */; };
+		0B4BA36526394B740079DDC9 /* BackgroundViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4BA36426394B740079DDC9 /* BackgroundViewModel.swift */; };
+		0B4BA36926394C770079DDC9 /* BackgroundDatabaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4BA36826394C770079DDC9 /* BackgroundDatabaseView.swift */; };
+		0B4BA36D26394D2E0079DDC9 /* BackgroundDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4BA36C26394D2E0079DDC9 /* BackgroundDetailView.swift */; };
+		0B4BA37026394E520079DDC9 /* EditBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4BA36F26394E520079DDC9 /* EditBackground.swift */; };
+		0B4BA3752639BFB30079DDC9 /* StatTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4BA3742639BFB30079DDC9 /* StatTab.swift */; };
+		0B4BA3782639BFF50079DDC9 /* InventoryTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4BA3772639BFF50079DDC9 /* InventoryTab.swift */; };
+		0B4BA37B2639C0270079DDC9 /* ActionsTab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4BA37A2639C0270079DDC9 /* ActionsTab.swift */; };
+		0B4BA37E2639CAFC0079DDC9 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4BA37D2639CAFC0079DDC9 /* EditorView.swift */; };
 		0B4D565C25AD4D1D00E959C9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D565B25AD4D1D00E959C9 /* Item.swift */; };
 		0B4D565F25AD4D6800E959C9 /* ItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D565E25AD4D6800E959C9 /* ItemRepository.swift */; };
 		0B4D566225AD4E1500E959C9 /* ItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4D566125AD4E1500E959C9 /* ItemViewModel.swift */; };
@@ -81,6 +91,16 @@
 		0B1C8A332613749800ACA518 /* ProfTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfTable.swift; sourceTree = "<group>"; };
 		0B20C026255EE21B00CEDA38 /* RollerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollerViewModel.swift; sourceTree = "<group>"; };
 		0B4585DD2555C27D00E65F47 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		0B4BA35E263946D90079DDC9 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		0B4BA36126394ACC0079DDC9 /* BackgroundRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundRepository.swift; sourceTree = "<group>"; };
+		0B4BA36426394B740079DDC9 /* BackgroundViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundViewModel.swift; sourceTree = "<group>"; };
+		0B4BA36826394C770079DDC9 /* BackgroundDatabaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundDatabaseView.swift; sourceTree = "<group>"; };
+		0B4BA36C26394D2E0079DDC9 /* BackgroundDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundDetailView.swift; sourceTree = "<group>"; };
+		0B4BA36F26394E520079DDC9 /* EditBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditBackground.swift; sourceTree = "<group>"; };
+		0B4BA3742639BFB30079DDC9 /* StatTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatTab.swift; sourceTree = "<group>"; };
+		0B4BA3772639BFF50079DDC9 /* InventoryTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryTab.swift; sourceTree = "<group>"; };
+		0B4BA37A2639C0270079DDC9 /* ActionsTab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionsTab.swift; sourceTree = "<group>"; };
+		0B4BA37D2639CAFC0079DDC9 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
 		0B4D565B25AD4D1D00E959C9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0B4D565E25AD4D6800E959C9 /* ItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemRepository.swift; sourceTree = "<group>"; };
 		0B4D566125AD4E1500E959C9 /* ItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewModel.swift; sourceTree = "<group>"; };
@@ -163,6 +183,7 @@
 				0BCF451425785E4400E98B86 /* DatabaseListViewModel.swift */,
 				0B4D566125AD4E1500E959C9 /* ItemViewModel.swift */,
 				0B1C8A28260A358100ACA518 /* CharacterViewModel.swift */,
+				0B4BA36426394B740079DDC9 /* BackgroundViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -179,8 +200,19 @@
 				0BE49A1725D6E04300E69471 /* Weapon.swift */,
 				0BE49A2525DC24A800E69471 /* Roller.swift */,
 				0B1C8A22260A22E300ACA518 /* Character.swift */,
+				0B4BA35E263946D90079DDC9 /* Background.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0B4BA36726394C5C0079DDC9 /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				0B4BA36826394C770079DDC9 /* BackgroundDatabaseView.swift */,
+				0B4BA36C26394D2E0079DDC9 /* BackgroundDetailView.swift */,
+				0B4BA36F26394E520079DDC9 /* EditBackground.swift */,
+			);
+			path = Background;
 			sourceTree = "<group>";
 		};
 		0B63C44C262EEBD3000195F1 /* Character Sheet */ = {
@@ -189,6 +221,9 @@
 				0BCF44A72561854400E98B86 /* CharacterSheet.swift */,
 				0B63C44D262EEBFF000195F1 /* PersonalityTab.swift */,
 				0B8504382637144E0073FF6E /* Condition.swift */,
+				0B4BA3742639BFB30079DDC9 /* StatTab.swift */,
+				0B4BA3772639BFF50079DDC9 /* InventoryTab.swift */,
+				0B4BA37A2639C0270079DDC9 /* ActionsTab.swift */,
 			);
 			path = "Character Sheet";
 			sourceTree = "<group>";
@@ -258,6 +293,7 @@
 				0BB3D47D26285B6700E03F41 /* CurrencyBox.swift */,
 				0B85043B263714BB0073FF6E /* DeathSavingThrow.swift */,
 				0B85043E263715130073FF6E /* SavingThrowTable.swift */,
+				0B4BA37D2639CAFC0079DDC9 /* EditorView.swift */,
 			);
 			path = "Support Views";
 			sourceTree = "<group>";
@@ -283,6 +319,7 @@
 				0BE49A1325D6DF2D00E69471 /* ArmorRepository.swift */,
 				0BE49A1225D6DF2D00E69471 /* WeaponRepository.swift */,
 				0B1C8A25260A346800ACA518 /* CharacterRepository.swift */,
+				0B4BA36126394ACC0079DDC9 /* BackgroundRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -290,6 +327,7 @@
 		0BE499F225D6DF0200E69471 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				0B4BA36726394C5C0079DDC9 /* Background */,
 				0BE499F325D6DF0200E69471 /* Weapon */,
 				0BE499F725D6DF0200E69471 /* Spell */,
 				0BE499FB25D6DF0200E69471 /* Item */,
@@ -479,8 +517,11 @@
 				0BE49A1F25D6E06400E69471 /* ArmorViewModel.swift in Sources */,
 				0B4D565C25AD4D1D00E959C9 /* Item.swift in Sources */,
 				0BE49A1E25D6E06400E69471 /* WeaponViewModel.swift in Sources */,
+				0B4BA37026394E520079DDC9 /* EditBackground.swift in Sources */,
 				0BE49A0825D6DF0200E69471 /* EditSpell.swift in Sources */,
 				0B77621725ED114C00338CCE /* Webservice.swift in Sources */,
+				0B4BA3752639BFB30079DDC9 /* StatTab.swift in Sources */,
+				0B4BA37B2639C0270079DDC9 /* ActionsTab.swift in Sources */,
 				0BCF44AB25618A0E00E98B86 /* CharatcerTopBar.swift in Sources */,
 				0B4D566225AD4E1500E959C9 /* ItemViewModel.swift in Sources */,
 				0BE49A0F25D6DF0200E69471 /* ArmorDetail.swift in Sources */,
@@ -491,6 +532,7 @@
 				0BE49A0B25D6DF0200E69471 /* ItemDetailView.swift in Sources */,
 				0BE49A1525D6DF2D00E69471 /* ArmorRepository.swift in Sources */,
 				0BCF44A82561854400E98B86 /* CharacterSheet.swift in Sources */,
+				0B4BA36226394ACC0079DDC9 /* BackgroundRepository.swift in Sources */,
 				0B8504392637144E0073FF6E /* Condition.swift in Sources */,
 				0BCF45192578664C00E98B86 /* SpellRepository.swift in Sources */,
 				0B4D565F25AD4D6800E959C9 /* ItemRepository.swift in Sources */,
@@ -502,6 +544,7 @@
 				0BE49A0525D6DF0200E69471 /* WeaponDatabase.swift in Sources */,
 				0B63C44E262EEBFF000195F1 /* PersonalityTab.swift in Sources */,
 				0B20C027255EE21B00CEDA38 /* RollerViewModel.swift in Sources */,
+				0B4BA36926394C770079DDC9 /* BackgroundDatabaseView.swift in Sources */,
 				0BB3D47E26285B6700E03F41 /* CurrencyBox.swift in Sources */,
 				0BB4C13D2551A01D0061455C /* DnDAppApp.swift in Sources */,
 				0B1C8A26260A346800ACA518 /* CharacterRepository.swift in Sources */,
@@ -510,13 +553,18 @@
 				0BB4C15A2551EB220061455C /* Campaign.swift in Sources */,
 				0B13B955255C69450078E076 /* PcPill.swift in Sources */,
 				0B85043C263714BB0073FF6E /* DeathSavingThrow.swift in Sources */,
+				0B4BA37E2639CAFC0079DDC9 /* EditorView.swift in Sources */,
 				0B1C8A1F2608C03A00ACA518 /* CameraPlacehold.swift in Sources */,
 				0BE49A0625D6DF0200E69471 /* EditWeapon.swift in Sources */,
 				0BE49A2625DC24A800E69471 /* Roller.swift in Sources */,
 				0BE49A0D25D6DF0200E69471 /* ArmorDatabse.swift in Sources */,
+				0B4BA35F263946D90079DDC9 /* Background.swift in Sources */,
 				0B1C8A23260A22E300ACA518 /* Character.swift in Sources */,
+				0B4BA3782639BFF50079DDC9 /* InventoryTab.swift in Sources */,
 				0BE49A0C25D6DF0200E69471 /* EditItem.swift in Sources */,
 				0BE49A1925D6E04300E69471 /* Weapon.swift in Sources */,
+				0B4BA36D26394D2E0079DDC9 /* BackgroundDetailView.swift in Sources */,
+				0B4BA36526394B740079DDC9 /* BackgroundViewModel.swift in Sources */,
 				0BE49A0425D6DF0200E69471 /* WeaponDetail.swift in Sources */,
 				0B13B95B255CAB200078E076 /* DiceSection.swift in Sources */,
 				0BE49A1025D6DF0200E69471 /* Database.swift in Sources */,
