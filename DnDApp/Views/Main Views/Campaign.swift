@@ -22,6 +22,7 @@ struct Campaign: View {
 
                     CampaignScreenButton(destination: AnyView(SpellDatabaseView()), symbol: "book.circle")
                 }
+                CampaignScreenButton(destination: AnyView(ProbabilityView()), symbol: "percent")
             }
             .padding(.bottom)
         }
