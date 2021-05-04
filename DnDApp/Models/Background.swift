@@ -15,4 +15,5 @@ struct Background: Codable, Identifiable {
     var suggestedIdeal: [String]
     var suggestedBond: [String]
     var suggestedFlaw: [String]
+    var userID: String?
 }

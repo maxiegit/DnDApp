@@ -1,4 +1,5 @@
 import Foundation
+import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
@@ -15,7 +16,9 @@ class BackgroundRepository: ObservableObject {
     
     //grabs all the data from the  background collection
     func loadData() {
-        db.collection("backgrounds").addSnapshotListener { (querySnapshot, error) in
+        let userID = Auth.auth().currentUser?.uid
+
+        db.collection("backgrounds").order(by: "name").whereField("userID", isEqualTo: userID!).addSnapshotListener { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
                 self.backgrounds = querySnapshot.documents.compactMap {document in
                     do {
@@ -32,8 +35,11 @@ class BackgroundRepository: ObservableObject {
     }
     
     func addBackground(_ background: Background){
+        var addedBackground = background
+        addedBackground.userID = Auth.auth().currentUser?.uid
+        
         do{
-           let _ = try db.collection("backgrounds").addDocument(from: background)
+           let _ = try db.collection("backgrounds").addDocument(from: addedBackground)
         }
         catch{
             fatalError("Unable to encode task: \(error.localizedDescription)")

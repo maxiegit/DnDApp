@@ -8,6 +8,7 @@ struct Item: Codable, Identifiable, Hashable{
     var cost: Int
     var weight: Int
     var description: String
+    var userID: String?
 }
 
 //test data

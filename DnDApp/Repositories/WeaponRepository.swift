@@ -1,5 +1,6 @@
 
 import Foundation
+import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
@@ -16,7 +17,9 @@ class WeaponRepository: ObservableObject {
     
     //grabs all the data from the weapon collection
     func loadData() {
-        db.collection("weapon").addSnapshotListener { (querySnapshot, error) in
+        let userID = Auth.auth().currentUser?.uid
+
+        db.collection("weapon").order(by: "name").whereField("userID", isEqualTo: userID).addSnapshotListener { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
                 self.weapon = querySnapshot.documents.compactMap {document in
                     do {
@@ -33,8 +36,11 @@ class WeaponRepository: ObservableObject {
     }
     
     func addWeapon(_ weapon: Weapon){
+        var addedWeapon = weapon
+        addedWeapon.userID = Auth.auth().currentUser?.uid
+        
         do{
-           let _ = try db.collection("weapon").addDocument(from: weapon)
+           let _ = try db.collection("weapon").addDocument(from: addedWeapon)
         }
         catch{
             fatalError("Unable to encode task: \(error.localizedDescription)")

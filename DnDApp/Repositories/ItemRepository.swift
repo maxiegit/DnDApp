@@ -1,4 +1,5 @@
 import Foundation
+import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
@@ -16,7 +17,10 @@ class ItemRepository: ObservableObject {
     
     //grabs all the data from the spell collection
     func loadData() {
-        db.collection("items").addSnapshotListener { (querySnapshot, error) in
+        
+        let userID = Auth.auth().currentUser?.uid
+        
+        db.collection("items").order(by: "name").whereField("userID", isEqualTo: userID).addSnapshotListener { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
                 self.items = querySnapshot.documents.compactMap {document in
                     do {
@@ -33,8 +37,11 @@ class ItemRepository: ObservableObject {
     }
     
     func addItem(_ item: Item){
+        var addedItem = item
+        addedItem.userID = Auth.auth().currentUser?.uid
+        
         do{
-            let _ = try db.collection("items").addDocument(from: item)
+            let _ = try db.collection("items").addDocument(from: addedItem)
         }
         catch{
             fatalError("Unable to encode task: \(error.localizedDescription)")
