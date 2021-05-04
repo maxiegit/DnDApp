@@ -70,7 +70,7 @@ struct WeaponSelectionCell: View {
 struct WeaponCell: View{
     @ObservedObject var weaponVM: WeaponViewModel
     
-    
+
     var body: some View{
         NavigationLink(destination: WeaponDetailView(weapon: weaponVM.weapon)){
             VStack{

@@ -37,25 +37,24 @@ struct EditWeapon: View {
                     Section(header: Text("Magical")){
                         Toggle("", isOn: $weaponModel.weapon.magic).labelsHidden()
                     }
-                    //TODO: fix this
-//                    Section(header: HStack {
-//                        Text("Descriptors")
-//                        Spacer()
-//                        Button(action: {}){Image(systemName: "plus")
-//                                            .foregroundColor(.green)
-//                                            .padding(.trailing)
-//                        }})
-//                    {
-//                        List{
-//                            ForEach(weapon.descriptors, id: \.self){ desc in
-//                                Text(desc)
-//                            }
-//                            .onDelete(perform: deleteListItem)
-//                        }
-//
-//                        .navigationBarItems(trailing: EditButton())
-//                        .environment(\.editMode, self.$isEditMode)
-//                    }
+                    Section(header: HStack{
+                        Text("Descriptors")
+                        Spacer()
+                        Button(action: {
+                            weaponModel.weapon.descriptors.append("")
+                        }, label: {
+                            Image(systemName: "plus")
+                                .font(.headline)
+                                    })
+                    }, content:{
+                        List{
+                            ForEach(weaponModel.weapon.descriptors, id: \.self){
+                                desc in
+                                EditorView(container: $weaponModel.weapon.descriptors, index: weaponModel.weapon.descriptors.firstIndex(of: desc)!, text: desc)
+                            }
+                            .onDelete(perform: deleteListItem)
+                        }
+                    })
                     
                     Section(header: Text("Description")){
                         TextField("Description", text: $weaponModel.weapon.description)
