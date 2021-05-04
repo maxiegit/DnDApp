@@ -7,6 +7,7 @@ target 'DnDApp' do
 
   # Pods for DnDApp
   # add the Firebase pod for Google Analytics
+  pod 'Firebase/Auth'
   pod 'Firebase/Analytics'
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift', '~> 7.0-beta'

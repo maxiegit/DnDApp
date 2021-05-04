@@ -13,6 +13,7 @@ struct Spell: Codable, Identifiable, Hashable{
     var duration: String
     var description: String
     var ritual: Bool
+    var userID: String?
 }
 
 //test data

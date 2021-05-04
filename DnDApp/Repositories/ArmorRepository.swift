@@ -1,4 +1,5 @@
 import Foundation
+import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
@@ -15,7 +16,9 @@ class ArmorRepository: ObservableObject {
     
     //grabs all the data from the armor collection
     func loadData() {
-        db.collection("armor").addSnapshotListener { (querySnapshot, error) in
+        let userID = Auth.auth().currentUser?.uid
+
+        db.collection("armor").order(by: "name").whereField("userID", isEqualTo: userID).addSnapshotListener { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
                 self.armor = querySnapshot.documents.compactMap {document in
                     do {
@@ -32,8 +35,11 @@ class ArmorRepository: ObservableObject {
     }
     
     func addArmor(_ armor: Armor){
+        var addedArmor = armor
+        addedArmor.userID = Auth.auth().currentUser?.uid
+        
         do{
-           let _ = try db.collection("armor").addDocument(from: armor)
+           let _ = try db.collection("armor").addDocument(from: addedArmor)
         }
         catch{
             fatalError("Unable to encode task: \(error.localizedDescription)")

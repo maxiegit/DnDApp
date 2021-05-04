@@ -1,4 +1,5 @@
 import Foundation
+import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
@@ -15,7 +16,10 @@ class CharacterRepository: ObservableObject {
     
     //grabs all the data from the  character collection
     func loadData() {
-        db.collection("characters").addSnapshotListener { (querySnapshot, error) in
+        
+        let userID = Auth.auth().currentUser?.uid
+
+        db.collection("characters").whereField("userID", isEqualTo: userID).addSnapshotListener { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
                 self.characters = querySnapshot.documents.compactMap {document in
                     do {
@@ -32,8 +36,11 @@ class CharacterRepository: ObservableObject {
     }
     
     func addCharacter(_ character: Character){
+        var addedChar = character
+        addedChar.userID = Auth.auth().currentUser?.uid
+        
         do{
-           let _ = try db.collection("characters").addDocument(from: character)
+           let _ = try db.collection("characters").addDocument(from: addedChar)
         }
         catch{
             fatalError("Unable to encode task: \(error.localizedDescription)")

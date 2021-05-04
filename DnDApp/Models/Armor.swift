@@ -11,4 +11,5 @@ struct Armor: Codable, Identifiable, Hashable{
     var type: String
     var magic: Bool
     var description: String
+    var userID: String?
 }

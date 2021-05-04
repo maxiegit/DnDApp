@@ -13,4 +13,5 @@ struct Weapon: Codable, Identifiable, Hashable{
     var magic: Bool
     var descriptors: [String]
     var description: String
+    var userID: String?
 }
