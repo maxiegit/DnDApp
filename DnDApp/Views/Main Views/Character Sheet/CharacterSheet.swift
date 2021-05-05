@@ -95,7 +95,7 @@ struct CharacterSheet: View{
     struct CharatcerSheet_Previews: PreviewProvider {
         static var previews: some View {
             CharacterSheet(charVM: CharacterViewModel(character: Character(
-                                                        name: "Max Magill",
+                                                        isDM: false, name: "Max Magill",
                                                         race: "Human",
                                                         classes: "Fighter",
                                                         level: 3, exp: 0,
