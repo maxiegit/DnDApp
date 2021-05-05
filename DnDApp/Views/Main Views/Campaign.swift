@@ -3,6 +3,9 @@ import SwiftUI
 struct Campaign: View {
     
     @ObservedObject var charVM: CharacterViewModel
+    @Environment(\.presentationMode) private var presentationMode
+    var completionHandler: ((Result<Action, Error>) -> Void)?
+    @State var presentActionSheet = false
 
     var body: some View {
         ZStack{
@@ -32,8 +35,28 @@ struct Campaign: View {
             }
             .padding(.bottom)
         }
+        .navigationBarItems(trailing: Button(action: {presentActionSheet.toggle()}, label: {
+            Image(systemName: "ellipsis.circle.fill")
+        }))
+        .actionSheet(isPresented: $presentActionSheet, content: {
+            ActionSheet(title: Text("Are you sure?"),
+                        buttons:[
+                        .destructive(Text("Delete item"),
+                        action: { delete() }),
+                        .cancel()
+                        ])
+        })
     }
+    
+    func delete(){
+        charVM.deleteCharacter()
+        self.presentationMode.wrappedValue.dismiss()
+        self.completionHandler?(.success(.delete))
+    }
+    
 }
+
+
 
 
 struct Campaign_Previews: PreviewProvider {
