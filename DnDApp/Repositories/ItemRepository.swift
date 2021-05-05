@@ -9,7 +9,6 @@ class ItemRepository: ObservableObject {
     let db = Firestore.firestore()
     
     @Published var items = [Item]()
-    @Published var item = Item(name: "", cost: 0, weight: 0, description: "")
     
     init() {
         loadData()

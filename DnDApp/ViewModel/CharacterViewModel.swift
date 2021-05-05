@@ -30,6 +30,7 @@ class CharacterViewModel: ObservableObject, Identifiable {
     
     func addCharacter(){
         characterRepo.addCharacter(character)
+        print("adding")
     }
     
     func updateCharacter(){
@@ -38,5 +39,6 @@ class CharacterViewModel: ObservableObject, Identifiable {
     
     func deleteCharacter(){
         characterRepo.deleteCharacter(character)
+        print("deleting")
     }
 }
