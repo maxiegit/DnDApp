@@ -1,6 +1,7 @@
 import SwiftUI
 import UIKit
 import Firebase
+import FirebaseAuth
 
 //reinstate the appdelegate
 class AppDelegate: NSObject, UIApplicationDelegate {
