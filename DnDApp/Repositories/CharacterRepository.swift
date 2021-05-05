@@ -8,7 +8,7 @@ class CharacterRepository: ObservableObject {
     //set db for use
     let db = Firestore.firestore()
     
-    @Published var characters = [Character]()
+    @Published var characters = [PlayerCharacter]()
     
     init() {
         loadData()
@@ -23,7 +23,7 @@ class CharacterRepository: ObservableObject {
             if let querySnapshot = querySnapshot {
                 self.characters = querySnapshot.documents.compactMap {document in
                     do {
-                        let x = try document.data(as: Character.self)
+                        let x = try document.data(as: PlayerCharacter.self)
                         return x
                     }
                     catch {
@@ -35,7 +35,7 @@ class CharacterRepository: ObservableObject {
         }
     }
     
-    func addCharacter(_ character: Character){
+    func addCharacter(_ character: PlayerCharacter){
         var addedChar = character
         addedChar.userID = Auth.auth().currentUser?.uid
         
@@ -47,7 +47,7 @@ class CharacterRepository: ObservableObject {
         }
     }
     
-    func updateCharacter(_ character: Character){
+    func updateCharacter(_ character: PlayerCharacter){
         if let documentId = character.id{
             do{
                 try db.collection("characters").document(documentId).setData(from: character)
@@ -58,7 +58,7 @@ class CharacterRepository: ObservableObject {
         }
     }
     
-    func deleteCharacter(_ character: Character){
+    func deleteCharacter(_ character: PlayerCharacter){
         if let characterID = character.id{
             db.collection("characters").document(characterID).delete() { (error) in
                 if let error = error {

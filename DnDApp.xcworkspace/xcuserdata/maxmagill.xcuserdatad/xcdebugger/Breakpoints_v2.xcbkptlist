@@ -30,8 +30,8 @@
             filePath = "DnDApp/Views/Main Views/MainMenu.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -78,8 +78,8 @@
             filePath = "DnDApp/Views/Main Views/MainMenu.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -100,11 +100,11 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "D68128E3-5F82-4206-849E-AEE7D7BAD1CD - 7d75d2774c803813"
+                  uuid = "D68128E3-5F82-4206-849E-AEE7D7BAD1CD - 4c8b4cda2ad75422"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "DnDApp.CharacterRepository.deleteCharacter(DnDApp.Character) -&gt; ()"
+                  symbolName = "DnDApp.CharacterRepository.deleteCharacter(DnDApp.PlayerCharacter) -&gt; ()"
                   moduleName = "DnDApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maxmagill/Projects/DnDApp/DnDApp/Repositories/CharacterRepository.swift"
@@ -115,11 +115,11 @@
                   offsetFromSymbolStart = "190">
                </Location>
                <Location
-                  uuid = "D68128E3-5F82-4206-849E-AEE7D7BAD1CD - 4289f6f29c55599c"
+                  uuid = "D68128E3-5F82-4206-849E-AEE7D7BAD1CD - 1fd500f4b9d8b631"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in DnDApp.CharacterRepository.deleteCharacter(DnDApp.Character) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in DnDApp.CharacterRepository.deleteCharacter(DnDApp.PlayerCharacter) -&gt; ()"
                   moduleName = "DnDApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maxmagill/Projects/DnDApp/DnDApp/Repositories/CharacterRepository.swift"
