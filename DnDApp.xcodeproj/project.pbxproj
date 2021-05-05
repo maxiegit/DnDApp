@@ -46,6 +46,7 @@
 		0BB4C1442551A0210061455C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0BB4C1432551A0210061455C /* Preview Assets.xcassets */; };
 		0BB4C15A2551EB220061455C /* Campaign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB4C1592551EB220061455C /* Campaign.swift */; };
 		0BB4C1602551EFFD0061455C /* DatabaseSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB4C15F2551EFFD0061455C /* DatabaseSection.swift */; };
+		0BCD8DC22642F3E900596709 /* DmPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD8DC12642F3E900596709 /* DmPill.swift */; };
 		0BCE95B0263AA58C004D30B3 /* ProbabilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE95AF263AA58C004D30B3 /* ProbabilityView.swift */; };
 		0BCE95B3263AA6CC004D30B3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE95B2263AA6CC004D30B3 /* Box.swift */; };
 		0BCE95B6263AAD96004D30B3 /* Probability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE95B5263AAD96004D30B3 /* Probability.swift */; };
@@ -123,6 +124,7 @@
 		0BB4C1452551A0210061455C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BB4C1592551EB220061455C /* Campaign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campaign.swift; sourceTree = "<group>"; };
 		0BB4C15F2551EFFD0061455C /* DatabaseSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSection.swift; sourceTree = "<group>"; };
+		0BCD8DC12642F3E900596709 /* DmPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DmPill.swift; sourceTree = "<group>"; };
 		0BCE95AF263AA58C004D30B3 /* ProbabilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProbabilityView.swift; sourceTree = "<group>"; };
 		0BCE95B2263AA6CC004D30B3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		0BCE95B5263AAD96004D30B3 /* Probability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Probability.swift; sourceTree = "<group>"; };
@@ -305,6 +307,7 @@
 				0B85043E263715130073FF6E /* SavingThrowTable.swift */,
 				0B4BA37D2639CAFC0079DDC9 /* EditorView.swift */,
 				0BCE95B2263AA6CC004D30B3 /* Box.swift */,
+				0BCD8DC12642F3E900596709 /* DmPill.swift */,
 			);
 			path = "Support Views";
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				0BB3D47E26285B6700E03F41 /* CurrencyBox.swift in Sources */,
 				0BB4C13D2551A01D0061455C /* DnDAppApp.swift in Sources */,
 				0B1C8A26260A346800ACA518 /* CharacterRepository.swift in Sources */,
+				0BCD8DC22642F3E900596709 /* DmPill.swift in Sources */,
 				0B85043F263715130073FF6E /* SavingThrowTable.swift in Sources */,
 				0B1C8A29260A358100ACA518 /* CharacterViewModel.swift in Sources */,
 				0BB4C15A2551EB220061455C /* Campaign.swift in Sources */,
