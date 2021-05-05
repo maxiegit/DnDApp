@@ -13,8 +13,12 @@ struct MainMenu: View {
                 VStack() {
                     ScrollView{
                         ForEach(listVM.characterViewModel){ char in
-                            charCell(charVm: char)
-                            
+                            if char.character.isDM{
+                                dmCell(charVm: char)
+                            }
+                            else{
+                                charCell(charVm: char)
+                            }
                         }
                     }
                 }
@@ -47,6 +51,18 @@ struct MainMenu: View {
             
             NavigationLink(destination: Campaign(charVM: charVm)) {
                 PcPill(portrait: "default", classIcon: charVm.character.classes, level: charVm.character.level, race: charVm.character.race, name: charVm.character.name)
+            }
+        }
+    }
+    
+    struct dmCell: View {
+        
+        @ObservedObject var charVm: CharacterViewModel
+        
+        var body: some View{
+            
+            NavigationLink(destination: Campaign(charVM: charVm)) {
+                DmPill(portrait: "default", name: charVm.character.name)
             }
         }
     }

@@ -3,7 +3,7 @@ import SwiftUI
 struct PcPill: View {
     
     let portrait: String
-    let classIcon: String //will need to be an array to accomodate multiclassing
+    let classIcon: String
     let level: Int
     let race: String
     let name: String

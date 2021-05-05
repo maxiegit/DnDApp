@@ -5,6 +5,7 @@ import FirebaseFirestoreSwift
 struct Character: Codable, Identifiable{
     @DocumentID var id: String?
     var userID: String?
+    var isDM: Bool
     
     //basic character info
     var name: String

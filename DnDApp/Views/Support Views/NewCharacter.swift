@@ -7,7 +7,6 @@ struct NewCharacter: View {
     
     @ObservedObject var charModel = CharacterViewModel()
     
-    //    var mode: Mode = .new
     var completionHandler: ((Result<Action, Error>) -> Void)?
     
     var body: some View {
@@ -17,14 +16,22 @@ struct NewCharacter: View {
                     Section(header: Text("Name")) {
                         TextField("Name", text: $charModel.character.name)
                     }
-                    Section(header: Text("Level")) {
-                        TextField("Level", value: $charModel.character.level, formatter: NumberFormatter())
+                    if(!charModel.character.isDM){
+                        Section(header: Text("Level")) {
+                            TextField("Level", value: $charModel.character.level, formatter: NumberFormatter())
+                        }
+                        Section(header: Text("Race")) {
+                            TextField("Race", text: $charModel.character.race)
+                        }
+                        Section(header: Text("Class")) {
+                            TextField("Class", text: $charModel.character.classes)
+                        }
                     }
-                    Section(header: Text("Race")) {
-                        TextField("Race", text: $charModel.character.race)
-                    }
-                    Section(header: Text("Class")) {
-                        TextField("Class", text: $charModel.character.classes)
+                    Section(header: Text("Dungeon Master")){
+                        Toggle(isOn: $charModel.character.isDM) {
+                            Text("")
+                        }
+                        .labelsHidden()
                     }
                 }
                 .navigationTitle("New Character")

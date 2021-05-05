@@ -71,6 +71,7 @@ struct Editor: View {
 struct PersonalityTab_Previews: PreviewProvider {
     static var previews: some View {
         PersonalityTab(charVM: CharacterViewModel(character: Character(
+                                                    isDM: false, 
                                                     name: "Max Magill",
                                                     race: "Human",
                                                     classes: "Fighter",
