@@ -7,7 +7,20 @@
 		<key>DnDApp.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>21</integer>
+			<integer>22</integer>
+		</dict>
+	</dict>
+	<key>SuppressBuildableAutocreation</key>
+	<dict>
+		<key>0BB4C1382551A01D0061455C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0BCD8DDC264B644B00596709</key>
+		<dict>
+			<key>primary</key>
+			<true/>
 		</dict>
 	</dict>
 </dict>

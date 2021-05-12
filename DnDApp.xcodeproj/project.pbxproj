@@ -47,6 +47,8 @@
 		0BB4C15A2551EB220061455C /* Campaign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB4C1592551EB220061455C /* Campaign.swift */; };
 		0BB4C1602551EFFD0061455C /* DatabaseSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BB4C15F2551EFFD0061455C /* DatabaseSection.swift */; };
 		0BCD8DC22642F3E900596709 /* DmPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD8DC12642F3E900596709 /* DmPill.swift */; };
+		0BCD8DE0264B644B00596709 /* DnDAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD8DDF264B644B00596709 /* DnDAppTests.swift */; };
+		0BCD8E25264C3A4400596709 /* DnDAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD8E24264C3A4400596709 /* DnDAppUITests.swift */; };
 		0BCE95B0263AA58C004D30B3 /* ProbabilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE95AF263AA58C004D30B3 /* ProbabilityView.swift */; };
 		0BCE95B3263AA6CC004D30B3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE95B2263AA6CC004D30B3 /* Box.swift */; };
 		0BCE95B6263AAD96004D30B3 /* Probability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE95B5263AAD96004D30B3 /* Probability.swift */; };
@@ -79,8 +81,26 @@
 		0BE49A1E25D6E06400E69471 /* WeaponViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE49A1C25D6E06400E69471 /* WeaponViewModel.swift */; };
 		0BE49A1F25D6E06400E69471 /* ArmorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE49A1D25D6E06400E69471 /* ArmorViewModel.swift */; };
 		0BE49A2625DC24A800E69471 /* Roller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE49A2525DC24A800E69471 /* Roller.swift */; };
+		5087042DF1A99194F88B28C1 /* Pods_DnDAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FD73D78509C2D483F6C5803 /* Pods_DnDAppTests.framework */; };
 		93DC6683CA851E22AC021FC6 /* Pods_DnDApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAE572FBD83E66DCBEB9B44A /* Pods_DnDApp.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0BCD8DE2264B644B00596709 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0BB4C1312551A01D0061455C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0BB4C1382551A01D0061455C;
+			remoteInfo = DnDApp;
+		};
+		0BCD8E27264C3A4400596709 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0BB4C1312551A01D0061455C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0BB4C1382551A01D0061455C;
+			remoteInfo = DnDApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0B0952BD255B6C560012C64F /* RollerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollerView.swift; sourceTree = "<group>"; };
@@ -125,6 +145,12 @@
 		0BB4C1592551EB220061455C /* Campaign.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Campaign.swift; sourceTree = "<group>"; };
 		0BB4C15F2551EFFD0061455C /* DatabaseSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseSection.swift; sourceTree = "<group>"; };
 		0BCD8DC12642F3E900596709 /* DmPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DmPill.swift; sourceTree = "<group>"; };
+		0BCD8DDD264B644B00596709 /* DnDAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DnDAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BCD8DDF264B644B00596709 /* DnDAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDAppTests.swift; sourceTree = "<group>"; };
+		0BCD8DE1264B644B00596709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BCD8E22264C3A4400596709 /* DnDAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DnDAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0BCD8E24264C3A4400596709 /* DnDAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDAppUITests.swift; sourceTree = "<group>"; };
+		0BCD8E26264C3A4400596709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0BCE95AF263AA58C004D30B3 /* ProbabilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProbabilityView.swift; sourceTree = "<group>"; };
 		0BCE95B2263AA6CC004D30B3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		0BCE95B5263AAD96004D30B3 /* Probability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Probability.swift; sourceTree = "<group>"; };
@@ -158,6 +184,9 @@
 		0BE49A1D25D6E06400E69471 /* ArmorViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArmorViewModel.swift; sourceTree = "<group>"; };
 		0BE49A2525DC24A800E69471 /* Roller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Roller.swift; sourceTree = "<group>"; };
 		1228F08F1A1624338A7AC644 /* Pods-DnDApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDApp.release.xcconfig"; path = "Target Support Files/Pods-DnDApp/Pods-DnDApp.release.xcconfig"; sourceTree = "<group>"; };
+		1FD73D78509C2D483F6C5803 /* Pods_DnDAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DnDAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		228EA92F2C1E46764EF7CD46 /* Pods-DnDAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDAppTests.release.xcconfig"; path = "Target Support Files/Pods-DnDAppTests/Pods-DnDAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		719DA6502973EF967C5F79AA /* Pods-DnDAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDAppTests.debug.xcconfig"; path = "Target Support Files/Pods-DnDAppTests/Pods-DnDAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BBDF44A32DFDAADFD97810E3 /* Pods-DnDApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DnDApp.debug.xcconfig"; path = "Target Support Files/Pods-DnDApp/Pods-DnDApp.debug.xcconfig"; sourceTree = "<group>"; };
 		DAE572FBD83E66DCBEB9B44A /* Pods_DnDApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DnDApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -168,6 +197,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				93DC6683CA851E22AC021FC6 /* Pods_DnDApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BCD8DDA264B644B00596709 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5087042DF1A99194F88B28C1 /* Pods_DnDAppTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BCD8E1F264C3A4400596709 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,6 +296,8 @@
 			isa = PBXGroup;
 			children = (
 				0BB4C13B2551A01D0061455C /* DnDApp */,
+				0BCD8DDE264B644B00596709 /* DnDAppTests */,
+				0BCD8E23264C3A4400596709 /* DnDAppUITests */,
 				0BB4C13A2551A01D0061455C /* Products */,
 				7959B211D33E0008D8268E79 /* Pods */,
 				2B9E26205D733A06F56A67F0 /* Frameworks */,
@@ -262,6 +308,8 @@
 			isa = PBXGroup;
 			children = (
 				0BB4C1392551A01D0061455C /* DnDApp.app */,
+				0BCD8DDD264B644B00596709 /* DnDAppTests.xctest */,
+				0BCD8E22264C3A4400596709 /* DnDAppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -324,6 +372,24 @@
 				0BCE95AF263AA58C004D30B3 /* ProbabilityView.swift */,
 			);
 			path = "Main Views";
+			sourceTree = "<group>";
+		};
+		0BCD8DDE264B644B00596709 /* DnDAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				0BCD8DDF264B644B00596709 /* DnDAppTests.swift */,
+				0BCD8DE1264B644B00596709 /* Info.plist */,
+			);
+			path = DnDAppTests;
+			sourceTree = "<group>";
+		};
+		0BCD8E23264C3A4400596709 /* DnDAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				0BCD8E24264C3A4400596709 /* DnDAppUITests.swift */,
+				0BCD8E26264C3A4400596709 /* Info.plist */,
+			);
+			path = DnDAppUITests;
 			sourceTree = "<group>";
 		};
 		0BCF45172578663000E98B86 /* Repositories */ = {
@@ -396,6 +462,7 @@
 			isa = PBXGroup;
 			children = (
 				DAE572FBD83E66DCBEB9B44A /* Pods_DnDApp.framework */,
+				1FD73D78509C2D483F6C5803 /* Pods_DnDAppTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -405,6 +472,8 @@
 			children = (
 				BBDF44A32DFDAADFD97810E3 /* Pods-DnDApp.debug.xcconfig */,
 				1228F08F1A1624338A7AC644 /* Pods-DnDApp.release.xcconfig */,
+				719DA6502973EF967C5F79AA /* Pods-DnDAppTests.debug.xcconfig */,
+				228EA92F2C1E46764EF7CD46 /* Pods-DnDAppTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -431,17 +500,63 @@
 			productReference = 0BB4C1392551A01D0061455C /* DnDApp.app */;
 			productType = "com.apple.product-type.application";
 		};
+		0BCD8DDC264B644B00596709 /* DnDAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0BCD8DE4264B644B00596709 /* Build configuration list for PBXNativeTarget "DnDAppTests" */;
+			buildPhases = (
+				B150439606CCFA8EC56F0ACD /* [CP] Check Pods Manifest.lock */,
+				0BCD8DD9264B644B00596709 /* Sources */,
+				0BCD8DDA264B644B00596709 /* Frameworks */,
+				0BCD8DDB264B644B00596709 /* Resources */,
+				7BFD8297030AE800689850EB /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0BCD8DE3264B644B00596709 /* PBXTargetDependency */,
+			);
+			name = DnDAppTests;
+			productName = DnDAppTests;
+			productReference = 0BCD8DDD264B644B00596709 /* DnDAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		0BCD8E21264C3A4400596709 /* DnDAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0BCD8E2B264C3A4400596709 /* Build configuration list for PBXNativeTarget "DnDAppUITests" */;
+			buildPhases = (
+				0BCD8E1E264C3A4400596709 /* Sources */,
+				0BCD8E1F264C3A4400596709 /* Frameworks */,
+				0BCD8E20264C3A4400596709 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0BCD8E28264C3A4400596709 /* PBXTargetDependency */,
+			);
+			name = DnDAppUITests;
+			productName = DnDAppUITests;
+			productReference = 0BCD8E22264C3A4400596709 /* DnDAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		0BB4C1312551A01D0061455C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1210;
+				LastSwiftUpdateCheck = 1240;
 				LastUpgradeCheck = 1210;
 				TargetAttributes = {
 					0BB4C1382551A01D0061455C = {
 						CreatedOnToolsVersion = 12.1;
+					};
+					0BCD8DDC264B644B00596709 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 0BB4C1382551A01D0061455C;
+					};
+					0BCD8E21264C3A4400596709 = {
+						CreatedOnToolsVersion = 12.4;
+						TestTargetID = 0BB4C1382551A01D0061455C;
 					};
 				};
 			};
@@ -459,6 +574,8 @@
 			projectRoot = "";
 			targets = (
 				0BB4C1382551A01D0061455C /* DnDApp */,
+				0BCD8DDC264B644B00596709 /* DnDAppTests */,
+				0BCD8E21264C3A4400596709 /* DnDAppUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -471,6 +588,20 @@
 				0BB4C1442551A0210061455C /* Preview Assets.xcassets in Resources */,
 				0BB4C1412551A0210061455C /* Assets.xcassets in Resources */,
 				0BCF44E82578477D00E98B86 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BCD8DDB264B644B00596709 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BCD8E20264C3A4400596709 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +645,45 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DnDApp/Pods-DnDApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7BFD8297030AE800689850EB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DnDAppTests/Pods-DnDAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-DnDAppTests/Pods-DnDAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-DnDAppTests/Pods-DnDAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B150439606CCFA8EC56F0ACD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-DnDAppTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -595,7 +765,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0BCD8DD9264B644B00596709 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BCD8DE0264B644B00596709 /* DnDAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0BCD8E1E264C3A4400596709 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0BCD8E25264C3A4400596709 /* DnDAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0BCD8DE3264B644B00596709 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0BB4C1382551A01D0061455C /* DnDApp */;
+			targetProxy = 0BCD8DE2264B644B00596709 /* PBXContainerItemProxy */;
+		};
+		0BCD8E28264C3A4400596709 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0BB4C1382551A01D0061455C /* DnDApp */;
+			targetProxy = 0BCD8E27264C3A4400596709 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0BB4C1462551A0210061455C /* Debug */ = {
@@ -760,6 +959,90 @@
 			};
 			name = Release;
 		};
+		0BCD8DE5264B644B00596709 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 719DA6502973EF967C5F79AA /* Pods-DnDAppTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UAFW5MF3T8;
+				INFOPLIST_FILE = DnDAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DnDAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DnDApp.app/DnDApp";
+			};
+			name = Debug;
+		};
+		0BCD8DE6264B644B00596709 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 228EA92F2C1E46764EF7CD46 /* Pods-DnDAppTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UAFW5MF3T8;
+				INFOPLIST_FILE = DnDAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DnDAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DnDApp.app/DnDApp";
+			};
+			name = Release;
+		};
+		0BCD8E29264C3A4400596709 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UAFW5MF3T8;
+				INFOPLIST_FILE = DnDAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DnDAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DnDApp;
+			};
+			name = Debug;
+		};
+		0BCD8E2A264C3A4400596709 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = UAFW5MF3T8;
+				INFOPLIST_FILE = DnDAppUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.DnDAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = DnDApp;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -777,6 +1060,24 @@
 			buildConfigurations = (
 				0BB4C1492551A0210061455C /* Debug */,
 				0BB4C14A2551A0210061455C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0BCD8DE4264B644B00596709 /* Build configuration list for PBXNativeTarget "DnDAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BCD8DE5264B644B00596709 /* Debug */,
+				0BCD8DE6264B644B00596709 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0BCD8E2B264C3A4400596709 /* Build configuration list for PBXNativeTarget "DnDAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0BCD8E29264C3A4400596709 /* Debug */,
+				0BCD8E2A264C3A4400596709 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
