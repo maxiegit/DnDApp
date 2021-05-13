@@ -64,5 +64,10 @@ struct PlayerCharacter: Codable, Identifiable {
 
     // misc
     var initiative: [String]
-    var journal: [String]
+    var journal: [Journal]
+}
+
+struct Journal: Codable, Hashable {
+    var name: String
+    var text: String
 }

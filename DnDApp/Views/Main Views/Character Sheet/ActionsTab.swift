@@ -4,8 +4,8 @@ struct ActionsTab: View {
 
     @ObservedObject var charVM: CharacterViewModel
     @State var toggleSheet = (show: false, sheet: invSheet.spell)
-    
-    init(charVM: CharacterViewModel){
+
+    init(charVM: CharacterViewModel) {
         self.charVM = charVM
         UITableView.appearance().backgroundColor = .clear
     }

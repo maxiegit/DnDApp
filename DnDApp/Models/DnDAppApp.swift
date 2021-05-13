@@ -8,15 +8,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
         // init firebase
         FirebaseApp.configure()
-        
+
         UITableView.appearance().backgroundColor = .clear
-        
-        //Use this if NavigationBarTitle is with Large Font
+
+        // Use this if NavigationBarTitle is with Large Font
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
 
-        //Use this if NavigationBarTitle is with displayMode = .inline
+        // Use this if NavigationBarTitle is with displayMode = .inline
         UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.white]
-            
 
         // Checking if unit tests are running
         if ProcessInfo.processInfo.environment["unit_tests"] == "true" {

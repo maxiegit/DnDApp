@@ -5,8 +5,8 @@ struct Condition: View {
     @ObservedObject var charVM: CharacterViewModel
     @State var toggleLangSheet: Bool = false
     @State var toggleProfSheet: Bool = false
-    
-    init(charVM: CharacterViewModel){
+
+    init(charVM: CharacterViewModel) {
         self.charVM = charVM
         UITableView.appearance().backgroundColor = .clear
     }
@@ -71,7 +71,7 @@ struct Condition: View {
                 SavingThrowTable(charVM: charVM)
                     .padding(.leading, 45)
             })
-            
+
             Section(header: Text("Death Saving Throws"), content: {
                 DeathSavingThrow(charVM: charVM)
             })
