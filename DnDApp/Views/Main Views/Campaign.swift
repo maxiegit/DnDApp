@@ -13,26 +13,29 @@ struct Campaign: View {
 
             VStack(spacing: 20) {
                 HStack(spacing: 25) {
-                    CampaignScreenButton(destination: AnyView(RollerView()), symbol: "hexagon.fill")
+                    CampaignScreenButton(destination: AnyView(RollerView()), symbol: "hexagon.fill", width: 175, height: 175)
                         .overlay(Text("20")
                                     .font(.title)
                                     .fontWeight(.light))
+                                    .foregroundColor(.black)
 
                     if charVM.character.isDM {
-                        CampaignScreenButton(destination: AnyView(Initiative(charVM: charVM)), symbol: "list.bullet")
+                        CampaignScreenButton(destination: AnyView(Initiative(charVM: charVM)), symbol: "list.bullet", width: 175, height: 175)
                     } else {
-                        CampaignScreenButton(destination: AnyView(CharacterSheet(charVM: charVM)), symbol: "person.fill")
+                        CampaignScreenButton(destination: AnyView(CharacterSheet(charVM: charVM)), symbol: "person.fill", width: 175, height: 175)
                     }
                 }
 
                 HStack(spacing: 25) {
-                    CampaignScreenButton(destination: AnyView(CameraPlacehold()), symbol: "bubble.right.fill")
+                    CampaignScreenButton(destination: AnyView(ProbabilityView()), symbol: "percent", width: 175, height: 175)
 
-                    CampaignScreenButton(destination: AnyView(SpellDatabaseView()), symbol: "book.circle")
+                    CampaignScreenButton(destination: AnyView(SpellDatabaseView()), symbol: "book.circle", width: 175, height: 175)
                 }
-                CampaignScreenButton(destination: AnyView(ProbabilityView()), symbol: "percent")
+                
+                CampaignScreenButton(destination: AnyView(Database()), symbol: "archivebox.fill", width: 370, height: 150)
             }
             .padding(.bottom)
+            .navigationBarTitle(charVM.character.name, displayMode: .inline)
         }
         .navigationBarItems(trailing: Button(action: {presentActionSheet.toggle()}, label: {
             Image(systemName: "ellipsis.circle.fill")
@@ -40,7 +43,7 @@ struct Campaign: View {
         .actionSheet(isPresented: $presentActionSheet, content: {
             ActionSheet(title: Text("Are you sure?"),
                         buttons: [
-                        .destructive(Text("Delete item"),
+                        .destructive(Text("Delete"),
                         action: { delete() }),
                         .cancel()
                         ])
