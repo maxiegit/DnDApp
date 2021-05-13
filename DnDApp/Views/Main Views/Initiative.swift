@@ -1,14 +1,21 @@
 import SwiftUI
 
 struct Initiative: View {
-
+    
     @ObservedObject var charVM: CharacterViewModel
 
+    
+    init(charVM: CharacterViewModel){
+        self.charVM = charVM
+        UITableView.appearance().backgroundColor = .clear
+    }
+    
     var body: some View {
 
         Form {
             Section(header: HStack {
                 Text("Initiaive Order")
+                    .foregroundColor(.white)
                 Spacer()
                 Button(action: {
                     charVM.character.initiative.append("")
@@ -16,6 +23,7 @@ struct Initiative: View {
                 }, label: {
                     Image(systemName: "plus")
                         .font(.headline)
+                        .foregroundColor(.blue)
                 })
             }) {
                 List {
@@ -30,11 +38,14 @@ struct Initiative: View {
                     charVM.updateCharacter()
                 }, label: {
                     Text("Clear")
+                        .foregroundColor(.red)
                 })
             }
 
         }
         .navigationBarTitle("", displayMode: .inline)
+        .background(Color.flatDarkBackground).ignoresSafeArea()
+        .foregroundColor(.black)
 
     }
 }
