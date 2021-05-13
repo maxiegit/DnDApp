@@ -18,6 +18,7 @@ struct SpellDatabaseView: View {
                         SpellCell(spellVM: spellVM)
                     }
                 }
+                .listRowBackground(Color.flatDarkBackground)
             }
             .toolbar {
                 ToolbarItem {
@@ -26,6 +27,7 @@ struct SpellDatabaseView: View {
                     })
                 }
             }
+            .background(Color.flatDarkBackground).ignoresSafeArea()
             .navigationBarTitle("", displayMode: .inline)
             .navigationBarItems(leading: NavigationLink(destination: Database()) {
                 Text("")
@@ -51,6 +53,7 @@ struct SpellSelectionCell: View {
 
     var body: some View {
         Text(spellVM.spell.name)
+            .foregroundColor(.white)
             .onTapGesture {
                 charVM.character.spells.append(spellVM.spell)
                 charVM.updateCharacter()
@@ -66,6 +69,7 @@ struct SpellCell: View {
         NavigationLink(destination: SpellDetailView(spell: spellVM.spell)) {
             VStack {
                 Text(spellVM.spell.name)
+                    .foregroundColor(.white)
             }
         }
     }

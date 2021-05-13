@@ -93,6 +93,7 @@ struct EditBackground: View {
                         }
                     }
                 }
+                .background(Color.flatDarkBackground).ignoresSafeArea()
                 .navigationTitle(mode == .new ? "New Background" : "Edit \(backgroundModel.background.name)")
                 .navigationBarItems(leading: Button(action: {self.presentationMode.wrappedValue.dismiss()},
                                                     label: {

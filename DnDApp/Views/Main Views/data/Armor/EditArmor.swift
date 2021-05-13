@@ -44,6 +44,7 @@ struct EditArmor: View {
                     }
 
                 }
+                .background(Color.flatDarkBackground).ignoresSafeArea()
                 .navigationTitle(mode == .new ? "New Armor" : "Edit \(armorModel.armor.name)")
                 .navigationBarItems(leading: Button(action: {self.presentationMode.wrappedValue.dismiss()},
                                                     label: {

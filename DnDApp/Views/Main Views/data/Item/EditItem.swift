@@ -48,6 +48,7 @@ struct EditItem: View {
                     }
 
                 }
+                .background(Color.flatDarkBackground).ignoresSafeArea()
                 .navigationTitle(mode == .new ? "New Item" : "Edit \(itemModel.item.name)")
                 .navigationBarItems(leading: Button(action: {self.presentationMode.wrappedValue.dismiss()},
                                                     label: {

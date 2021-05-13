@@ -67,6 +67,7 @@ struct EditWeapon: View {
                         }
                     }
                 }
+                .background(Color.flatDarkBackground).ignoresSafeArea()
                 .navigationTitle(mode == .new ? "New Weapon" : "Edit \(weaponModel.weapon.name)")
                 .navigationBarItems(leading: Button(action: {self.presentationMode.wrappedValue.dismiss()},
                                                     label: {

@@ -7,33 +7,38 @@ struct ItemDatabaseView: View {
     @StateObject var itemVM = ItemViewModel()
     @State var addToInventory = false
     @State private var toggleSheet = false
-
+    
     var body: some View {
-        VStack {
-            List {
-                ForEach(listVM.itemViewModel) { itemVM in
-                    if addToInventory {
-                        ItemSelectionCell(itemVM: itemVM, charVM: charVM)
-                    } else {
-                        ItemCell(itemVM: itemVM)
+
+            
+            VStack {
+                List {
+                    ForEach(listVM.itemViewModel) { itemVM in
+                        if addToInventory {
+                            ItemSelectionCell(itemVM: itemVM, charVM: charVM)
+                        } else {
+                            ItemCell(itemVM: itemVM)
+                        }
+                    }
+                    .listRowBackground(Color.flatDarkBackground)
+                }
+                .toolbar {
+                    ToolbarItem {
+                        Button(action: { toggleSheet.toggle() }, label: {
+                            Image(systemName: "plus")
+                        })
                     }
                 }
             }
-            .toolbar {
-                ToolbarItem {
-                    Button(action: { toggleSheet.toggle() }, label: {
-                        Image(systemName: "plus")
-                    })
-                }
-            }
-        }
-        .navigationBarTitle("", displayMode: .inline)
-        .navigationBarItems(leading: NavigationLink(destination: Database()) {
-            Text("")
+            .background(Color.flatDarkBackground).ignoresSafeArea()
+            .navigationBarTitle("", displayMode: .inline)
+            .navigationBarItems(leading: NavigationLink(destination: Database()) {
+                Text("")
+            })
+            .sheet(isPresented: $toggleSheet, content: {
+                EditItem()
         })
-        .sheet(isPresented: $toggleSheet, content: {
-            EditItem()
-        })
+        
     }
 
     struct DatabaseCategory_Previews: PreviewProvider {
@@ -51,6 +56,7 @@ struct ItemSelectionCell: View {
 
     var body: some View {
         Text(itemVM.item.name)
+            .foregroundColor(.white)
             .onTapGesture {
                 charVM.character.items.append(itemVM.item)
                 charVM.updateCharacter()
@@ -66,6 +72,7 @@ struct ItemCell: View {
         NavigationLink(destination: ItemDetailView(item: itemVM.item)) {
             VStack {
                 Text(itemVM.item.name)
+                    .foregroundColor(.white)
             }
         }
     }

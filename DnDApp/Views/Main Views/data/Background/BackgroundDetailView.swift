@@ -104,6 +104,7 @@ struct BackgroundDetailView: View {
                 Text("Edit")
             }
         }
+        .background(Color.flatDarkBackground).ignoresSafeArea()
         .navigationBarTitle("", displayMode: .inline)
         .sheet(isPresented: self.$presentEditScreen, content: {
             EditBackground(backgroundModel: BackgroundViewModel(background: background), mode: .edit) { result in

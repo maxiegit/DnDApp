@@ -19,7 +19,9 @@ struct ArmorDatabaseView: View {
                             ArmorCell(armorVM: armorVM)
                         }
                     }
+                    .listRowBackground(Color.flatDarkBackground)
                 }
+                .background(Color.flatDarkBackground).ignoresSafeArea()
                 .toolbar {
                     ToolbarItem {
                         Button(action: { toggleSheet.toggle() }, label: {
@@ -51,6 +53,7 @@ struct ArmorSelectionCell: View {
 
     var body: some View {
         Text(armorVM.armor.name)
+            .foregroundColor(.white)
             .onTapGesture {
                 charVM.character.armor.append(armorVM.armor)
                 charVM.updateCharacter()
@@ -66,6 +69,7 @@ struct ArmorCell: View {
         NavigationLink(destination: ArmorDetailView(armor: armorVM.armor)) {
             VStack {
                 Text(armorVM.armor.name)
+                    .foregroundColor(.white)
             }
         }
     }
