@@ -18,8 +18,10 @@ class CharacterRepository: ObservableObject {
     //grabs all the data from the  character collection
     func loadData() {
         
-        let userID = Auth.auth().currentUser?.uid
-
+        guard let userID = Auth.auth().currentUser?.uid else{
+            print("error: no user ID")
+            return
+        }
         db.collection("characters").whereField("userID", isEqualTo: userID).addSnapshotListener { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
                 self.characters = querySnapshot.documents.compactMap {document in
