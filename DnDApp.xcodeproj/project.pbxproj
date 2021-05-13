@@ -12,7 +12,7 @@
 		0B13B958255C69700078E076 /* Extenstions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13B957255C69700078E076 /* Extenstions.swift */; };
 		0B13B95B255CAB200078E076 /* DiceSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B13B95A255CAB200078E076 /* DiceSection.swift */; };
 		0B1C8A1F2608C03A00ACA518 /* CameraPlacehold.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C8A1E2608C03A00ACA518 /* CameraPlacehold.swift */; };
-		0B1C8A23260A22E300ACA518 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C8A22260A22E300ACA518 /* Character.swift */; };
+		0B1C8A23260A22E300ACA518 /* PlayerCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C8A22260A22E300ACA518 /* PlayerCharacter.swift */; };
 		0B1C8A26260A346800ACA518 /* CharacterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C8A25260A346800ACA518 /* CharacterRepository.swift */; };
 		0B1C8A29260A358100ACA518 /* CharacterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C8A28260A358100ACA518 /* CharacterViewModel.swift */; };
 		0B1C8A2C260F862200ACA518 /* NewCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C8A2B260F862200ACA518 /* NewCharacter.swift */; };
@@ -49,6 +49,9 @@
 		0BCD8DC22642F3E900596709 /* DmPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD8DC12642F3E900596709 /* DmPill.swift */; };
 		0BCD8DE0264B644B00596709 /* DnDAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD8DDF264B644B00596709 /* DnDAppTests.swift */; };
 		0BCD8E25264C3A4400596709 /* DnDAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD8E24264C3A4400596709 /* DnDAppUITests.swift */; };
+		0BCD8F3A264D54A200596709 /* SignInWithAppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD8F39264D54A200596709 /* SignInWithAppleCoordinator.swift */; };
+		0BCD8F3F264D553300596709 /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD8F3E264D553300596709 /* SignInButton.swift */; };
+		0BCD8F44264D555100596709 /* SignInview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD8F43264D555100596709 /* SignInview.swift */; };
 		0BCE95B0263AA58C004D30B3 /* ProbabilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE95AF263AA58C004D30B3 /* ProbabilityView.swift */; };
 		0BCE95B3263AA6CC004D30B3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE95B2263AA6CC004D30B3 /* Box.swift */; };
 		0BCE95B6263AAD96004D30B3 /* Probability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE95B5263AAD96004D30B3 /* Probability.swift */; };
@@ -108,7 +111,7 @@
 		0B13B957255C69700078E076 /* Extenstions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extenstions.swift; sourceTree = "<group>"; };
 		0B13B95A255CAB200078E076 /* DiceSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceSection.swift; sourceTree = "<group>"; };
 		0B1C8A1E2608C03A00ACA518 /* CameraPlacehold.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPlacehold.swift; sourceTree = "<group>"; };
-		0B1C8A22260A22E300ACA518 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
+		0B1C8A22260A22E300ACA518 /* PlayerCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCharacter.swift; sourceTree = "<group>"; };
 		0B1C8A25260A346800ACA518 /* CharacterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterRepository.swift; sourceTree = "<group>"; };
 		0B1C8A28260A358100ACA518 /* CharacterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewModel.swift; sourceTree = "<group>"; };
 		0B1C8A2B260F862200ACA518 /* NewCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCharacter.swift; sourceTree = "<group>"; };
@@ -151,6 +154,9 @@
 		0BCD8E22264C3A4400596709 /* DnDAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DnDAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0BCD8E24264C3A4400596709 /* DnDAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DnDAppUITests.swift; sourceTree = "<group>"; };
 		0BCD8E26264C3A4400596709 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0BCD8F39264D54A200596709 /* SignInWithAppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleCoordinator.swift; sourceTree = "<group>"; };
+		0BCD8F3E264D553300596709 /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
+		0BCD8F43264D555100596709 /* SignInview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInview.swift; sourceTree = "<group>"; };
 		0BCE95AF263AA58C004D30B3 /* ProbabilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProbabilityView.swift; sourceTree = "<group>"; };
 		0BCE95B2263AA6CC004D30B3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		0BCE95B5263AAD96004D30B3 /* Probability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Probability.swift; sourceTree = "<group>"; };
@@ -254,7 +260,7 @@
 				0BE49A1825D6E04300E69471 /* Armor.swift */,
 				0BE49A1725D6E04300E69471 /* Weapon.swift */,
 				0BE49A2525DC24A800E69471 /* Roller.swift */,
-				0B1C8A22260A22E300ACA518 /* Character.swift */,
+				0B1C8A22260A22E300ACA518 /* PlayerCharacter.swift */,
 				0B4BA35E263946D90079DDC9 /* Background.swift */,
 				0BCE95B5263AAD96004D30B3 /* Probability.swift */,
 			);
@@ -288,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				0B77621625ED114C00338CCE /* Webservice.swift */,
+				0BCD8F39264D54A200596709 /* SignInWithAppleCoordinator.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -356,6 +363,7 @@
 				0B4BA37D2639CAFC0079DDC9 /* EditorView.swift */,
 				0BCE95B2263AA6CC004D30B3 /* Box.swift */,
 				0BCD8DC12642F3E900596709 /* DmPill.swift */,
+				0BCD8F3E264D553300596709 /* SignInButton.swift */,
 			);
 			path = "Support Views";
 			sourceTree = "<group>";
@@ -370,6 +378,7 @@
 				0B0952BD255B6C560012C64F /* RollerView.swift */,
 				0B1C8A1E2608C03A00ACA518 /* CameraPlacehold.swift */,
 				0BCE95AF263AA58C004D30B3 /* ProbabilityView.swift */,
+				0BCD8F43264D555100596709 /* SignInview.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -743,13 +752,15 @@
 				0B13B955255C69450078E076 /* PcPill.swift in Sources */,
 				0B85043C263714BB0073FF6E /* DeathSavingThrow.swift in Sources */,
 				0B4BA37E2639CAFC0079DDC9 /* EditorView.swift in Sources */,
+				0BCD8F3A264D54A200596709 /* SignInWithAppleCoordinator.swift in Sources */,
 				0B1C8A1F2608C03A00ACA518 /* CameraPlacehold.swift in Sources */,
+				0BCD8F3F264D553300596709 /* SignInButton.swift in Sources */,
 				0BCE95B9263AAE1A004D30B3 /* ProbabilityViewModel.swift in Sources */,
 				0BE49A0625D6DF0200E69471 /* EditWeapon.swift in Sources */,
 				0BE49A2625DC24A800E69471 /* Roller.swift in Sources */,
 				0BE49A0D25D6DF0200E69471 /* ArmorDatabse.swift in Sources */,
 				0B4BA35F263946D90079DDC9 /* Background.swift in Sources */,
-				0B1C8A23260A22E300ACA518 /* Character.swift in Sources */,
+				0B1C8A23260A22E300ACA518 /* PlayerCharacter.swift in Sources */,
 				0B4BA3782639BFF50079DDC9 /* InventoryTab.swift in Sources */,
 				0BE49A0C25D6DF0200E69471 /* EditItem.swift in Sources */,
 				0BE49A1925D6E04300E69471 /* Weapon.swift in Sources */,
@@ -761,6 +772,7 @@
 				0BE49A0A25D6DF0200E69471 /* ItemDatabaseView.swift in Sources */,
 				0B13B958255C69700078E076 /* Extenstions.swift in Sources */,
 				0B1C8A342613749800ACA518 /* ProfTable.swift in Sources */,
+				0BCD8F44264D555100596709 /* SignInview.swift in Sources */,
 				0B506B82255E0B7700610557 /* CampaignScreenButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -2,7 +2,7 @@ import Foundation
 import FirebaseFirestoreSwift
 
 // Create the character model
-struct Character: Codable, Identifiable {
+struct PlayerCharacter: Codable, Identifiable {
     @DocumentID var id: String?
     var userID: String?
     var isDM: Bool

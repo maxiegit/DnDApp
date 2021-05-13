@@ -70,7 +70,7 @@ struct Editor: View {
 
 struct PersonalityTab_Previews: PreviewProvider {
     static var previews: some View {
-        PersonalityTab(charVM: CharacterViewModel(character: Character(
+        PersonalityTab(charVM: CharacterViewModel(character: PlayerCharacter(
                                                     isDM: false,
                                                     name: "Max Magill",
                                                     race: "Human",
