@@ -18,7 +18,10 @@ class ItemRepository: ObservableObject {
     //grabs all the data from the spell collection
     func loadData() {
         
-        let userID = Auth.auth().currentUser?.uid
+        guard let userID = Auth.auth().currentUser?.uid else{
+            print("error: no user ID")
+            return
+        }
         
         db.collection("items").order(by: "name").whereField("userID", isEqualTo: userID).addSnapshotListener { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {

@@ -17,9 +17,12 @@ class BackgroundRepository: ObservableObject {
     
     //grabs all the data from the  background collection
     func loadData() {
-        let userID = Auth.auth().currentUser?.uid
+        guard let userID = Auth.auth().currentUser?.uid else{
+            print("error: no user ID")
+            return
+        }
 
-        db.collection("backgrounds").order(by: "name").whereField("userID", isEqualTo: userID!).addSnapshotListener { (querySnapshot, error) in
+        db.collection("backgrounds").order(by: "name").whereField("userID", isEqualTo: userID).addSnapshotListener { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
                 self.backgrounds = querySnapshot.documents.compactMap {document in
                     do {

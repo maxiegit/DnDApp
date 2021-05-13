@@ -18,8 +18,10 @@ class WeaponRepository: ObservableObject {
     
     //grabs all the data from the weapon collection
     func loadData() {
-        let userID = Auth.auth().currentUser?.uid
-
+        guard let userID = Auth.auth().currentUser?.uid else{
+            print("error: no user ID")
+            return
+        }
         db.collection("weapon").order(by: "name").whereField("userID", isEqualTo: userID).addSnapshotListener { (querySnapshot, error) in
             if let querySnapshot = querySnapshot {
                 self.weapon = querySnapshot.documents.compactMap {document in
