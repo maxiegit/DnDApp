@@ -79,7 +79,6 @@ struct PersonalityTab_Previews: PreviewProvider {
                                                     alignment: "Lawful Good", background: "Hermit",
                                                     ac: 23, hp: 20, tempHp: 0,
                                                     speed: 0, profBonus: 2,
-                                                    hitDice: [],
                                                     inspo: false,
                                                     dstFailure: [false, false, false], dstSuccess: [false, false, false],
                                                     strength: 10, dexterity: 13, constitution: 16,
@@ -102,10 +101,9 @@ struct PersonalityTab_Previews: PreviewProvider {
                                                         Weapon(name: "Rapier", cost: 40, weight: 20, damage: "1d8", type: "Pericing", martial: true, magic: false, descriptors: ["light", "finesse"], description: "A standard issue rapier")],
                                                     armor: [Armor(name: "Chainmail", cost: 40, weight: 30, ac: 15, type: "heavy", magic: false, description: "A set of chainmail")],
                                                     cp: 0, sp: 0, gp: 0, ep: 0, pp: 0,
-                                                    attacks: [],
-                                                    classAbilities: [],
                                                     spells: [
                                                         Spell(name: "Firebolt", level: 0, school: "Evocation", castTime: "1 Action", range: "120 ft", components: "V, S", duration: "Instant", description: "You hurl a mote of fire at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 fire damage. A flammable object hit by this spell ignites if it isn't being worn or carried.", ritual: false)
-                                                    ])))
+                                                    ],
+                                                    initiative: [], journal: [])))
     }
 }

@@ -4,7 +4,7 @@ import AuthenticationServices
 import Firebase
 import FirebaseAuth
 
-class SignInWithAppleCoordinator: NSObject, ASAuthorizationControllerPresentationContextProviding{
+class SignInWithAppleCoordinator: NSObject, ASAuthorizationControllerPresentationContextProviding {
 
     private var onSignIn: (() -> Void)?
 
@@ -64,11 +64,10 @@ extension SignInWithAppleCoordinator: ASAuthorizationControllerDelegate {
             let credential = OAuthProvider.credential(withProviderID: "apple.com",
                                                       idToken: idTokenString,
                                                       rawNonce: nonce)
-            Auth.auth().currentUser?.link(with: credential, completion: {(authresult, error) in
-                if(error != nil){
+            Auth.auth().currentUser?.link(with: credential, completion: {(_, error) in
+                if error != nil {
                     print("Error with sign in: \(String(describing: error?.localizedDescription))")
-                }
-                else{
+                } else {
                     if let callback = self.onSignIn {
                         callback()
                     }
@@ -84,11 +83,10 @@ extension SignInWithAppleCoordinator: ASAuthorizationControllerDelegate {
 
 }
 
-
 // Adapted from https://auth0.com/docs/api-auth/tutorials/nonce#generate-a-cryptographically-random-nonce
 private func randomNonceString(length: Int = 32) -> String {
     precondition(length > 0)
-    let charset: Array<Character> =
+    let charset: [Character] =
         Array("0123456789ABCDEFGHIJKLMNOPQRSTUVXYZabcdefghijklmnopqrstuvwxyz-._")
     var result = ""
     var remainingLength = length

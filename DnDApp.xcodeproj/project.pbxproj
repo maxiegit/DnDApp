@@ -52,6 +52,7 @@
 		0BCD8F3A264D54A200596709 /* SignInWithAppleCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD8F39264D54A200596709 /* SignInWithAppleCoordinator.swift */; };
 		0BCD8F3F264D553300596709 /* SignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD8F3E264D553300596709 /* SignInButton.swift */; };
 		0BCD8F44264D555100596709 /* SignInview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD8F43264D555100596709 /* SignInview.swift */; };
+		0BCD8F52264D5C7400596709 /* Initiative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCD8F51264D5C7400596709 /* Initiative.swift */; };
 		0BCE95B0263AA58C004D30B3 /* ProbabilityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE95AF263AA58C004D30B3 /* ProbabilityView.swift */; };
 		0BCE95B3263AA6CC004D30B3 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE95B2263AA6CC004D30B3 /* Box.swift */; };
 		0BCE95B6263AAD96004D30B3 /* Probability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCE95B5263AAD96004D30B3 /* Probability.swift */; };
@@ -157,6 +158,7 @@
 		0BCD8F39264D54A200596709 /* SignInWithAppleCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInWithAppleCoordinator.swift; sourceTree = "<group>"; };
 		0BCD8F3E264D553300596709 /* SignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInButton.swift; sourceTree = "<group>"; };
 		0BCD8F43264D555100596709 /* SignInview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInview.swift; sourceTree = "<group>"; };
+		0BCD8F51264D5C7400596709 /* Initiative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Initiative.swift; sourceTree = "<group>"; };
 		0BCE95AF263AA58C004D30B3 /* ProbabilityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProbabilityView.swift; sourceTree = "<group>"; };
 		0BCE95B2263AA6CC004D30B3 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		0BCE95B5263AAD96004D30B3 /* Probability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Probability.swift; sourceTree = "<group>"; };
@@ -379,6 +381,7 @@
 				0B1C8A1E2608C03A00ACA518 /* CameraPlacehold.swift */,
 				0BCE95AF263AA58C004D30B3 /* ProbabilityView.swift */,
 				0BCD8F43264D555100596709 /* SignInview.swift */,
+				0BCD8F51264D5C7400596709 /* Initiative.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -746,6 +749,7 @@
 				0BB4C13D2551A01D0061455C /* DnDAppApp.swift in Sources */,
 				0B1C8A26260A346800ACA518 /* CharacterRepository.swift in Sources */,
 				0BCD8DC22642F3E900596709 /* DmPill.swift in Sources */,
+				0BCD8F52264D5C7400596709 /* Initiative.swift in Sources */,
 				0B85043F263715130073FF6E /* SavingThrowTable.swift in Sources */,
 				0B1C8A29260A358100ACA518 /* CharacterViewModel.swift in Sources */,
 				0BB4C15A2551EB220061455C /* Campaign.swift in Sources */,
