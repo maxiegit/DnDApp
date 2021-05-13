@@ -47,6 +47,8 @@ struct SpellDetailView: View {
                 Text("Edit")
             }
         }
+        .background(Color.flatDarkBackground).ignoresSafeArea()
+
         .navigationBarTitle("", displayMode: .inline)
         .sheet(isPresented: self.$presentEditScreen, content: {
             EditSpell(spellModel: SpellViewModel(spell: spell), mode: .edit) { result in

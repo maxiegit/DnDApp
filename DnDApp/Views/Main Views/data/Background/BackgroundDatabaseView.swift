@@ -12,6 +12,7 @@ struct BackgroundDatabaseView: View {
                 ForEach(listVM.backgroundViewModel) { backgroundVM in
                     BackgroundCell(backgroundVM: backgroundVM)
                 }
+                .listRowBackground(Color.flatDarkBackground)
             }
             .toolbar {
                 ToolbarItem {
@@ -20,6 +21,7 @@ struct BackgroundDatabaseView: View {
                     })
                 }
             }
+            .background(Color.flatDarkBackground).ignoresSafeArea()
             .navigationBarTitle("", displayMode: .inline)
             .navigationBarItems(leading: NavigationLink(destination: Database()) {
                 Text("")
@@ -44,6 +46,7 @@ struct BackgroundCell: View {
         NavigationLink(destination: BackgroundDetailView(background: backgroundVM.background)) {
             VStack {
                 Text(backgroundVM.background.name)
+                    .foregroundColor(.white)
             }
         }
     }

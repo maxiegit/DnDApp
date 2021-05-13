@@ -48,6 +48,7 @@ struct WeaponDetailView: View {
                 Text("Edit")
             }
         }
+        .background(Color.flatDarkBackground).ignoresSafeArea()
         .navigationBarTitle("", displayMode: .inline)
         .sheet(isPresented: self.$presentEditScreen, content: {
             EditWeapon(weaponModel: WeaponViewModel(weapon: weapon), weapon: weapon, mode: .edit) { result in

@@ -24,10 +24,12 @@ struct ItemDetailView: View {
                     Text(item.description)
                 }
             }
+            
             Button(action: {self.presentEditScreen.toggle()}) {
                 Text("Edit")
             }
         }
+        .background(Color.flatDarkBackground).ignoresSafeArea()
         .navigationBarTitle("", displayMode: .inline)
         .sheet(isPresented: self.$presentEditScreen, content: {
             EditItem(itemModel: ItemViewModel(item: item), mode: .edit) { result in

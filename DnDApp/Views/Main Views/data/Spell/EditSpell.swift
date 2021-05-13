@@ -51,6 +51,7 @@ struct EditSpell: View {
                         }
                     }
                 }
+                .background(Color.flatDarkBackground).ignoresSafeArea()
                 .navigationTitle(mode == .new ? "New Spell" : "Edit \(spellModel.spell.name)")
                 .navigationBarItems(leading: Button(action: {self.presentationMode.wrappedValue.dismiss()},
                                                     label: {

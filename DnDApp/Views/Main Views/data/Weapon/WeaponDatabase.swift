@@ -19,6 +19,7 @@ struct WeaponDatabaseView: View {
                             WeaponCell(weaponVM: weaponVM)
                         }
                     }
+                    .listRowBackground(Color.flatDarkBackground)
                 }
                 .toolbar {
                     ToolbarItem {
@@ -29,6 +30,7 @@ struct WeaponDatabaseView: View {
                 }
 
             }
+            .background(Color.flatDarkBackground).ignoresSafeArea()
             .navigationBarTitle("", displayMode: .inline)
             .navigationBarItems(leading: NavigationLink(destination: Database()) {
                 Text("")
@@ -54,6 +56,7 @@ struct WeaponSelectionCell: View {
 
     var body: some View {
         Text(weaponVM.weapon.name)
+            .foregroundColor(.white)
             .onTapGesture {
                 charVM.character.weapons.append(weaponVM.weapon)
                 charVM.updateCharacter()
@@ -69,6 +72,7 @@ struct WeaponCell: View {
         NavigationLink(destination: WeaponDetailView(weapon: weaponVM.weapon)) {
             VStack {
                 Text(weaponVM.weapon.name)
+                    .foregroundColor(.white)
             }
         }
     }

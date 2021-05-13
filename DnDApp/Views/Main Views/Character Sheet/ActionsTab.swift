@@ -4,6 +4,11 @@ struct ActionsTab: View {
 
     @ObservedObject var charVM: CharacterViewModel
     @State var toggleSheet = (show: false, sheet: invSheet.spell)
+    
+    init(charVM: CharacterViewModel){
+        self.charVM = charVM
+        UITableView.appearance().backgroundColor = .clear
+    }
 
     var body: some View {
         VStack {
@@ -120,6 +125,7 @@ struct ActionsTab: View {
                     }
                 }
             }
+            .background(Color.flatDarkBackground).ignoresSafeArea()
         }
         .sheet(isPresented: $toggleSheet.show, content: {
             if toggleSheet.sheet == .spell {

@@ -39,6 +39,7 @@ struct ArmorDetailView: View {
                 Text("Edit")
             }
         }
+        .background(Color.flatDarkBackground).ignoresSafeArea()
         .navigationBarTitle("", displayMode: .inline)
         .sheet(isPresented: self.$presentEditScreen, content: {
             EditArmor(armorModel: ArmorViewModel(armor: armor), mode: .edit) { result in

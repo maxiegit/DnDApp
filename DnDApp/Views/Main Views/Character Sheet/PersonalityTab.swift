@@ -3,36 +3,48 @@ import SwiftUI
 struct PersonalityTab: View {
 
     @ObservedObject var charVM: CharacterViewModel
+    
+    init(charVM: CharacterViewModel){
+        self.charVM = charVM
+        UITableView.appearance().backgroundColor = .clear
+    }
 
     var body: some View {
         Form {
-            Section(header: Text("Alignment"), content: {
+            Section(header: Text("Alignment")
+                        .foregroundColor(.white), content: {
                 TextField("Alignment", text: $charVM.character.alignment)
             })
-            Section(header: Text("Background"), content: {
+            Section(header: Text("Background")
+                        .foregroundColor(.white), content: {
                 TextField("Background", text: $charVM.character.background)
                 })
-            Section(header: Text("Personality Traits"), content: {
+            Section(header: Text("Personality Traits")
+                        .foregroundColor(.white), content: {
                 NavigationLink(destination: Editor(charVM: charVM, txt: charVM.character.personality, trait: "personality")) {
                     Text(charVM.character.personality)
                 }
             })
-            Section(header: Text("Ideals"), content: {
+            Section(header: Text("Ideals")
+                        .foregroundColor(.white), content: {
                 NavigationLink(destination: Editor(charVM: charVM, txt: charVM.character.ideals, trait: "ideals")) {
                     Text(charVM.character.ideals)
                 }
             })
-            Section(header: Text("Bonds"), content: {
+            Section(header: Text("Bonds")
+                        .foregroundColor(.white), content: {
                 NavigationLink(destination: Editor(charVM: charVM, txt: charVM.character.bonds, trait: "bonds")) {
                     Text(charVM.character.bonds)
                 }
             })
-            Section(header: Text("Flaws"), content: {
+            Section(header: Text("Flaws")
+                        .foregroundColor(.white), content: {
                 NavigationLink(destination: Editor(charVM: charVM, txt: charVM.character.flaws, trait: "flaws")) {
                     Text(charVM.character.flaws)
                 }
             })
         }
+        .background(Color.flatDarkBackground).ignoresSafeArea()
     }
 }
 

@@ -34,6 +34,7 @@ struct NewCharacter: View {
                         .labelsHidden()
                     }
                 }
+                .background(Color.flatDarkBackground).ignoresSafeArea()
                 .navigationTitle("New Character")
                 .navigationBarItems(leading: Button(action: {self.presentationMode.wrappedValue.dismiss()},
                                                     label: {

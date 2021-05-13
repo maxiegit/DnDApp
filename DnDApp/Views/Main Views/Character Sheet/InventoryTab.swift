@@ -6,6 +6,11 @@ struct InventoryTab: View {
     @State var toggleItemSheet: Bool = false
     @State var toggleWeaponSheet: Bool = false
     @State var toggleArmorSheet: Bool = false
+    
+    init(charVM: CharacterViewModel){
+        self.charVM = charVM
+        UITableView.appearance().backgroundColor = .clear
+    }
 
     var body: some View {
         VStack {
@@ -106,6 +111,7 @@ struct InventoryTab: View {
                     }
                 }
             }
+            .background(Color.flatDarkBackground).ignoresSafeArea()
 
             .sheet(isPresented: $toggleSheet.show, content: {
                 if toggleSheet.sheet == .item {

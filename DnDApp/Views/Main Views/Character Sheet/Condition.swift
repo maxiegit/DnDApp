@@ -2,9 +2,14 @@ import SwiftUI
 
 struct Condition: View {
 
-    @StateObject var charVM: CharacterViewModel
+    @ObservedObject var charVM: CharacterViewModel
     @State var toggleLangSheet: Bool = false
     @State var toggleProfSheet: Bool = false
+    
+    init(charVM: CharacterViewModel){
+        self.charVM = charVM
+        UITableView.appearance().backgroundColor = .clear
+    }
 
     var body: some View {
         Form {
@@ -66,10 +71,12 @@ struct Condition: View {
                 SavingThrowTable(charVM: charVM)
                     .padding(.leading, 45)
             })
+            
             Section(header: Text("Death Saving Throws"), content: {
                 DeathSavingThrow(charVM: charVM)
             })
         }
+        .background(Color.flatDarkBackground).ignoresSafeArea()
     }
 
     func deleteLanguage(at offsets: IndexSet) {

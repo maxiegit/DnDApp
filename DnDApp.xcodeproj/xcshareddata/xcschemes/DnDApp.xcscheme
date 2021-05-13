@@ -74,7 +74,7 @@
          <EnvironmentVariable
             key = "unit_tests"
             value = "true"
-            isEnabled = "YES">
+            isEnabled = "NO">
          </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>
