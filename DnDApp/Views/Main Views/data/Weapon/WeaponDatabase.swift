@@ -6,23 +6,22 @@ struct WeaponDatabaseView: View {
     @ObservedObject var listVM = DatabaseListViewModel()
     @StateObject var weaponVM = WeaponViewModel()
     @State var addToInventory = false
-    
+
     @State private var toggleSheet = false
-    
+
     var body: some View {
             VStack {
-                List{
-                    ForEach(listVM.weaponViewModel){ weaponVM in
-                        if(addToInventory){
+                List {
+                    ForEach(listVM.weaponViewModel) { weaponVM in
+                        if addToInventory {
                             WeaponSelectionCell(weaponVM: weaponVM, charVM: charVM)
-                        }
-                        else{
+                        } else {
                             WeaponCell(weaponVM: weaponVM)
                         }
                     }
                 }
                 .toolbar {
-                    ToolbarItem{
+                    ToolbarItem {
                         Button(action: { toggleSheet.toggle() }, label: {
                             Image(systemName: "plus")
                         })
@@ -40,8 +39,6 @@ struct WeaponDatabaseView: View {
             })
         }
 
-
-    
         struct DatabaseCategory_Previews: PreviewProvider {
             static var previews: some View {
                 WeaponDatabaseView()
@@ -52,12 +49,10 @@ struct WeaponDatabaseView: View {
 struct WeaponSelectionCell: View {
     @ObservedObject var weaponVM: WeaponViewModel
     @ObservedObject var charVM: CharacterViewModel
-    
-    
+
     @Environment(\.presentationMode) var presentationMode
-    
-    
-    var body: some View{
+
+    var body: some View {
         Text(weaponVM.weapon.name)
             .onTapGesture {
                 charVM.character.weapons.append(weaponVM.weapon)
@@ -67,16 +62,14 @@ struct WeaponSelectionCell: View {
     }
 }
 
-struct WeaponCell: View{
+struct WeaponCell: View {
     @ObservedObject var weaponVM: WeaponViewModel
-    
 
-    var body: some View{
-        NavigationLink(destination: WeaponDetailView(weapon: weaponVM.weapon)){
-            VStack{
+    var body: some View {
+        NavigationLink(destination: WeaponDetailView(weapon: weaponVM.weapon)) {
+            VStack {
                 Text(weaponVM.weapon.name)
             }
         }
     }
 }
-

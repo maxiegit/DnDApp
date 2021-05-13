@@ -5,16 +5,16 @@ struct BackgroundDatabaseView: View {
     @ObservedObject var listVM = DatabaseListViewModel()
     @StateObject var backgroundVM = BackgroundViewModel()
     @State private var toggleSheet = false
-        
+
     var body: some View {
         VStack {
-            List{
-                ForEach(listVM.backgroundViewModel){ backgroundVM in
+            List {
+                ForEach(listVM.backgroundViewModel) { backgroundVM in
                     BackgroundCell(backgroundVM: backgroundVM)
                 }
             }
             .toolbar {
-                ToolbarItem{
+                ToolbarItem {
                     Button(action: { toggleSheet.toggle() }, label: {
                         Image(systemName: "plus")
                     })
@@ -29,7 +29,7 @@ struct BackgroundDatabaseView: View {
             })
         }
     }
-    
+
     struct BackgroundDatabase_Previews: PreviewProvider {
         static var previews: some View {
             BackgroundDatabaseView()
@@ -37,15 +37,14 @@ struct BackgroundDatabaseView: View {
     }
 }
 
-struct BackgroundCell: View{
+struct BackgroundCell: View {
     @ObservedObject var backgroundVM: BackgroundViewModel
-    
-    var body: some View{
-        NavigationLink(destination: BackgroundDetailView(background: backgroundVM.background)){
-            VStack{
+
+    var body: some View {
+        NavigationLink(destination: BackgroundDetailView(background: backgroundVM.background)) {
+            VStack {
                 Text(backgroundVM.background.name)
             }
         }
     }
 }
-

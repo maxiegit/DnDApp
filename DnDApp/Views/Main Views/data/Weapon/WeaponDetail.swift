@@ -1,47 +1,46 @@
 import SwiftUI
 
 struct WeaponDetailView: View {
-    
+
     @StateObject var weaponModel = WeaponViewModel()
     @State var presentEditScreen: Bool = false
     @Environment(\.presentationMode) var presentationMode
     var weapon: Weapon
-    
-    
+
     var body: some View {
         VStack {
-            Form{
-                Section(header: Text("Name")){
+            Form {
+                Section(header: Text("Name")) {
                     Text(weapon.name)
                 }
-                Section(header: Text("Cost")){
+                Section(header: Text("Cost")) {
                     Text(String(weapon.cost))
                 }
-                Section(header: Text("Weight")){
+                Section(header: Text("Weight")) {
                     Text(String(weapon.weight))
                 }
-                Section(header: Text("Damage")){
+                Section(header: Text("Damage")) {
                     Text(String(weapon.damage))
                 }
-                Section(header: Text("Type")){
+                Section(header: Text("Type")) {
                     Text(String(weapon.type))
                 }
-                Section(header: Text("Martial")){
+                Section(header: Text("Martial")) {
                     Toggle("", isOn: $weaponModel.weapon.martial)
                         .labelsHidden()
                         .disabled(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                 }
-                Section(header: Text("Magic")){
+                Section(header: Text("Magic")) {
                     Toggle("", isOn: $weaponModel.weapon.magic)
                         .labelsHidden()
                         .disabled(/*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/)
                 }
-                Section(header: Text("Descriptors")){
-                    List(weapon.descriptors, id: \.self){ desc in
+                Section(header: Text("Descriptors")) {
+                    List(weapon.descriptors, id: \.self) { desc in
                         Text(desc)
                     }
                 }
-                Section(header: Text("Description")){
+                Section(header: Text("Description")) {
                     Text(String(weapon.description))
                 }
             }

@@ -7,21 +7,20 @@ struct SpellDatabaseView: View {
     @StateObject var spellVM = SpellViewModel()
     @State var addToInventory = false
     @State private var toggleSheet = false
-        
+
     var body: some View {
         VStack {
-            List{
-                ForEach(listVM.spellViewModel){ spellVM in
-                    if(addToInventory){
+            List {
+                ForEach(listVM.spellViewModel) { spellVM in
+                    if addToInventory {
                         SpellSelectionCell(spellVM: spellVM, charVM: charVM)
-                    }
-                    else{
+                    } else {
                         SpellCell(spellVM: spellVM)
                     }
                 }
             }
             .toolbar {
-                ToolbarItem{
+                ToolbarItem {
                     Button(action: { toggleSheet.toggle() }, label: {
                         Image(systemName: "plus")
                     })
@@ -36,7 +35,7 @@ struct SpellDatabaseView: View {
             })
         }
     }
-    
+
     struct DatabaseCategory_Previews: PreviewProvider {
         static var previews: some View {
             SpellDatabaseView()
@@ -48,11 +47,9 @@ struct SpellSelectionCell: View {
     @ObservedObject var spellVM: SpellViewModel
     @ObservedObject var charVM: CharacterViewModel
 
-
     @Environment(\.presentationMode) var presentationMode
 
-    
-    var body: some View{
+    var body: some View {
         Text(spellVM.spell.name)
             .onTapGesture {
                 charVM.character.spells.append(spellVM.spell)
@@ -62,12 +59,12 @@ struct SpellSelectionCell: View {
     }
 }
 
-struct SpellCell: View{
+struct SpellCell: View {
     @ObservedObject var spellVM: SpellViewModel
-    
-    var body: some View{
-        NavigationLink(destination: SpellDetailView(spell: spellVM.spell)){
-            VStack{
+
+    var body: some View {
+        NavigationLink(destination: SpellDetailView(spell: spellVM.spell)) {
+            VStack {
                 Text(spellVM.spell.name)
             }
         }

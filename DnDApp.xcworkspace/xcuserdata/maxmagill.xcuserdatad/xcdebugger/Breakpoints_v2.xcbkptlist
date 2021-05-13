@@ -14,8 +14,8 @@
             filePath = "DnDApp/Repositories/ItemRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
             landmarkName = "loadData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -23,103 +23,24 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DA138563-3425-40ED-80B9-BBF07ACFA994"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DnDApp/Views/Main Views/MainMenu.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "DA138563-3425-40ED-80B9-BBF07ACFA994 - 95d89cbeebf99b7e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;DnDApp.CharacterViewModel&gt;, Swift.String, DnDApp.MainMenu.charCell&gt; in closure #1 () -&gt; SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;Swift.Array&lt;DnDApp.CharacterViewModel&gt;, Swift.String, DnDApp.MainMenu.charCell&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, SwiftUI.VStack&lt;SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;Swift.Array&lt;DnDApp.CharacterViewModel&gt;, Swift.String, DnDApp.MainMenu.charCell&gt;&gt;&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.sheet&lt;A where A1: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; A1) -&gt; some&gt;&gt;.0 in DnDApp.MainMenu.body.getter : some"
-                  moduleName = "DnDApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maxmagill/Projects/DnDApp/DnDApp/Views/Main%20Views/MainMenu.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "15"
-                  endingLineNumber = "15"
-                  offsetFromSymbolStart = "128">
-               </Location>
-               <Location
-                  uuid = "DA138563-3425-40ED-80B9-BBF07ACFA994 - f0f432f136562cce"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (DnDApp.CharacterViewModel) -&gt; DnDApp.MainMenu.charCell in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;DnDApp.CharacterViewModel&gt;, Swift.String, DnDApp.MainMenu.charCell&gt; in closure #1 () -&gt; SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;Swift.Array&lt;DnDApp.CharacterViewModel&gt;, Swift.String, DnDApp.MainMenu.charCell&gt;&gt; in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.ignoresSafeArea(_: SwiftUI.SafeAreaRegions, edges: SwiftUI.Edge.Set) -&gt; some&gt;&gt;.0, SwiftUI.VStack&lt;SwiftUI.ScrollView&lt;SwiftUI.ForEach&lt;Swift.Array&lt;DnDApp.CharacterViewModel&gt;, Swift.String, DnDApp.MainMenu.charCell&gt;&gt;&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of (extension in SwiftUI):SwiftUI.View.sheet&lt;A where A1: SwiftUI.View&gt;(isPresented: SwiftUI.Binding&lt;Swift.Bool&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: () -&gt; A1) -&gt; some&gt;&gt;.0 in DnDApp.MainMenu.body.getter : some"
-                  moduleName = "DnDApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maxmagill/Projects/DnDApp/DnDApp/Views/Main%20Views/MainMenu.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "38">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "481DEA29-4BA7-4638-B11A-C06B7F559142"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "DnDApp/Views/Main Views/MainMenu.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "D68128E3-5F82-4206-849E-AEE7D7BAD1CD"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DnDApp/Repositories/CharacterRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "deleteCharacter(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "D68128E3-5F82-4206-849E-AEE7D7BAD1CD - 7d75d2774c803813"
+                  uuid = "D68128E3-5F82-4206-849E-AEE7D7BAD1CD - 4c8b4cda2ad754c5"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "DnDApp.CharacterRepository.deleteCharacter(DnDApp.Character) -&gt; ()"
-                  moduleName = "DnDApp"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/maxmagill/Projects/DnDApp/DnDApp/Repositories/CharacterRepository.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "63"
-                  endingLineNumber = "63"
-                  offsetFromSymbolStart = "190">
-               </Location>
-               <Location
-                  uuid = "D68128E3-5F82-4206-849E-AEE7D7BAD1CD - 4289f6f29c55599c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in DnDApp.CharacterRepository.deleteCharacter(DnDApp.Character) -&gt; ()"
+                  symbolName = "DnDApp.CharacterRepository.deleteCharacter(DnDApp.PlayerCharacter) -&gt; ()"
                   moduleName = "DnDApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/maxmagill/Projects/DnDApp/DnDApp/Repositories/CharacterRepository.swift"
@@ -127,6 +48,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "64"
                   endingLineNumber = "64"
+                  offsetFromSymbolStart = "190">
+               </Location>
+               <Location
+                  uuid = "D68128E3-5F82-4206-849E-AEE7D7BAD1CD - 1fd500f4b9d8b610"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;) -&gt; () in DnDApp.CharacterRepository.deleteCharacter(DnDApp.PlayerCharacter) -&gt; ()"
+                  moduleName = "DnDApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/maxmagill/Projects/DnDApp/DnDApp/Repositories/CharacterRepository.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
                   offsetFromSymbolStart = "95">
                </Location>
             </Locations>
@@ -142,8 +78,8 @@
             filePath = "DnDApp/Repositories/CharacterRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "addCharacter(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -158,8 +94,8 @@
             filePath = "DnDApp/Repositories/ItemRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "deleteItem(_:)"
             landmarkType = "7">
             <Locations>
@@ -286,9 +222,57 @@
             filePath = "DnDApp/Repositories/CharacterRepository.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "deleteCharacter(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2BA036D5-F340-4533-855B-B255D720F5E7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DnDApp/Repositories/CharacterRepository.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "deleteCharacter(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F55560C6-3F7D-4E77-9184-27DFA00D78DA"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DnDApp/ViewModel/ItemViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "addItem()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F392601E-44E2-445A-9B5B-63AFD271D03E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DnDAppTests/DnDAppTests.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "testRollerWithValue()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

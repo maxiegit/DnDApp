@@ -12,22 +12,22 @@ struct menuRow: View {
     let campaignName: String
     let portrait: String
     let level: Int64
-    
+
     init(charName: String, campaignName: String, portrait: String, level: Int64) {
         self.charName = charName
         self.campaignName = campaignName
         self.portrait = portrait
         self.level = level
     }
-    
+
     var body: some View {
         HStack {
             Image(portrait)
                 .resizable()
                 .cornerRadius(/*@START_MENU_TOKEN@*/18.0/*@END_MENU_TOKEN@*/)
                 .padding(.leading)
-                .frame(width: 125, height: 115, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                
+                .frame(width: 125, height: 115, alignment: .center/*@END_MENU_TOKEN@*/)
+
             Spacer()
             VStack(alignment: .trailing) {
                 Text(charName)

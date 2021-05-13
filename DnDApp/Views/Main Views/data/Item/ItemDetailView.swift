@@ -1,16 +1,16 @@
 import SwiftUI
 
 struct ItemDetailView: View {
-    
+
     @StateObject var itemModel = ItemViewModel()
     @State var presentEditScreen = false
-    
+
     @Environment(\.presentationMode) var presentationMode
     var item: Item
-    
+
     var body: some View {
         VStack {
-            Form{
+            Form {
                 Section(header: Text("Item")) {
                     Text(item.name)
                 }

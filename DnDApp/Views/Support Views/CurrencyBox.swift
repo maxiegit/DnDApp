@@ -7,12 +7,12 @@ struct CurrencyBox: View {
     @ObservedObject var charVM: CharacterViewModel
 
     var body: some View {
-        ZStack(alignment: .center){
+        ZStack(alignment: .center) {
             Color.flatDarkCardBackground
-                .frame(width: 60, height: 65, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: 60, height: 65, alignment: .center/*@END_MENU_TOKEN@*/)
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .shadow(radius: 20)
-            
+
             VStack {
                 TextField("0", text: $currency)
                     // santise input
@@ -23,23 +23,23 @@ struct CurrencyBox: View {
                             self.currency = filtered
                         }
                     }
-                    .onChange(of: currency, perform: { newValue in
+                    .onChange(of: currency, perform: { _ in
                         currencyChange(currencyChanging: currencyName, currency: currency)
                     })
                     .fixedSize()
                     .foregroundColor(.white)
                     .font(Font.custom("OpenSans-Bold", size: 24))
                     .offset(y: 5)
-                
+
                 Text(currencyName)
                     .foregroundColor(.white)
                     .font(.subheadline)
             }
         }
     }
-    
-    func currencyChange(currencyChanging: String, currency: String){
-        switch(currencyChanging){
+
+    func currencyChange(currencyChanging: String, currency: String) {
+        switch currencyChanging {
             case("CP"):
                 charVM.character.cp = Int(currency) ?? 0
                 charVM.updateCharacter()

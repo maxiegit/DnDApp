@@ -1,7 +1,7 @@
 import SwiftUI
 
-//Mode switch enum
-enum Mode{
+// Mode switch enum
+enum Mode {
     case new
     case edit
     case read
@@ -14,19 +14,19 @@ enum Action {
 }
 
 struct EditItem: View {
-    
+
     @Environment(\.presentationMode) private var presentationMode
     @State var presentActionSheet = false
-    
+
     @ObservedObject var itemModel = ItemViewModel()
-    
+
     var mode: Mode = .new
     var completionHandler: ((Result<Action, Error>) -> Void)?
-    
+
     var body: some View {
         VStack {
-            NavigationView{
-                Form{
+            NavigationView {
+                Form {
                     Section(header: Text("Item")) {
                         TextField("Name", text: $itemModel.item.name)
                     }
@@ -39,14 +39,14 @@ struct EditItem: View {
                     Section(header: Text("Description")) {
                         TextField("Description", text: $itemModel.item.description)
                     }
-                    
-                    if(mode == .edit){
+
+                    if mode == .edit {
                         Button(action: {self.presentActionSheet.toggle()}) {
                             Text("Delete")
                                 .foregroundColor(.red)
                         }
                     }
-                    
+
                 }
                 .navigationTitle(mode == .new ? "New Item" : "Edit \(itemModel.item.name)")
                 .navigationBarItems(leading: Button(action: {self.presentationMode.wrappedValue.dismiss()},
@@ -58,7 +58,7 @@ struct EditItem: View {
                                     }))
                 .actionSheet(isPresented: $presentActionSheet, content: {
                     ActionSheet(title: Text("Are you sure?"),
-                                buttons:[
+                                buttons: [
                                 .destructive(Text("Delete item"),
                                 action: { delete() }),
                                 .cancel()
@@ -67,26 +67,23 @@ struct EditItem: View {
             }
         }
     }
-    
+
     // Condense closing and saving the document
-    func done(){
-        if(mode == .new){
+    func done() {
+        if mode == .new {
             itemModel.addItem()
-        }
-        else{
+        } else {
             itemModel.updateItem()
         }
         self.presentationMode.wrappedValue.dismiss()
     }
-    
-    func delete(){
+
+    func delete() {
         itemModel.deleteItem()
         self.presentationMode.wrappedValue.dismiss()
         self.completionHandler?(.success(.delete))
     }
 }
-
-
 
 struct NewItem_Previews: PreviewProvider {
     static var previews: some View {

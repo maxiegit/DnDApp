@@ -1,13 +1,13 @@
 import SwiftUI
 
 struct ProbabilityView: View {
-    
+
     @StateObject var prob = ProbabilityViewModel()
-    
+
     var body: some View {
-        ZStack{
+        ZStack {
             Color.flatDarkBackground.ignoresSafeArea()
-            VStack(alignment: .center){
+            VStack(alignment: .center) {
                 Spacer()
                 VStack {
                     Text("Target")
@@ -20,7 +20,7 @@ struct ProbabilityView: View {
                     Text("Dice")
                         .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                         .foregroundColor(.white)
-                    HStack{
+                    HStack {
                         Box(probVar: "dieNum", prob: prob)
                         Text("d")
                             .font(.largeTitle)
@@ -29,14 +29,14 @@ struct ProbabilityView: View {
                     }
                 }
                 Spacer()
-                VStack{
+                VStack {
                     Text("Bonus")
                         .font(.largeTitle)
                         .foregroundColor(.white)
                     Box(probVar: "bonus", prob: prob)
                 }
                 Spacer()
-                VStack{
+                VStack {
                     Text("Chance of Success")
                         .font(.title)
                         .foregroundColor(.white)

@@ -1,20 +1,20 @@
 import Foundation
 
-struct RollerViewModel{
-    
+struct RollerViewModel {
+
     // struct for the dice objuct recieved form the api to be assigned to
-    
+
     var dice: Dice
-    
+
     init(dice: Dice) {
         self.dice = dice
     }
-    
-    var id: Int{
+
+    var id: Int {
         return self.dice.id
     }
-    
-    var value: Int{
+
+    var value: Int {
         return self.dice.value
     }
 }
@@ -29,18 +29,18 @@ public enum DieSides {
     case twenty
 }
 
-class RollerListViewModel: ObservableObject{
-    
+class RollerListViewModel: ObservableObject {
+
     @Published var dice = [RollerViewModel]()
     var sideArray = [false, false, false, false, false, false]
     var x = 0
     var diceArray: [RollerViewModel] = []
-    
+
     // the main roll function
     // TODO: there is a bug where its using the previous set of results not the current
-    
-    func roll(){
-        for value in sideArray{
+
+    func roll() {
+        for value in sideArray {
             if value { // check the dice has been selected
                 Webservice().getRoll(sides: urlShite(arrPos: x)) { (dice) in
                     if let dice = dice {
@@ -53,28 +53,28 @@ class RollerListViewModel: ObservableObject{
         }
         x = 0
     }
-    
-    func addValue(rollerListVm: RollerListViewModel) -> Int{
+
+    func addValue(rollerListVm: RollerListViewModel) -> Int {
         var result = 0
-        
+
         rollerListVm.roll()
-        
-        for dice in diceArray{
+
+        for dice in diceArray {
             result += dice.value
         }
         diceArray = []
         return result
     }
-    
-    func urlShite(arrPos: Int) -> String{
+
+    func urlShite(arrPos: Int) -> String {
         if sideArray[arrPos] == true {
             let value = valueByIndex(index: arrPos)
             return value
         }
         return ""
     }
-    
-    func valueByIndex(index: Int) -> String{
+
+    func valueByIndex(index: Int) -> String {
         switch index {
         case 0:
             return "4"
@@ -92,8 +92,8 @@ class RollerListViewModel: ObservableObject{
             return ""
         }
     }
-    
-    func rawSidesValue(sides: DieSides) -> String{
+
+    func rawSidesValue(sides: DieSides) -> String {
         switch sides {
         case .four:
             return "4"
@@ -109,8 +109,8 @@ class RollerListViewModel: ObservableObject{
             return "20"
         }
     }
-    
-    func setArrayBool(sides: DieSides, isToggled: Bool){
+
+    func setArrayBool(sides: DieSides, isToggled: Bool) {
         switch sides {
         case .four:
             sideArray[0] = isToggled

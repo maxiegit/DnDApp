@@ -2,18 +2,17 @@ import SwiftUI
 
 struct SpellDatabaseView: View {
     @ObservedObject var listVM = DatabaseListViewModel()
-    
+
     let spells = spellTestData
 
     @State var presentAddNewItem = false
-    
-    
-    //All placeholder at the moment. Will eventually loop thought the relevent database category and display all items to be tapped on.
-    
+
+    // All placeholder at the moment. Will eventually loop thought the relevent database category and display all items to be tapped on.
+
     var body: some View {
         VStack {
-            List{
-                ForEach(listVM.spellViewModel){ spellVM in
+            List {
+                ForEach(listVM.spellViewModel) { spellVM in
                     ListCell(spellVM: spellVM)
                 }
                 if presentAddNewItem {
@@ -28,7 +27,7 @@ struct SpellDatabaseView: View {
             }
         }
     }
-    
+
     struct DatabaseCategory_Previews: PreviewProvider {
         static var previews: some View {
             SpellDatabaseView()
@@ -36,16 +35,16 @@ struct SpellDatabaseView: View {
     }
 }
 
-struct ListCell: View{
+struct ListCell: View {
     @ObservedObject var spellVM: SpellViewModel
-    
-    var onCommit: (Spell) -> (Void) = { _ in}
-    
-    var body: some View{
+
+    var onCommit: (Spell) -> Void = { _ in}
+
+    var body: some View {
         HStack {
             VStack(alignment: .center) {
                 Text(spellVM.spell.name)
-                
+
 //                TextField("Please enter spell", text: $spellVM.spell.name, onCommit:{
 //                    self.onCommit(self.spellVM.spell)
 //                })
@@ -55,7 +54,7 @@ struct ListCell: View{
     }
 }
 
-//struct ListCell: View{
+// struct ListCell: View{
 //    @ObservedObject var spellVM: SpellViewModel
 //
 //    var onCommit: (Spell) -> (Void) = { _ in}
@@ -72,4 +71,4 @@ struct ListCell: View{
 //            .padding()
 //        }
 //    }
-//}
+// }

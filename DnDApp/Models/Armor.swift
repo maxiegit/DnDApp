@@ -1,8 +1,7 @@
-
 import Foundation
 import FirebaseFirestoreSwift
 
-struct Armor: Codable, Identifiable, Hashable{
+struct Armor: Codable, Identifiable, Hashable {
     @DocumentID var id: String?
     var name: String
     var cost: Int

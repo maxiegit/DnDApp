@@ -7,12 +7,12 @@ class WeaponViewModel: ObservableObject, Identifiable {
     @Published var weaponRepo = WeaponRepository()
 
     var id = ""
-    
+
     private var cancellables = Set<AnyCancellable>()
-    
-    init(weapon: Weapon = Weapon(name: "", cost: 0, weight: 0, damage: "", type: "", martial: false, magic: false, descriptors: [""], description: "")){
+
+    init(weapon: Weapon = Weapon(name: "", cost: 0, weight: 0, damage: "", type: "", martial: false, magic: false, descriptors: [""], description: "")) {
         self.weapon = weapon
-        
+
         $weapon
             .compactMap { weapon in
                 weapon.id
@@ -20,16 +20,16 @@ class WeaponViewModel: ObservableObject, Identifiable {
             .assign(to: \.id, on: self)
             .store(in: &cancellables)
     }
-    
-    func addWeapon(){
+
+    func addWeapon() {
         weaponRepo.addWeapon(weapon)
     }
-    
-    func updateWeapon(){
+
+    func updateWeapon() {
         weaponRepo.updateWeapon(weapon)
     }
-    
-    func deleteWeapon(){
+
+    func deleteWeapon() {
         weaponRepo.deleteWeapon(weapon)
     }
 }

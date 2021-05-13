@@ -1,43 +1,43 @@
 import SwiftUI
 
 struct EditWeapon: View {
-    
+
     @Environment(\.presentationMode) private var presentationMode
     @State var presentActionSheet = false
     @State var isEditMode: EditMode = .inactive
-    
+
     @ObservedObject var weaponModel = WeaponViewModel()
     var weapon: Weapon
-    
+
     var mode: Mode = .new
     var completionHandler: ((Result<Action, Error>) -> Void)?
-    
+
     var body: some View {
         VStack {
-            NavigationView{
-                Form{
-                    Section(header: Text("Name")){
+            NavigationView {
+                Form {
+                    Section(header: Text("Name")) {
                         TextField("Name", text: $weaponModel.weapon.name)
                     }
-                    Section(header: Text("Cost")){
+                    Section(header: Text("Cost")) {
                         TextField("Cost", value: $weaponModel.weapon.cost, formatter: NumberFormatter())
                     }
-                    Section(header: Text("Weight")){
+                    Section(header: Text("Weight")) {
                         TextField("Weight", value: $weaponModel.weapon.weight, formatter: NumberFormatter())
                     }
-                    Section(header: Text("Type")){
+                    Section(header: Text("Type")) {
                         TextField("Type", text: $weaponModel.weapon.type)
                     }
-                    Section(header: Text("Damage")){
+                    Section(header: Text("Damage")) {
                         TextField("Damage", text: $weaponModel.weapon.damage)
                     }
-                    Section(header: Text("Martial")){
+                    Section(header: Text("Martial")) {
                         Toggle("", isOn: $weaponModel.weapon.martial).labelsHidden()
                     }
-                    Section(header: Text("Magical")){
+                    Section(header: Text("Magical")) {
                         Toggle("", isOn: $weaponModel.weapon.magic).labelsHidden()
                     }
-                    Section(header: HStack{
+                    Section(header: HStack {
                         Text("Descriptors")
                         Spacer()
                         Button(action: {
@@ -46,21 +46,21 @@ struct EditWeapon: View {
                             Image(systemName: "plus")
                                 .font(.headline)
                                     })
-                    }, content:{
-                        List{
-                            ForEach(weaponModel.weapon.descriptors, id: \.self){
+                    }, content: {
+                        List {
+                            ForEach(weaponModel.weapon.descriptors, id: \.self) {
                                 desc in
                                 EditorView(container: $weaponModel.weapon.descriptors, index: weaponModel.weapon.descriptors.firstIndex(of: desc)!, text: desc)
                             }
                             .onDelete(perform: deleteListItem)
                         }
                     })
-                    
-                    Section(header: Text("Description")){
+
+                    Section(header: Text("Description")) {
                         TextField("Description", text: $weaponModel.weapon.description)
                     }
-                    
-                    if(mode == .edit){
+
+                    if mode == .edit {
                         Button(action: {self.presentActionSheet.toggle()}) {
                             Text("Delete")
                                 .foregroundColor(.red)
@@ -77,7 +77,7 @@ struct EditWeapon: View {
                                     }))
                 .actionSheet(isPresented: $presentActionSheet, content: {
                     ActionSheet(title: Text("Are you sure?"),
-                                buttons:[
+                                buttons: [
                                 .destructive(Text("Delete weapon"),
                                 action: { delete() }),
                                 .cancel()
@@ -86,32 +86,27 @@ struct EditWeapon: View {
             }
         }
     }
-    
 
-    
     // Condense closing and saving the document
-    func done(){
-        if(mode == .new){
+    func done() {
+        if mode == .new {
             weaponModel.addWeapon()
-        }
-        else{
+        } else {
             weaponModel.updateWeapon()
         }
         self.presentationMode.wrappedValue.dismiss()
     }
-    
-    func delete(){
+
+    func delete() {
         weaponModel.deleteWeapon()
         self.presentationMode.wrappedValue.dismiss()
         self.completionHandler?(.success(.delete))
     }
-    
-    func deleteListItem(at offsets: IndexSet){
+
+    func deleteListItem(at offsets: IndexSet) {
         weaponModel.weapon.descriptors.remove(atOffsets: offsets)
     }
 }
-
-
 
 struct NewWeapon_Previews: PreviewProvider {
     static var previews: some View {
