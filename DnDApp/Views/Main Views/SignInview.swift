@@ -16,7 +16,7 @@ struct SignInView: View {
                     .cornerRadius(10)
                     .onTapGesture {
                         self.coord = SignInWithAppleCoordinator()
-                        if let coord = self.coord{
+                        if let coord = self.coord {
                             coord.startSignInWithAppleFlow {
                                 print("Sign in successful")
                                 presentationMode.wrappedValue.dismiss()

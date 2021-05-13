@@ -22,7 +22,6 @@ struct PlayerCharacter: Codable, Identifiable {
     var tempHp: Int
     var speed: Int
     var profBonus: Int // proficiency bonus
-    var hitDice: [String]
     var inspo: Bool
 
     // death saving throw
@@ -61,20 +60,9 @@ struct PlayerCharacter: Codable, Identifiable {
     var pp: Int
 
     // abilities
-    var attacks: [Attacks]
-    var classAbilities: [String]
     var spells: [Spell]
 
-    // god help me
+    // misc
+    var initiative: [String]
+    var journal: [String]
 }
-
-struct Attacks: Codable {
-    var name: String
-    var bonus: Int
-    var damage: String
-    var damageType: String
-}
-// test data
-#if DEBUG
-
-#endif
