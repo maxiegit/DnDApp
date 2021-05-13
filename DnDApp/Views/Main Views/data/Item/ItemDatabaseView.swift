@@ -7,10 +7,9 @@ struct ItemDatabaseView: View {
     @StateObject var itemVM = ItemViewModel()
     @State var addToInventory = false
     @State private var toggleSheet = false
-    
+
     var body: some View {
 
-            
             VStack {
                 List {
                     ForEach(listVM.itemViewModel) { itemVM in
@@ -38,7 +37,7 @@ struct ItemDatabaseView: View {
             .sheet(isPresented: $toggleSheet, content: {
                 EditItem()
         })
-        
+
     }
 
     struct DatabaseCategory_Previews: PreviewProvider {

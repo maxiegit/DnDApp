@@ -1,15 +1,14 @@
 import SwiftUI
 
 struct Initiative: View {
-    
+
     @ObservedObject var charVM: CharacterViewModel
 
-    
-    init(charVM: CharacterViewModel){
+    init(charVM: CharacterViewModel) {
         self.charVM = charVM
         UITableView.appearance().backgroundColor = .clear
     }
-    
+
     var body: some View {
 
         Form {

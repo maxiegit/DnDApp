@@ -19,6 +19,8 @@
 		0B1C8A302613364900ACA518 /* StatBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C8A2F2613364900ACA518 /* StatBox.swift */; };
 		0B1C8A342613749800ACA518 /* ProfTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B1C8A332613749800ACA518 /* ProfTable.swift */; };
 		0B20C027255EE21B00CEDA38 /* RollerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B20C026255EE21B00CEDA38 /* RollerViewModel.swift */; };
+		0B2A47BA264D8B13006CF8C8 /* JournalList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2A47B9264D8B13006CF8C8 /* JournalList.swift */; };
+		0B2A47C7264D8EDC006CF8C8 /* JournalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2A47C6264D8EDC006CF8C8 /* JournalView.swift */; };
 		0B4585DE2555C27D00E65F47 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4585DD2555C27D00E65F47 /* ImagePicker.swift */; };
 		0B4BA35F263946D90079DDC9 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4BA35E263946D90079DDC9 /* Background.swift */; };
 		0B4BA36226394ACC0079DDC9 /* BackgroundRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B4BA36126394ACC0079DDC9 /* BackgroundRepository.swift */; };
@@ -119,6 +121,8 @@
 		0B1C8A2F2613364900ACA518 /* StatBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatBox.swift; sourceTree = "<group>"; };
 		0B1C8A332613749800ACA518 /* ProfTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfTable.swift; sourceTree = "<group>"; };
 		0B20C026255EE21B00CEDA38 /* RollerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RollerViewModel.swift; sourceTree = "<group>"; };
+		0B2A47B9264D8B13006CF8C8 /* JournalList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalList.swift; sourceTree = "<group>"; };
+		0B2A47C6264D8EDC006CF8C8 /* JournalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalView.swift; sourceTree = "<group>"; };
 		0B4585DD2555C27D00E65F47 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		0B4BA35E263946D90079DDC9 /* Background.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		0B4BA36126394ACC0079DDC9 /* BackgroundRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundRepository.swift; sourceTree = "<group>"; };
@@ -382,6 +386,8 @@
 				0BCE95AF263AA58C004D30B3 /* ProbabilityView.swift */,
 				0BCD8F43264D555100596709 /* SignInview.swift */,
 				0BCD8F51264D5C7400596709 /* Initiative.swift */,
+				0B2A47B9264D8B13006CF8C8 /* JournalList.swift */,
+				0B2A47C6264D8EDC006CF8C8 /* JournalView.swift */,
 			);
 			path = "Main Views";
 			sourceTree = "<group>";
@@ -744,6 +750,7 @@
 				0BE49A0525D6DF0200E69471 /* WeaponDatabase.swift in Sources */,
 				0B63C44E262EEBFF000195F1 /* PersonalityTab.swift in Sources */,
 				0B20C027255EE21B00CEDA38 /* RollerViewModel.swift in Sources */,
+				0B2A47BA264D8B13006CF8C8 /* JournalList.swift in Sources */,
 				0B4BA36926394C770079DDC9 /* BackgroundDatabaseView.swift in Sources */,
 				0BB3D47E26285B6700E03F41 /* CurrencyBox.swift in Sources */,
 				0BB4C13D2551A01D0061455C /* DnDAppApp.swift in Sources */,
@@ -770,6 +777,7 @@
 				0BE49A1925D6E04300E69471 /* Weapon.swift in Sources */,
 				0B4BA36D26394D2E0079DDC9 /* BackgroundDetailView.swift in Sources */,
 				0B4BA36526394B740079DDC9 /* BackgroundViewModel.swift in Sources */,
+				0B2A47C7264D8EDC006CF8C8 /* JournalView.swift in Sources */,
 				0BE49A0425D6DF0200E69471 /* WeaponDetail.swift in Sources */,
 				0B13B95B255CAB200078E076 /* DiceSection.swift in Sources */,
 				0BE49A1025D6DF0200E69471 /* Database.swift in Sources */,

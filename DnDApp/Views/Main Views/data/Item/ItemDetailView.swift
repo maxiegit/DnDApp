@@ -24,7 +24,7 @@ struct ItemDetailView: View {
                     Text(item.description)
                 }
             }
-            
+
             Button(action: {self.presentEditScreen.toggle()}) {
                 Text("Edit")
             }

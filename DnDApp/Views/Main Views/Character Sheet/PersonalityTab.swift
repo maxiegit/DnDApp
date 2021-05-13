@@ -3,8 +3,8 @@ import SwiftUI
 struct PersonalityTab: View {
 
     @ObservedObject var charVM: CharacterViewModel
-    
-    init(charVM: CharacterViewModel){
+
+    init(charVM: CharacterViewModel) {
         self.charVM = charVM
         UITableView.appearance().backgroundColor = .clear
     }

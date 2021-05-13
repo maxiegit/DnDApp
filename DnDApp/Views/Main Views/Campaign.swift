@@ -29,9 +29,9 @@ struct Campaign: View {
                 HStack(spacing: 25) {
                     CampaignScreenButton(destination: AnyView(ProbabilityView()), symbol: "percent", width: 175, height: 175)
 
-                    CampaignScreenButton(destination: AnyView(SpellDatabaseView()), symbol: "book.circle", width: 175, height: 175)
+                    CampaignScreenButton(destination: AnyView(JournalList(charVm: charVM)), symbol: "book.circle", width: 175, height: 175)
                 }
-                
+
                 CampaignScreenButton(destination: AnyView(Database()), symbol: "archivebox.fill", width: 370, height: 150)
             }
             .padding(.bottom)

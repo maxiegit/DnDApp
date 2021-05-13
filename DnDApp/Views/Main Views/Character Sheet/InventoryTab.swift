@@ -6,8 +6,8 @@ struct InventoryTab: View {
     @State var toggleItemSheet: Bool = false
     @State var toggleWeaponSheet: Bool = false
     @State var toggleArmorSheet: Bool = false
-    
-    init(charVM: CharacterViewModel){
+
+    init(charVM: CharacterViewModel) {
         self.charVM = charVM
         UITableView.appearance().backgroundColor = .clear
     }
