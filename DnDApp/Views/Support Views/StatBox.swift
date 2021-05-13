@@ -2,18 +2,18 @@ import SwiftUI
 import Combine
 
 struct StatBox: View {
-    
+
     @State var stat: String
     var statName: String
     @ObservedObject var charVM: CharacterViewModel
 
     var body: some View {
-        ZStack(alignment: .center){
+        ZStack(alignment: .center) {
             Color.flatDarkCardBackground
-                .frame(width: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, height: /*@START_MENU_TOKEN@*/100/*@END_MENU_TOKEN@*/, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                .frame(width: 100/*@END_MENU_TOKEN@*/, height: 100/*@END_MENU_TOKEN@*/, alignment: .center/*@END_MENU_TOKEN@*/)
                 .clipShape(RoundedRectangle(cornerRadius: 15))
                 .shadow(radius: 20)
-            
+
             VStack {
                 TextField("0", text: $stat)
                     // santise input
@@ -24,30 +24,30 @@ struct StatBox: View {
                             self.stat = filtered
                         }
                     }
-                    .onChange(of: stat, perform: { newStat in
+                    .onChange(of: stat, perform: { _ in
                         statChange(statChanging: statName, stat: stat)
                     })
                     .fixedSize()
                     .foregroundColor(.white)
                     .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
                     .offset(y: 5)
-                
+
                 Text(statName)
                     .foregroundColor(.white)
                     .font(.subheadline)
             }
-            
+
             Color.flatDarkBackground
-                .frame(width:50, height:35)
+                .frame(width: 50, height: 35)
                 .cornerRadius(5)
                 .overlay(Text("\(charVM.bonusCalc(stat: Int(stat) ?? 0 ))").foregroundColor(.white))
                 .offset(y: 55)
-            
+
         }
     }
-    
-    func statChange(statChanging: String, stat: String){
-        switch(statChanging){
+
+    func statChange(statChanging: String, stat: String) {
+        switch statChanging {
             case("Str"):
                 charVM.character.strength = Int(stat) ?? 0
                 charVM.updateCharacter()
@@ -70,7 +70,7 @@ struct StatBox: View {
                 break
         }
     }
-    
+
 }
 
 struct SwiftUIView_Previews: PreviewProvider {

@@ -7,12 +7,12 @@ class SpellViewModel: ObservableObject, Identifiable {
     @Published var spellRepo = SpellRepository()
 
     var id = ""
-    
+
     private var cancellables = Set<AnyCancellable>()
-    
-    init(spell: Spell = Spell(name: "", level: 0, school: "", castTime: "", range: "", components: "", duration: "", description: "", ritual: false)){
+
+    init(spell: Spell = Spell(name: "", level: 0, school: "", castTime: "", range: "", components: "", duration: "", description: "", ritual: false)) {
         self.spell = spell
-        
+
         $spell
             .compactMap { spell in
                 spell.id
@@ -20,16 +20,16 @@ class SpellViewModel: ObservableObject, Identifiable {
             .assign(to: \.id, on: self)
             .store(in: &cancellables)
     }
-    
-    func addSpell(){
+
+    func addSpell() {
         spellRepo.addSpell(spell)
     }
-    
-    func updateSpell(){
+
+    func updateSpell() {
         spellRepo.updateSpell(spell)
     }
-    
-    func deleteSpell(){
+
+    func deleteSpell() {
         spellRepo.deleteSpell(spell)
     }
 }

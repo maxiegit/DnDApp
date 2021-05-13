@@ -1,4 +1,3 @@
-
 import Foundation
 import Firebase
 import FirebaseAuth
@@ -6,19 +5,19 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class WeaponRepository: ObservableObject {
-    
-    //set db for use
+
+    // set db for use
     let db = Firestore.firestore()
-    
+
     @Published var weapon = [Weapon]()
-    
+
     init() {
         loadData()
     }
-    
-    //grabs all the data from the weapon collection
+
+    // grabs all the data from the weapon collection
     func loadData() {
-        guard let userID = Auth.auth().currentUser?.uid else{
+        guard let userID = Auth.auth().currentUser?.uid else {
             print("error: no user ID")
             return
         }
@@ -28,8 +27,7 @@ class WeaponRepository: ObservableObject {
                     do {
                         let x = try document.data(as: Weapon.self)
                         return x
-                    }
-                    catch {
+                    } catch {
                         print(error)
                     }
                     return nil
@@ -37,33 +35,31 @@ class WeaponRepository: ObservableObject {
             }
         }
     }
-    
-    func addWeapon(_ weapon: Weapon){
+
+    func addWeapon(_ weapon: Weapon) {
         var addedWeapon = weapon
         addedWeapon.userID = Auth.auth().currentUser?.uid
-        
-        do{
-           let _ = try db.collection("weapon").addDocument(from: addedWeapon)
-        }
-        catch{
+
+        do {
+           _ = try db.collection("weapon").addDocument(from: addedWeapon)
+        } catch {
             fatalError("Unable to encode task: \(error.localizedDescription)")
         }
     }
-    
-    func updateWeapon(_ weapon: Weapon){
-        if let documentId = weapon.id{
-            do{
+
+    func updateWeapon(_ weapon: Weapon) {
+        if let documentId = weapon.id {
+            do {
                 try db.collection("weapon").document(documentId).setData(from: weapon)
-            }
-            catch{
+            } catch {
                 fatalError("Unable to encode task: \(error.localizedDescription)")
             }
         }
     }
-    
-    func deleteWeapon(_ weapon: Weapon){
-        if let weaponID = weapon.id{
-            db.collection("weapon").document(weaponID).delete() { (error) in
+
+    func deleteWeapon(_ weapon: Weapon) {
+        if let weaponID = weapon.id {
+            db.collection("weapon").document(weaponID).delete { (error) in
                 if let error = error {
                     print("Error removing document: \(error.localizedDescription)")
                 }

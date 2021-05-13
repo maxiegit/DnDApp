@@ -1,41 +1,40 @@
 import SwiftUI
 
 struct ArmorDetailView: View {
-    
+
     @StateObject var armorModel = ArmorViewModel()
     @State var presentEditScreen: Bool = false
     @Environment(\.presentationMode) var presentationMode
     var armor: Armor
-    
-    
+
     var body: some View {
         VStack {
-            Form{
-                Section(header: Text("Name")){
+            Form {
+                Section(header: Text("Name")) {
                     Text(armor.name)
                 }
-                Section(header: Text("Cost")){
+                Section(header: Text("Cost")) {
                     Text(String(armor.cost))
                 }
-                Section(header: Text("Weight")){
+                Section(header: Text("Weight")) {
                     Text(String(armor.weight))
                 }
-                Section(header: Text("AC")){
+                Section(header: Text("AC")) {
                     Text(String(armor.ac))
                 }
-                Section(header: Text("Type")){
+                Section(header: Text("Type")) {
                     Text(armor.type)
                 }
-                Section(header: Text("Description")){
+                Section(header: Text("Description")) {
                     Text(armor.description)
                 }
-                Section(header: Text("Magical")){
+                Section(header: Text("Magical")) {
                     Toggle("", isOn: $armorModel.armor.magic)
                         .labelsHidden()
                         .disabled(true)
                 }
             }
-            
+
             Button(action: {self.presentEditScreen.toggle()}) {
                 Text("Edit")
             }

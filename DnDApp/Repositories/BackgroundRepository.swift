@@ -5,19 +5,19 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class BackgroundRepository: ObservableObject {
-    
-    //set db for use
+
+    // set db for use
     let db = Firestore.firestore()
-    
+
     @Published var backgrounds = [Background]()
-    
+
     init() {
         loadData()
     }
-    
-    //grabs all the data from the  background collection
+
+    // grabs all the data from the  background collection
     func loadData() {
-        guard let userID = Auth.auth().currentUser?.uid else{
+        guard let userID = Auth.auth().currentUser?.uid else {
             print("error: no user ID")
             return
         }
@@ -28,8 +28,7 @@ class BackgroundRepository: ObservableObject {
                     do {
                         let x = try document.data(as: Background.self)
                         return x
-                    }
-                    catch {
+                    } catch {
                         print(error)
                     }
                     return nil
@@ -37,33 +36,31 @@ class BackgroundRepository: ObservableObject {
             }
         }
     }
-    
-    func addBackground(_ background: Background){
+
+    func addBackground(_ background: Background) {
         var addedBackground = background
         addedBackground.userID = Auth.auth().currentUser?.uid
-        
-        do{
-           let _ = try db.collection("backgrounds").addDocument(from: addedBackground)
-        }
-        catch{
+
+        do {
+           _ = try db.collection("backgrounds").addDocument(from: addedBackground)
+        } catch {
             fatalError("Unable to encode task: \(error.localizedDescription)")
         }
     }
-    
-    func updateBackground(_ background: Background){
-        if let documentId = background.id{
-            do{
+
+    func updateBackground(_ background: Background) {
+        if let documentId = background.id {
+            do {
                 try db.collection("backgrounds").document(documentId).setData(from: background)
-            }
-            catch{
+            } catch {
                 fatalError("Unable to encode task: \(error.localizedDescription)")
             }
         }
     }
-    
-    func deleteBackground(_ background: Background){
-        if let backgroundID = background.id{
-            db.collection("backgrounds").document(backgroundID).delete() { (error) in
+
+    func deleteBackground(_ background: Background) {
+        if let backgroundID = background.id {
+            db.collection("backgrounds").document(backgroundID).delete { (error) in
                 if let error = error {
                     print("Error removing document: \(error.localizedDescription)")
                 }

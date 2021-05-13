@@ -1,6 +1,6 @@
-//import SwiftUI
+// import SwiftUI
 //
-//struct camera: View {
+// struct camera: View {
 //    @State private var showSheet: Bool = false
 //    @State private var showImagePicker: Bool = false
 //    @State private var sourseType: UIImagePickerController.SourceType = .camera
@@ -37,8 +37,8 @@
 //        }
 //    }}
 //
-//struct camera_Previews: PreviewProvider {
+// struct camera_Previews: PreviewProvider {
 //    static var previews: some View {
 //        camera()
 //    }
-//}
+// }

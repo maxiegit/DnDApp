@@ -5,19 +5,19 @@ import FirebaseFirestore
 import FirebaseFirestoreSwift
 
 class ArmorRepository: ObservableObject {
-    
-    //set db for use
+
+    // set db for use
     let db = Firestore.firestore()
-    
+
     @Published var armor = [Armor]()
-    
+
     init() {
         loadData()
     }
-    
-    //grabs all the data from the armor collection
+
+    // grabs all the data from the armor collection
     func loadData() {
-        guard let userID = Auth.auth().currentUser?.uid else{
+        guard let userID = Auth.auth().currentUser?.uid else {
             print("error: no user ID")
             return
         }
@@ -27,8 +27,7 @@ class ArmorRepository: ObservableObject {
                     do {
                         let x = try document.data(as: Armor.self)
                         return x
-                    }
-                    catch {
+                    } catch {
                         print(error)
                     }
                     return nil
@@ -36,33 +35,31 @@ class ArmorRepository: ObservableObject {
             }
         }
     }
-    
-    func addArmor(_ armor: Armor){
+
+    func addArmor(_ armor: Armor) {
         var addedArmor = armor
         addedArmor.userID = Auth.auth().currentUser?.uid
-        
-        do{
-           let _ = try db.collection("armor").addDocument(from: addedArmor)
-        }
-        catch{
+
+        do {
+           _ = try db.collection("armor").addDocument(from: addedArmor)
+        } catch {
             fatalError("Unable to encode task: \(error.localizedDescription)")
         }
     }
-    
-    func updateArmor(_ armor: Armor){
-        if let documentId = armor.id{
-            do{
+
+    func updateArmor(_ armor: Armor) {
+        if let documentId = armor.id {
+            do {
                 try db.collection("armor").document(documentId).setData(from: armor)
-            }
-            catch{
+            } catch {
                 fatalError("Unable to encode task: \(error.localizedDescription)")
             }
         }
     }
-    
-    func deleteArmor(_ armor: Armor){
-        if let armorID = armor.id{
-            db.collection("armor").document(armorID).delete() { (error) in
+
+    func deleteArmor(_ armor: Armor) {
+        if let armorID = armor.id {
+            db.collection("armor").document(armorID).delete { (error) in
                 if let error = error {
                     print("Error removing document: \(error.localizedDescription)")
                 }

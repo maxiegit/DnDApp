@@ -1,19 +1,18 @@
 import SwiftUI
 
 struct ProfTable: View {
-    
+
     @ObservedObject var charVM: CharacterViewModel
-    
-    
+
     var body: some View {
-        ZStack{
+        ZStack {
             Color.flatDarkCardBackground
                 .frame(minWidth: 0, idealWidth: 100, maxWidth: .infinity, minHeight: 0, idealHeight: 100, maxHeight: 250, alignment: .center)
                 .cornerRadius(20)
                 .padding()
-            
-            HStack{
-                VStack(spacing: 4){
+
+            HStack {
+                VStack(spacing: 4) {
                     ProfListItem(prof: "Acrobatics", isProf: charVM.character.coreProficicies[0], index: 0, charVM: charVM)
                     ProfListItem(prof: "Animal Handling", isProf: charVM.character.coreProficicies[1], index: 1, charVM: charVM)
                     ProfListItem(prof: "Arcana", isProf: charVM.character.coreProficicies[2], index: 2, charVM: charVM)
@@ -25,7 +24,7 @@ struct ProfTable: View {
                     ProfListItem(prof: "Investigtion", isProf: charVM.character.coreProficicies[8], index: 8, charVM: charVM)
 
                 }
-                VStack(spacing: 4){
+                VStack(spacing: 4) {
                     ProfListItem(prof: "Medicine", isProf: charVM.character.coreProficicies[9], index: 9, charVM: charVM)
                     ProfListItem(prof: "Nature", isProf: charVM.character.coreProficicies[10], index: 10, charVM: charVM)
                     ProfListItem(prof: "Perception", isProf: charVM.character.coreProficicies[11], index: 11, charVM: charVM)
@@ -39,17 +38,17 @@ struct ProfTable: View {
             }
         }
     }
-    
-    struct ProfListItem: View{
-        
+
+    struct ProfListItem: View {
+
         var prof: String
         @State var isProf: Bool
         var index: Int
         @ObservedObject var charVM: CharacterViewModel
 
-        var body: some View{
-            HStack{
-                if(isProf){
+        var body: some View {
+            HStack {
+                if isProf {
                     Text(prof + " \(charVM.bonusCalc(stat: getSkillNumber(index: index)) + charVM.character.profBonus)")
                         .frame(maxWidth: 150, alignment: .leading)
                         .foregroundColor(.white)
@@ -60,8 +59,7 @@ struct ProfTable: View {
                             charVM.character.coreProficicies[index].toggle()
                             charVM.updateCharacter()
                         })
-                }
-                else{
+                } else {
                     Text(prof + " \(charVM.bonusCalc(stat: getSkillNumber(index: index)))")
                         .frame(maxWidth: 150, alignment: .leading)
                         .foregroundColor(.white)
@@ -75,29 +73,25 @@ struct ProfTable: View {
                 }
             }
         }
-        
+
         func getSkillNumber(index: Int) -> Int {
             var skillNum: Int = 0
-            
-            if(index == 3){
+
+            if index == 3 {
                 skillNum = charVM.character.strength
-            }
-            else if(index == 0 || index == 16 || index == 15){
+            } else if index == 0 || index == 16 || index == 15 {
                 skillNum = charVM.character.dexterity
-            }
-            else if(index == 2 || index == 5 || index == 8 || index == 10 || index == 14){
+            } else if index == 2 || index == 5 || index == 8 || index == 10 || index == 14 {
                 skillNum = charVM.character.intellignece
-            }
-            else if(index == 1 || index == 6 || index == 9 || index == 11 || index == 16){
+            } else if index == 1 || index == 6 || index == 9 || index == 11 || index == 16 {
                 skillNum = charVM.character.wisdom
-            }
-            else if(index == 4 || index == 7 || index == 12 || index == 13){
+            } else if index == 4 || index == 7 || index == 12 || index == 13 {
                 skillNum = charVM.character.charisma
             }
-            
+
             return skillNum
         }
-        
+
     }
     struct ProfTable_Previews: PreviewProvider {
         static var previews: some View {

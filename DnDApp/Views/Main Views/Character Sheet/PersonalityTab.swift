@@ -1,11 +1,11 @@
 import SwiftUI
 
 struct PersonalityTab: View {
-    
+
     @ObservedObject var charVM: CharacterViewModel
 
     var body: some View {
-        Form{
+        Form {
             Section(header: Text("Alignment"), content: {
                 TextField("Alignment", text: $charVM.character.alignment)
             })
@@ -13,22 +13,22 @@ struct PersonalityTab: View {
                 TextField("Background", text: $charVM.character.background)
                 })
             Section(header: Text("Personality Traits"), content: {
-                NavigationLink(destination: Editor(charVM: charVM, txt: charVM.character.personality, trait: "personality")){
+                NavigationLink(destination: Editor(charVM: charVM, txt: charVM.character.personality, trait: "personality")) {
                     Text(charVM.character.personality)
                 }
             })
             Section(header: Text("Ideals"), content: {
-                NavigationLink(destination: Editor(charVM: charVM, txt: charVM.character.ideals, trait: "ideals")){
+                NavigationLink(destination: Editor(charVM: charVM, txt: charVM.character.ideals, trait: "ideals")) {
                     Text(charVM.character.ideals)
                 }
             })
             Section(header: Text("Bonds"), content: {
-                NavigationLink(destination: Editor(charVM: charVM, txt: charVM.character.bonds, trait: "bonds")){
+                NavigationLink(destination: Editor(charVM: charVM, txt: charVM.character.bonds, trait: "bonds")) {
                     Text(charVM.character.bonds)
                 }
             })
             Section(header: Text("Flaws"), content: {
-                NavigationLink(destination: Editor(charVM: charVM, txt: charVM.character.flaws, trait: "flaws")){
+                NavigationLink(destination: Editor(charVM: charVM, txt: charVM.character.flaws, trait: "flaws")) {
                     Text(charVM.character.flaws)
                 }
             })
@@ -40,18 +40,18 @@ struct Editor: View {
     @ObservedObject var charVM: CharacterViewModel
     @State var txt: String
     var trait: String
-    
-    var body: some View{
+
+    var body: some View {
         TextEditor(text: $txt)
-            .onChange(of: txt, perform: { value in
+            .onChange(of: txt, perform: { _ in
                 traitChanging(text: txt, trait: trait)
             })
             .onDisappear(perform: {
                 charVM.updateCharacter()
             })
     }
-    
-    func traitChanging(text: String, trait: String){
+
+    func traitChanging(text: String, trait: String) {
         switch trait {
         case "personality":
             charVM.character.personality = txt
@@ -65,13 +65,13 @@ struct Editor: View {
             break
         }
     }
-    
+
 }
 
 struct PersonalityTab_Previews: PreviewProvider {
     static var previews: some View {
         PersonalityTab(charVM: CharacterViewModel(character: Character(
-                                                    isDM: false, 
+                                                    isDM: false,
                                                     name: "Max Magill",
                                                     race: "Human",
                                                     classes: "Fighter",

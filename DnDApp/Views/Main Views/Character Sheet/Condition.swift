@@ -1,13 +1,13 @@
 import SwiftUI
 
 struct Condition: View {
-    
+
     @StateObject var charVM: CharacterViewModel
     @State var toggleLangSheet: Bool = false
     @State var toggleProfSheet: Bool = false
-    
+
     var body: some View {
-        Form{
+        Form {
             Section(header: Text("Experience"), content: {
                 TextField("0", value: $charVM.character.exp, formatter: NumberFormatter())
             })
@@ -21,7 +21,7 @@ struct Condition: View {
             Section(header: Text("Temporary HP"), content: {
                 TextField("0", value: $charVM.character.tempHp, formatter: NumberFormatter())
             })
-            
+
             // Language List
             Section(header: HStack {
                 Text("Languages")
@@ -34,15 +34,15 @@ struct Condition: View {
                         .font(.headline)
                 })
             }, content: {
-                List{
-                    ForEach(charVM.character.languageProficicies, id: \.self){ lang in
+                List {
+                    ForEach(charVM.character.languageProficicies, id: \.self) { lang in
                         EditorView(container: $charVM.character.languageProficicies, index: charVM.character.languageProficicies.firstIndex(of: lang)!, text: lang)
                     }
                     .onDelete(perform: deleteLanguage)
                 }
             })
-            
-            //Other List
+
+            // Other List
             Section(header: HStack {
                 Text("Other Proficiencies")
                 Spacer()
@@ -54,14 +54,14 @@ struct Condition: View {
                         .font(.headline)
                 })
             }, content: {
-                List{
-                    ForEach(charVM.character.otherProficicies, id: \.self){ prof in
+                List {
+                    ForEach(charVM.character.otherProficicies, id: \.self) { prof in
                         EditorView(container: $charVM.character.otherProficicies, index: charVM.character.otherProficicies.firstIndex(of: prof)!, text: prof)
                     }
                     .onDelete(perform: deleteProficiency)
                 }
             })
-            
+
             Section(header: Text("Saving Throws"), content: {
                 SavingThrowTable(charVM: charVM)
                     .padding(.leading, 45)
@@ -71,13 +71,13 @@ struct Condition: View {
             })
         }
     }
-    
-    func deleteLanguage(at offsets: IndexSet){
+
+    func deleteLanguage(at offsets: IndexSet) {
         charVM.character.languageProficicies.remove(atOffsets: offsets)
         charVM.updateCharacter()
     }
-    
-    func deleteProficiency(at offsets: IndexSet){
+
+    func deleteProficiency(at offsets: IndexSet) {
         charVM.character.otherProficicies.remove(atOffsets: offsets)
         charVM.updateCharacter()
     }
@@ -86,7 +86,7 @@ struct Condition: View {
 struct Condition_Previews: PreviewProvider {
     static var previews: some View {
         Condition(charVM: CharacterViewModel(character: Character(
-                                                isDM: false, 
+                                                isDM: false,
                                                 name: "Max Magill",
                                                 race: "Human",
                                                 classes: "Fighter",

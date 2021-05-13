@@ -8,21 +8,19 @@ struct ItemDatabaseView: View {
     @State var addToInventory = false
     @State private var toggleSheet = false
 
-    
     var body: some View {
         VStack {
-            List{
-                ForEach(listVM.itemViewModel){ itemVM in
-                    if(addToInventory){
+            List {
+                ForEach(listVM.itemViewModel) { itemVM in
+                    if addToInventory {
                         ItemSelectionCell(itemVM: itemVM, charVM: charVM)
-                    }
-                    else{
+                    } else {
                         ItemCell(itemVM: itemVM)
                     }
                 }
             }
             .toolbar {
-                ToolbarItem{
+                ToolbarItem {
                     Button(action: { toggleSheet.toggle() }, label: {
                         Image(systemName: "plus")
                     })
@@ -37,7 +35,7 @@ struct ItemDatabaseView: View {
             EditItem()
         })
     }
-    
+
     struct DatabaseCategory_Previews: PreviewProvider {
         static var previews: some View {
             ItemDatabaseView()
@@ -49,11 +47,9 @@ struct ItemSelectionCell: View {
     @ObservedObject var itemVM: ItemViewModel
     @ObservedObject var charVM: CharacterViewModel
 
-
     @Environment(\.presentationMode) var presentationMode
 
-    
-    var body: some View{
+    var body: some View {
         Text(itemVM.item.name)
             .onTapGesture {
                 charVM.character.items.append(itemVM.item)
@@ -63,12 +59,12 @@ struct ItemSelectionCell: View {
     }
 }
 
-struct ItemCell: View{
+struct ItemCell: View {
     @ObservedObject var itemVM: ItemViewModel
-    
-    var body: some View{
-        NavigationLink(destination: ItemDetailView(item: itemVM.item)){
-            VStack{
+
+    var body: some View {
+        NavigationLink(destination: ItemDetailView(item: itemVM.item)) {
+            VStack {
                 Text(itemVM.item.name)
             }
         }

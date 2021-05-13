@@ -3,12 +3,12 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
-//reinstate the appdelegate
+// reinstate the appdelegate
 class AppDelegate: NSObject, UIApplicationDelegate {
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
-        //init firebase
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
+        // init firebase
         FirebaseApp.configure()
-        
+
         // Checking if unit tests are running
         if ProcessInfo.processInfo.environment["unit_tests"] == "true" {
           print("Setting up Firebase emulator localhost:8080")
@@ -18,7 +18,7 @@ class AppDelegate: NSObject, UIApplicationDelegate {
           settings.isSSLEnabled = false
           Firestore.firestore().settings = settings
         }
-        
+
         Auth.auth().signInAnonymously()
         return true
     }
@@ -26,9 +26,9 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct DnDAppApp: App {
-    //inject appdelegate
+    // inject appdelegate
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    
+
     var body: some Scene {
         WindowGroup {
             MainMenu()

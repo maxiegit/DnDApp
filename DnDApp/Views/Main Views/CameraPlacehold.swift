@@ -1,25 +1,25 @@
 import SwiftUI
 
 struct CameraPlacehold: View {
-    
+
     @State private var showSheet = false
     @State private var source: source = .cam
     @State private var image = UIImage()
-    
+
     enum source {
         case cam
         case photo
     }
-    
+
     var body: some View {
         ZStack {
-            VStack{
+            VStack {
                 Image(uiImage: self.image)
                     .resizable()
                     .scaledToFill()
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .edgesIgnoringSafeArea(.top)
-                
+
                 HStack {
                     Button(action: {
                         self.showSheet = true
@@ -28,7 +28,7 @@ struct CameraPlacehold: View {
                         HStack {
                             Image(systemName: "photo")
                                 .font(.system(size: 20))
-                            
+
                             Text("Camera")
                                 .font(.headline)
                         }
@@ -38,7 +38,7 @@ struct CameraPlacehold: View {
                         .cornerRadius(20)
                         .padding(.horizontal)
                     }
-                    
+
                     Button(action: {
                         self.showSheet = true
                         self.source = .photo
@@ -46,7 +46,7 @@ struct CameraPlacehold: View {
                         HStack {
                             Image(systemName: "photo")
                                 .font(.system(size: 20))
-                            
+
                             Text("Photo library")
                                 .font(.headline)
                         }
@@ -59,11 +59,9 @@ struct CameraPlacehold: View {
                 }
             }
             .sheet(isPresented: $showSheet, content: {
-                if(self.source == .cam){
+                if self.source == .cam {
                     ImagePicker(sourceType: .camera, selectedImage: $image)
-                }
-                else
-                {
+                } else {
                     ImagePicker(sourceType: .photoLibrary, selectedImage: $image)
                 }
             })

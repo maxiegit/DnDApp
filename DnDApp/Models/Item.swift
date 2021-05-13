@@ -1,8 +1,8 @@
 import Foundation
 import FirebaseFirestoreSwift
 
-//Create the item model
-struct Item: Codable, Identifiable, Hashable{
+// Create the item model
+struct Item: Codable, Identifiable, Hashable {
     @DocumentID var id: String?
     var name: String
     var cost: Int
@@ -11,7 +11,7 @@ struct Item: Codable, Identifiable, Hashable{
     var userID: String?
 }
 
-//test data
+// test data
 #if DEBUG
 
 #endif

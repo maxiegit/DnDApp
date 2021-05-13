@@ -7,28 +7,25 @@ public enum invSheet {
     case spell
 }
 
-struct CharacterSheet: View{
-    
+struct CharacterSheet: View {
+
     @ObservedObject var charVM: CharacterViewModel
-    
-    
-    var body: some View{
+
+    var body: some View {
         ZStack {
-            
+
             Color.flatDarkBackground
                 .ignoresSafeArea()
                 .onTapGesture {self.hideKeyboard()}
-            
-            
+
             VStack {
                 CharatcerTopBar(charVM: charVM)
                     .onTapGesture {self.hideKeyboard()}
-                
-                
-                TabView() {
-                    
+
+                TabView {
+
                     // First tab
-                    GeometryReader{ _ in
+                    GeometryReader { _ in
                         StatTab(charVM: charVM)
                     }
                     .tabItem {
@@ -36,34 +33,33 @@ struct CharacterSheet: View{
                         Text("Stats")
                     }.tag(0)
 //                    .onTapGesture {self.hideKeyboard()}
-                    
-                    
-                    //Second Tab
-                    GeometryReader{_ in
+
+                    // Second Tab
+                    GeometryReader {_ in
                         InventoryTab(charVM: charVM)
                     }
                     .tabItem {
                         Image(systemName: "bag")
                         Text("Inventory")
                     }.tag(1)
-                    
-                    //Third Tab
+
+                    // Third Tab
                     ActionsTab(charVM: charVM)
                         .tabItem {
                             Image(systemName: "staroflife.fill")
                             Text("Actions")
                         }.tag(2)
-                    
-                    //Fourth Tab
+
+                    // Fourth Tab
                     PersonalityTab(charVM: charVM).tabItem {
-                        Image(systemName:"book")
+                        Image(systemName: "book")
                         Text("Personality")
-                        
+
                     }.tag(3)
                     Condition(charVM: charVM).tabItem {
                         Image(systemName: "shield.fill")
                         Text("Condition")
-                        
+
                     }.tag(4)
                 }
             }
@@ -72,7 +68,6 @@ struct CharacterSheet: View{
         .navigationBarTitle("", displayMode: .inline)
     }
 
-    
     struct CharatcerSheet_Previews: PreviewProvider {
         static var previews: some View {
             CharacterSheet(charVM: CharacterViewModel(character: Character(
@@ -113,6 +108,6 @@ struct CharacterSheet: View{
                                                             Spell(name: "Firebolt", level: 0, school: "Evocation", castTime: "1 Action", range: "120 ft", components: "V, S", duration: "Instant", description: "You hurl a mote of fire at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 fire damage. A flammable object hit by this spell ignites if it isn't being worn or carried.", ritual: false)
                                                         ])))
         }
-        
+
     }
 }

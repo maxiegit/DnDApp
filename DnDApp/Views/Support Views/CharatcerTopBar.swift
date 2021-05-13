@@ -2,42 +2,42 @@ import SwiftUI
 import Combine
 
 struct CharatcerTopBar: View {
-    
+
     @ObservedObject var charVM: CharacterViewModel
-    
+
     var body: some View {
         ZStack {
             Color.flatDarkBackground
                 .frame(height: 180, alignment: .top)
                 .shadow(radius: 20)
-            
+
             VStack {
                 TopBarStat(name: "name", number: charVM.character.name, charVM: charVM)
                     .font(.title3)
                     .foregroundColor(Color.white)
                     .multilineTextAlignment(.center)
                     .padding(.top)
-                
+
                 ZStack {
-                    HStack(spacing: 20){
+                    HStack(spacing: 20) {
                         TopBarStat(name: "ft.", number: String(charVM.character.speed), charVM: charVM)
                             .padding(.leading, 30)
                         TopBarStat(name: "Prof.", number: String(charVM.character.profBonus), charVM: charVM)
-                            
+
                         Image("default")
                             .resizable()
-                            .frame(width: 80, height: 75, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                            .frame(width: 80, height: 75, alignment: .center/*@END_MENU_TOKEN@*/)
                             .clipShape(Circle())
                             .multilineTextAlignment(.center)
 //                            .position(x: 90, y: 375)
                         TopBarStat(name: "AC", number: String(charVM.character.ac), charVM: charVM)
                         TopBarStat(name: "HP", number: String(charVM.character.hp), charVM: charVM)
                             .padding(.trailing)
-                        
+
                     }
                     .offset(x: 6.0)
                 }
-                
+
                 HStack {
                     TopBarStat(name: "race", number: charVM.character.race, charVM: charVM)
                     TopBarStat(name: "class", number: charVM.character.classes, charVM: charVM)
@@ -49,25 +49,23 @@ struct CharatcerTopBar: View {
 }
 
 struct TopBarStat: View {
-    
+
     var name: String
     @State var number: String
     @ObservedObject var charVM: CharacterViewModel
-    
-    var body: some View{
-        
-        
-        VStack{
-            if(name == "race" || name == "class" || name == "name"){
+
+    var body: some View {
+
+        VStack {
+            if name == "race" || name == "class" || name == "name" {
                 TextField(name, text: $number)
-                    .onChange(of: number, perform: { newNumber in
+                    .onChange(of: number, perform: { _ in
                     changeNumber(numberChanging: name, number: number)
                 })
                 .fixedSize()
                 .foregroundColor(.white)
-            
-            }
-            else if(name == "Level"){
+
+            } else if name == "Level" {
                 TextField("", text: $number)
                     .keyboardType(.numberPad)
                     // santise input
@@ -77,13 +75,12 @@ struct TopBarStat: View {
                             self.number = filtered
                         }
                     }
-                    .onChange(of: number, perform: { newNumber in
+                    .onChange(of: number, perform: { _ in
                         changeNumber(numberChanging: name, number: number)
                     })
                     .fixedSize()
                     .foregroundColor(.white)
-            }
-            else{
+            } else {
             TextField("", text: $number)
                 .keyboardType(.numberPad)
                 // santise input
@@ -93,15 +90,15 @@ struct TopBarStat: View {
                         self.number = filtered
                     }
                 }
-                .onChange(of: number, perform: { newNumber in
+                .onChange(of: number, perform: { _ in
                     changeNumber(numberChanging: name, number: number)
                 })
                 .fixedSize()
                 .foregroundColor(.white)
                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
             }
-            
-            if(name != "race" && name != "class" && name != "Level" && name != "name"){
+
+            if name != "race" && name != "class" && name != "Level" && name != "name" {
                 Text(name)
                     .font(.footnote)
                     .foregroundColor(Color.white)
@@ -110,9 +107,9 @@ struct TopBarStat: View {
 
         }
     }
-    
+
     func changeNumber(numberChanging: String, number: String) {
-        switch(numberChanging){
+        switch numberChanging {
             case("ft."):
                 charVM.character.speed = Int(number) ?? 0
                 charVM.updateCharacter()

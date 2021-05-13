@@ -7,24 +7,21 @@ struct ArmorDatabaseView: View {
     @StateObject var armorVM = ArmorViewModel()
     @State var addToInventory = false
 
-    
-    
     @State private var toggleSheet = false
-    
+
     var body: some View {
             VStack {
-                List{
-                    ForEach(listVM.armorViewModel){ armorVM in
-                        if(addToInventory){
+                List {
+                    ForEach(listVM.armorViewModel) { armorVM in
+                        if addToInventory {
                             ArmorSelectionCell(armorVM: armorVM, charVM: charVM)
-                        }
-                        else{
+                        } else {
                             ArmorCell(armorVM: armorVM)
                         }
                     }
                 }
                 .toolbar {
-                    ToolbarItem{
+                    ToolbarItem {
                         Button(action: { toggleSheet.toggle() }, label: {
                             Image(systemName: "plus")
                         })
@@ -50,11 +47,9 @@ struct ArmorSelectionCell: View {
     @ObservedObject var armorVM: ArmorViewModel
     @ObservedObject var charVM: CharacterViewModel
 
-
     @Environment(\.presentationMode) var presentationMode
 
-    
-    var body: some View{
+    var body: some View {
         Text(armorVM.armor.name)
             .onTapGesture {
                 charVM.character.armor.append(armorVM.armor)
@@ -64,13 +59,12 @@ struct ArmorSelectionCell: View {
     }
 }
 
-struct ArmorCell: View{
+struct ArmorCell: View {
     @ObservedObject var armorVM: ArmorViewModel
-    
-    
-    var body: some View{
-        NavigationLink(destination: ArmorDetailView(armor: armorVM.armor)){
-            VStack{
+
+    var body: some View {
+        NavigationLink(destination: ArmorDetailView(armor: armorVM.armor)) {
+            VStack {
                 Text(armorVM.armor.name)
             }
         }

@@ -7,12 +7,12 @@ class BackgroundViewModel: ObservableObject, Identifiable {
     @Published var backgroundRepo = BackgroundRepository()
 
     var id = ""
-    
+
     private var cancellables = Set<AnyCancellable>()
-    
-    init(background: Background = Background(name: "", skillProf: [], toolProf: [], languages: "", equipment: "",  feature: "", ability: "", specialty: [], suggestedPersonality: [], suggestedIdeal: [], suggestedBond: [], suggestedFlaw: [])){
+
+    init(background: Background = Background(name: "", skillProf: [], toolProf: [], languages: "", equipment: "", feature: "", ability: "", specialty: [], suggestedPersonality: [], suggestedIdeal: [], suggestedBond: [], suggestedFlaw: [])) {
         self.background = background
-        
+
         $background
             .compactMap { background in
                 background.id
@@ -20,16 +20,16 @@ class BackgroundViewModel: ObservableObject, Identifiable {
             .assign(to: \.id, on: self)
             .store(in: &cancellables)
     }
-    
-    func addBackground(){
+
+    func addBackground() {
         backgroundRepo.addBackground(background)
     }
-    
-    func updateBackground(){
+
+    func updateBackground() {
         backgroundRepo.updateBackground(background)
     }
-    
-    func deleteBackground(){
+
+    func deleteBackground() {
         backgroundRepo.deleteBackground(background)
     }
 }

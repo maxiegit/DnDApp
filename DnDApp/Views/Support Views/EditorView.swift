@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct EditorView : View {
+struct EditorView: View {
     var container: Binding<[String]>
     var index: Int
 

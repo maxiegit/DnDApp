@@ -6,20 +6,19 @@ struct Database: View {
             Color.flatDarkBackground.ignoresSafeArea()
             ScrollView {
                 VStack {
-                    NavigationLink(destination: SpellDatabaseView())
-                    {
+                    NavigationLink(destination: SpellDatabaseView()) {
                         DatabaseSection(section: "Spells")
                     }
-                    NavigationLink(destination: ItemDatabaseView()){
+                    NavigationLink(destination: ItemDatabaseView()) {
                         DatabaseSection(section: "Items")
                     }
-                    NavigationLink(destination: ArmorDatabaseView()){
+                    NavigationLink(destination: ArmorDatabaseView()) {
                         DatabaseSection(section: "Armor")
                     }
-                    NavigationLink(destination: WeaponDatabaseView()){
+                    NavigationLink(destination: WeaponDatabaseView()) {
                         DatabaseSection(section: "Weapons")
                     }
-                    NavigationLink(destination: BackgroundDatabaseView()){
+                    NavigationLink(destination: BackgroundDatabaseView()) {
                         DatabaseSection(section: "Backgrounds")
                     }
                 }
@@ -27,7 +26,6 @@ struct Database: View {
         }
     }
 
-    
 }
 
 struct Database_Previews: PreviewProvider {

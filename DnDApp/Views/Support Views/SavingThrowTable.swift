@@ -1,26 +1,26 @@
 import SwiftUI
 
 struct SavingThrowTable: View {
-    
+
     @ObservedObject var charVM: CharacterViewModel
-    
+
     var body: some View {
-        ZStack{
+        ZStack {
             Color.flatDarkBackground
-            HStack{
-                VStack(alignment: .trailing, spacing: 10){
+            HStack {
+                VStack(alignment: .trailing, spacing: 10) {
                     Save(charVM: charVM, isProf: charVM.character.saveProficicies[0], index: 0, prof: "Str")
                     Save(charVM: charVM, isProf: charVM.character.saveProficicies[1], index: 1, prof: "Dex")
                     Save(charVM: charVM, isProf: charVM.character.saveProficicies[2], index: 2, prof: "Con")
                 }
-                
-                VStack(alignment: .trailing, spacing: 10){
+
+                VStack(alignment: .trailing, spacing: 10) {
                     Save(charVM: charVM, isProf: charVM.character.saveProficicies[3], index: 3, prof: "Int")
                     Save(charVM: charVM, isProf: charVM.character.saveProficicies[4], index: 4, prof: "WIs")
                     Save(charVM: charVM, isProf: charVM.character.saveProficicies[5], index: 5, prof: "Cha")
                 }
             }
-            
+
         }
         .frame(width: 240, height: 120, alignment: .center)
         .cornerRadius(10)
@@ -28,15 +28,15 @@ struct SavingThrowTable: View {
 }
 
 struct Save: View {
-    
+
     @ObservedObject var charVM: CharacterViewModel
     @State var isProf: Bool
     var index: Int
     var prof: String
-    
-    var body: some View{
-        HStack{
-            if(isProf){
+
+    var body: some View {
+        HStack {
+            if isProf {
                 Text("\(prof)  \(charVM.bonusCalc(stat: getSave(index: index)) + charVM.character.profBonus)")
                     .foregroundColor(.white)
                 Image(systemName: "circle.fill")
@@ -46,8 +46,7 @@ struct Save: View {
                         charVM.character.saveProficicies[index].toggle()
                         charVM.updateCharacter()
                     })
-            }
-            else{
+            } else {
                 Text("\(prof)  \(charVM.bonusCalc(stat: getSave(index: index)))")
                     .foregroundColor(.white)
                     .padding(.leading)
@@ -61,10 +60,10 @@ struct Save: View {
             }
         }
     }
-    
+
     func getSave(index: Int) -> Int {
         var save: Int = 0
-        
+
         switch index {
         case 0:
             save = charVM.character.strength
@@ -81,10 +80,10 @@ struct Save: View {
         default:
             break
         }
-        
+
         return save
     }
-    
+
 }
 
 struct SavingThrowTable_Previews: PreviewProvider {
