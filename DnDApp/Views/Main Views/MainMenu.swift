@@ -4,6 +4,7 @@ struct MainMenu: View {
     @ObservedObject var listVM = DatabaseListViewModel()
     @StateObject var charVm = CharacterViewModel()
     @State private var toggleSheet = false
+    @State private var showSignIn = false
 
     var body: some View {
         NavigationView {
@@ -19,6 +20,9 @@ struct MainMenu: View {
                             }
                         }
                     }
+                    Button(action: {self.showSignIn.toggle()}) {
+                                           Text("Sign in")
+                                       }
                 }
             }
             .navigationBarItems(leading: NavigationLink(destination: Database()) {
@@ -32,6 +36,9 @@ struct MainMenu: View {
                 NewCharacter()
             })
         }
+        .sheet(isPresented: $showSignIn, content: {
+            SignInView()
+        })
     }
 
     struct Menu_Previews: PreviewProvider {

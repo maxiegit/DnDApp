@@ -85,7 +85,7 @@ struct Condition: View {
 
 struct Condition_Previews: PreviewProvider {
     static var previews: some View {
-        Condition(charVM: CharacterViewModel(character: Character(
+        Condition(charVM: CharacterViewModel(character: PlayerCharacter(
                                                 isDM: false,
                                                 name: "Max Magill",
                                                 race: "Human",
